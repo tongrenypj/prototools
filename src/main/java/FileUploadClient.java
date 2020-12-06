@@ -1,18 +1,13 @@
-import com.alibaba.fastjson.JSON;
-import com.alibaba.fastjson.JSONArray;
-import com.alibaba.fastjson.JSONObject;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
+import org.apache.http.HttpStatus;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.entity.ContentType;
 import org.apache.http.entity.mime.MultipartEntityBuilder;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
-import org.apache.http.util.EntityUtils;
-import java.io.File;
-import java.io.InputStream;
-import java.net.URL;
-import java.nio.charset.Charset;
+
+import java.io.*;
+
 /**
  * 文件传送
  * 发送文件流到服务器端
@@ -26,49 +21,57 @@ public class FileUploadClient {
 
     public static void main(String[] args) throws Exception {
 
-        //接收文件的服务器地址
-        String url = "http://127.0.0.1:8090/springbootdemo/log/upload";
-        String pathname = new File("logs" + File.separator + "log_20190310.log").getCanonicalPath();
-        logUpload(url, pathname);
-        System.out.println("Hello World!");
+        //post方式上传文件, 服务器地址 http://10.94.29.20:8989/file/upload
+        String url = args[0];
+        String fileName = args[1];
+
+        File directory = new File("");//参数为空
+        //String courseFile = directory.getCanonicalPath();
+        //System.out.println(courseFile);
+
+
+        File file = new File(directory + fileName);
+        fileUpload(url, file);
     }
 
 
-    private static void logUpload(String url, String pathname) {
-        //文件URL，此处取豆瓣上的一个图片
-        String fileUrl ="https://img1.doubanio.com/view/photo/l/public/p2537149328.webp";
-        try {
-            //提取到文件名
-            String fileName = fileUrl.substring(fileUrl.lastIndexOf("/")+1);
-            //转换成文件流
-            InputStream is = new URL(fileUrl).openStream();
+    private static void fileUpload(String url, File file) {
 
+        try {
+            //需要上传的文件
             //创建HttpClient
             CloseableHttpClient httpClient = HttpClients.createDefault();
             HttpPost httpPost = new HttpPost(url);
+
+            //关键代码：将java.io.File对象添加到HttpEntity（org.apache.http.HttpEntity）对象中：
             MultipartEntityBuilder builder = MultipartEntityBuilder.create();
-            /*绑定文件参数，传入文件流和contenttype，此处也可以继续添加其他formdata参数*/
-            builder.addBinaryBody("file", is, ContentType.MULTIPART_FORM_DATA,fileName);
+            builder.addBinaryBody("file", file);
             HttpEntity entity = builder.build();
             httpPost.setEntity(entity);
 
             //执行提交
             HttpResponse response = httpClient.execute(httpPost);
+            //获取响应
             HttpEntity responseEntity = response.getEntity();
-            if(responseEntity != null) {
-                //将响应的内容转换成字符串
-                String result = EntityUtils.toString(responseEntity, Charset.forName("UTF-8"));
 
-                //此处根据服务器返回的参数转换，这里返回的是JSON格式
-                JSONObject output = JSON.parseObject(result);
-                JSONArray body = output.getJSONArray("body");
-                String resUrl = body.get(0) + "";
-
-                System.out.println(resUrl);
+            int statusCode=response.getStatusLine().getStatusCode();
+            if(statusCode== HttpStatus.SC_OK){
+                //得到客户段响应的实体内容
+                HttpEntity responseHttpEntity = response.getEntity();
+                //得到输入流
+                InputStream in = responseHttpEntity.getContent();
+                //得到输入流的内容
+                InputStreamReader isr =new InputStreamReader(in,"utf-8");
+                BufferedReader br =new BufferedReader(isr);
+                try {
+                    while ((br.read())!=-1) {
+                        System.out.println(br.readLine());
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
             }
-            if(is != null) {
-               is.close();
-            }
+            httpClient.close();
         }catch (Exception ex){
             ex.printStackTrace();
         }

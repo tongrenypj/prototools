@@ -1,0 +1,1860 @@
+protoMsgId = {}
+protoMsgId["CSClientLoginReq"] = 100
+protoMsgId["SCClientLoginAck"] = 101
+protoMsgId["CSCreateRoleReq"] = 102
+protoMsgId["SCCreateRoleAck"] = 103
+protoMsgId["SCUserStartupInfoNtf"] = 104
+protoMsgId["SCUserStartupFinishedNtf"] = 105
+protoMsgId["SCLogicPingNtf"] = 106
+protoMsgId["CSLogicPingAck"] = 107
+protoMsgId["SCKickNtf"] = 108
+protoMsgId["SCServerMaintainNtf"] = 109
+protoMsgId["CSZonePlayerInfoReq"] = 110
+protoMsgId["SSCommonIntAck"] = 111
+protoMsgId["SCZonePlayerInfoNtf"] = 112
+protoMsgId["CSServersReq"] = 113
+protoMsgId["SCServersAck"] = 114
+protoMsgId["CSServersCdnReq"] = 115
+protoMsgId["SCServersCdnAck"] = 116
+protoMsgId["CSClientLogoutReq"] = 117
+protoMsgId["SCClientLogoutAck"] = 118
+protoMsgId["CSChangeRoleNameReq"] = 119
+protoMsgId["SCChangeRoleNameAck"] = 120
+protoMsgId["CSReconnectReq"] = 121
+protoMsgId["SCReconnectAck"] = 122
+protoMsgId["SCReconnectCompleteNtf"] = 123
+protoMsgId["PSBgipReq"] = 124
+protoMsgId["SPBgipAck"] = 125
+protoMsgId["SCMarqueeNtf"] = 126
+protoMsgId["CSUpdatePowerInfoReq"] = 150
+protoMsgId["SCUpdatePowerInfoAck"] = 151
+protoMsgId["SCRoleBaseDataNtf"] = 201
+protoMsgId["CSClientSelectRoleReq"] = 202
+protoMsgId["SCClientSelectRoleAck"] = 203
+protoMsgId["CSClientPullRoleListReq"] = 204
+protoMsgId["SCClientPullRoleListAck"] = 205
+protoMsgId["CSClientGmCommandReq"] = 206
+protoMsgId["SCClientGmCommandAck"] = 207
+protoMsgId["SCClientSyncReq"] = 208
+protoMsgId["CSClientSyncAck"] = 209
+protoMsgId["CSLogoutReq"] = 210
+protoMsgId["SCLogoutNtf"] = 211
+protoMsgId["CSBattleReq"] = 212
+protoMsgId["SCBattleAck"] = 213
+protoMsgId["SCHeroListNtf"] = 214
+protoMsgId["SCAddHeroNtf"] = 215
+protoMsgId["SCDelHeroNtf"] = 216
+protoMsgId["CSPullItemReq"] = 217
+protoMsgId["SCPullItemAck"] = 218
+protoMsgId["CSOpenChestReq"] = 219
+protoMsgId["SCOpenChestAck"] = 220
+protoMsgId["CSSellItemReq"] = 221
+protoMsgId["SCSellItemAck"] = 222
+protoMsgId["CSSynthesisItemReq"] = 223
+protoMsgId["SCSynthesisItemAck"] = 224
+protoMsgId["CSSynthesisHeroReq"] = 225
+protoMsgId["SCSynthesisHeroAck"] = 226
+protoMsgId["SCItemChangeNtf"] = 227
+protoMsgId["CSStartIdleMissionReq"] = 244
+protoMsgId["SCStartIdleMissionAck"] = 245
+protoMsgId["CSCollectIdleMissionReq"] = 246
+protoMsgId["SCCollectIdleMissionAck"] = 247
+protoMsgId["CSCancelIdleMissionReq"] = 248
+protoMsgId["SCCancelIdleMissionAck"] = 249
+protoMsgId["CSAcceptBattleMissionReq"] = 250
+protoMsgId["SCAcceptBattleMissionAck"] = 251
+protoMsgId["CSStartBattleMissionReq"] = 252
+protoMsgId["SCStartBattleMissionAck"] = 253
+protoMsgId["CSChangeTeamReq"] = 254
+protoMsgId["SCChangeTeamAck"] = 255
+protoMsgId["CSChangeFunctionTeamReq"] = 256
+protoMsgId["SCChangeFunctionTeamAck"] = 257
+protoMsgId["SCMissionDataNtf"] = 258
+protoMsgId["SCUnblockedMissionDataNtf"] = 259
+protoMsgId["CSDrawCardReq"] = 260
+protoMsgId["SCDrawCardAck"] = 261
+protoMsgId["CSUnblockMissionReq"] = 262
+protoMsgId["SCUnblockMissionAck"] = 263
+protoMsgId["CSSpeedupIdleMissionReq"] = 264
+protoMsgId["SCSpeedupIdleMissionAck"] = 265
+protoMsgId["SCRoleLoadFinishNtf"] = 266
+protoMsgId["CSAdventureInfoReq"] = 267
+protoMsgId["SCAdventureInfoAck"] = 268
+protoMsgId["CSAdventureCombatReq"] = 269
+protoMsgId["SCAdventureCombatAck"] = 270
+protoMsgId["CSAdventureChapterAfkAwardReq"] = 271
+protoMsgId["SCAdventureChapterAfkAwardAck"] = 272
+protoMsgId["CSAdventureAfkCombatReq"] = 273
+protoMsgId["SCAdventureAfkCombatAck"] = 274
+protoMsgId["CSAdventureAfkAwardReq"] = 275
+protoMsgId["SCAdventureAfkAwardAck"] = 276
+protoMsgId["CSHeroDisplayReq"] = 277
+protoMsgId["SCHeroDisplayAck"] = 278
+protoMsgId["CSHeroLevelUpReq"] = 279
+protoMsgId["SCHeroLevelUpAck"] = 280
+protoMsgId["CSHeroStarUpReq"] = 281
+protoMsgId["SCHeroStarUpAck"] = 282
+protoMsgId["CSDrawReq"] = 297
+protoMsgId["SCDrawAck"] = 298
+protoMsgId["CSBuyDrawItemReq"] = 299
+protoMsgId["SCBuyDrawItemAck"] = 300
+protoMsgId["CSHeroDisassembleReq"] = 301
+protoMsgId["SCHeroDisassembleAck"] = 302
+protoMsgId["CSPieceDismissReq"] = 303
+protoMsgId["SCPieceDismissAck"] = 304
+protoMsgId["CSHeroRebornReq"] = 305
+protoMsgId["SCHeroRebornAck"] = 306
+protoMsgId["CSHeroQualityUpReq"] = 307
+protoMsgId["SCHeroQualityUpAck"] = 308
+protoMsgId["CSSynTaskListReq"] = 315
+protoMsgId["SCSynTaskListAck"] = 316
+protoMsgId["CSTaskRewardReq"] = 317
+protoMsgId["SCTaskRewardAck"] = 318
+protoMsgId["SCCommonItemPopUpNtf"] = 319
+protoMsgId["SCTaskChangeNtf"] = 320
+protoMsgId["SCTaskDeleteNtf"] = 321
+protoMsgId["CSShopInfoReq"] = 322
+protoMsgId["SCShopInfoAck"] = 323
+protoMsgId["CSShopRefreshReq"] = 324
+protoMsgId["SCShopRefreshAck"] = 325
+protoMsgId["CSShopBuyReq"] = 326
+protoMsgId["SCShopBuyAck"] = 327
+protoMsgId["CSConvertHeroPieceReq"] = 328
+protoMsgId["SCConvertHeroPieceAck"] = 329
+protoMsgId["SCEquipmentDataNtf"] = 330
+protoMsgId["CSEquipReq"] = 331
+protoMsgId["SCEquipAck"] = 332
+protoMsgId["CSEquipmentSlotEnchantingReq"] = 333
+protoMsgId["SCEquipmentSlotEnchantingAck"] = 334
+protoMsgId["CSEquipmentSlotStrengthReq"] = 335
+protoMsgId["SCEquipmentSlotStrengthAck"] = 336
+protoMsgId["CSEquipmentDestroyReq"] = 337
+protoMsgId["SCEquipmentDestroyAck"] = 339
+protoMsgId["SCEquipmentSlotUnlockNtf"] = 340
+protoMsgId["SCAddEquipmentNtf"] = 341
+protoMsgId["SCCrystalDataNtf"] = 342
+protoMsgId["CSBuyCrystalSlotReq"] = 343
+protoMsgId["SCBuyCrystalSlotAck"] = 344
+protoMsgId["CSPlaceHeroReq"] = 345
+protoMsgId["SCPlaceHeroAck"] = 346
+protoMsgId["CSClearHeroReq"] = 347
+protoMsgId["SCClearHeroAck"] = 348
+protoMsgId["CSRefreshSlotReq"] = 349
+protoMsgId["SCRefreshSlotAck"] = 350
+protoMsgId["CSShareLevelUpReq"] = 351
+protoMsgId["SCShareLevelUpAck"] = 352
+protoMsgId["SCHeroChangeNtf"] = 355
+protoMsgId["CSStoryInfoReq"] = 356
+protoMsgId["SCStoryInfoAck"] = 357
+protoMsgId["CSStoryStartReq"] = 358
+protoMsgId["SCStoryStartAck"] = 359
+protoMsgId["CSStoryEndReq"] = 360
+protoMsgId["SCStoryEndAck"] = 361
+protoMsgId["CSActivateEmblemReq"] = 362
+protoMsgId["SCActivateEmblemAck"] = 363
+protoMsgId["CSStrengthenEmblemReq"] = 364
+protoMsgId["SCStrengthenEmblemAck"] = 365
+protoMsgId["CSRefreshBlessReq"] = 366
+protoMsgId["SCRefreshBlessAck"] = 367
+protoMsgId["CSResumeBlessReq"] = 368
+protoMsgId["SCResumeBlessAck"] = 369
+protoMsgId["CSReplaceBlessReq"] = 370
+protoMsgId["SCReplaceBlessAck"] = 371
+protoMsgId["SCCrystalDataChangeNtf"] = 372
+protoMsgId["CSTowerListReq"] = 373
+protoMsgId["SCTowerListAck"] = 374
+protoMsgId["SCTowerChangeNtf"] = 375
+protoMsgId["CSTowerFinishRewardsReq"] = 376
+protoMsgId["CSTowerBattleReq"] = 378
+protoMsgId["SCTowerBattleAck"] = 379
+protoMsgId["SCAddTowerNtf"] = 380
+protoMsgId["CSElseWdInfoReq"] = 381
+protoMsgId["SCElseWdInfoAck"] = 382
+protoMsgId["CSElseWdStageInitReq"] = 383
+protoMsgId["SCElseWdStageInitAck"] = 384
+protoMsgId["CSElseWdRebornReq"] = 385
+protoMsgId["SCElseWdRebornAck"] = 386
+protoMsgId["CSElseWdStageBattleResultReq"] = 387
+protoMsgId["SCElseWdStageBattleResultAck"] = 388
+protoMsgId["CSElseWdStageOptReq"] = 389
+protoMsgId["SCElseWdStageOptAck"] = 390
+protoMsgId["CSAlbumInfoReq"] = 391
+protoMsgId["SCAlbumInfoAck"] = 392
+protoMsgId["CSAlbumRewardReq"] = 393
+protoMsgId["SCAlbumRewardAck"] = 394
+protoMsgId["CSCharacterProfileInfoReq"] = 395
+protoMsgId["SCCharacterProfileInfoAck"] = 396
+protoMsgId["CSActivateCharacterProfileReq"] = 397
+protoMsgId["SCActivateCharacterProfileAck"] = 398
+protoMsgId["CSCharacterProfileRewardReq"] = 399
+protoMsgId["SCCharacterProfileRewardAck"] = 400
+protoMsgId["SCCustomerServiceReddotNtf"] = 401
+protoMsgId["SCMainUiNtf"] = 402
+protoMsgId["CSMainUiRefreshReq"] = 403
+protoMsgId["SCMainUiRefreshAck"] = 404
+protoMsgId["CSMainUiReceiveReq"] = 405
+protoMsgId["SCMainUiReceiveAck"] = 406
+protoMsgId["SCMainUiSpecialDramaNtf"] = 407
+protoMsgId["CSMainUiCollectReq"] = 408
+protoMsgId["SCMainUiCollectAck"] = 409
+protoMsgId["CSClientGmHelpReq"] = 410
+protoMsgId["SCClientGmHelpAck"] = 411
+protoMsgId["CSMailInfoReq"] = 412
+protoMsgId["SCMailInfoAck"] = 413
+protoMsgId["CSMailOperateReq"] = 414
+protoMsgId["SCMailOperateAck"] = 415
+protoMsgId["CSMailboxSetReq"] = 416
+protoMsgId["SCMailboxSetAck"] = 417
+protoMsgId["SCGmDrawCardNtf"] = 418
+protoMsgId["CSFriendInfoReq"] = 419
+protoMsgId["SCFriendInfoAck"] = 420
+protoMsgId["CSFriendRequestReq"] = 421
+protoMsgId["SCFriendRequestAck"] = 422
+protoMsgId["SCFriendRequestOtherNtf"] = 423
+protoMsgId["CSFriendRemoveRequestReq"] = 424
+protoMsgId["SCFriendRemoveRequestAck"] = 425
+protoMsgId["CSFriendAddBlackListReq"] = 426
+protoMsgId["SCFriendAddBlackListAck"] = 427
+protoMsgId["CSFriendRemoveBlackListReq"] = 428
+protoMsgId["SCFriendRemoveBlackListAck"] = 429
+protoMsgId["CSFriendRemoveReq"] = 430
+protoMsgId["SCFriendRemoveAck"] = 431
+protoMsgId["SCFriendRemoveOtherNtf"] = 432
+protoMsgId["CSFriendRequestAgreeReq"] = 433
+protoMsgId["SCFriendRequestAgreeAck"] = 434
+protoMsgId["SCFriendRequestAgreeOtherNtf"] = 435
+protoMsgId["CSFriendSearchReq"] = 436
+protoMsgId["SCFriendSearchAck"] = 437
+protoMsgId["CSFriendModifyRemarkReq"] = 438
+protoMsgId["SCFriendModifyRemarkAck"] = 439
+protoMsgId["CSIntroQueryReq"] = 440
+protoMsgId["SCIntroQueryAck"] = 441
+protoMsgId["CSIntroChangePortraitReq"] = 442
+protoMsgId["SCIntroChangePortraitAck"] = 443
+protoMsgId["SCRoomChangeNtf"] = 500
+protoMsgId["CSRoomListReq"] = 501
+protoMsgId["SCRoomListAck"] = 502
+protoMsgId["CSRoomCollectReq"] = 503
+protoMsgId["SCRoomCollectAck"] = 504
+protoMsgId["CSCreateRoomReq"] = 505
+protoMsgId["SCCreateRoomAck"] = 506
+protoMsgId["CSRoomUpLevelReq"] = 507
+protoMsgId["SCRoomUpLevelAck"] = 508
+protoMsgId["CSUpdateRoomPosReq"] = 509
+protoMsgId["SCUpdateRoomPosAck"] = 510
+protoMsgId["CSSpeedUpReq"] = 511
+protoMsgId["SCSpeedUpAck"] = 512
+protoMsgId["CSRoomFinishReq"] = 515
+protoMsgId["SCRoomFinishAck"] = 516
+protoMsgId["CSBuyWorkerReq"] = 517
+protoMsgId["SCBuyWorkerAck"] = 518
+protoMsgId["CSStationRoomReq"] = 519
+protoMsgId["SCStationRoomAck"] = 520
+protoMsgId["CSAssignPowerReq"] = 521
+protoMsgId["SCAssignPowerAck"] = 522
+protoMsgId["CSGetHangUpResourceReq"] = 523
+protoMsgId["SCGetHangUpResourceAck"] = 524
+protoMsgId["CSSettingSaveReq"] = 550
+protoMsgId["SCSettingSaveAck"] = 551
+protoMsgId["CSOssBattleStartReq"] = 552
+protoMsgId["SCOssBattleStartAck"] = 553
+protoMsgId["CSOssBattleEndReq"] = 554
+protoMsgId["SCOssBattleEndAck"] = 555
+protoMsgId["SCHealthUpdateTimeNtf"] = 560
+protoMsgId["PSGmLoginReq"] = 2001
+protoMsgId["SPGmLoginAck"] = 2002
+protoMsgId["PSBanRoleReq"] = 2003
+protoMsgId["SPBanRoleAck"] = 2004
+protoMsgId["PSUnbanRoleReq"] = 2005
+protoMsgId["SPUnbanRoleAck"] = 2006
+protoMsgId["PSCheckRoleReq"] = 2007
+protoMsgId["SPCheckRoleAck"] = 2008
+protoMsgId["PSGmCmdReq"] = 2009
+protoMsgId["SPGmCmdAck"] = 2010
+protoMsgId["PSModifyRoleReq"] = 2011
+protoMsgId["SPModifyRoleAck"] = 2012
+
+protoMsgName = {}
+protoMsgName[100] = "CSClientLoginReq"
+protoMsgName[101] = "SCClientLoginAck"
+protoMsgName[102] = "CSCreateRoleReq"
+protoMsgName[103] = "SCCreateRoleAck"
+protoMsgName[104] = "SCUserStartupInfoNtf"
+protoMsgName[105] = "SCUserStartupFinishedNtf"
+protoMsgName[106] = "SCLogicPingNtf"
+protoMsgName[107] = "CSLogicPingAck"
+protoMsgName[108] = "SCKickNtf"
+protoMsgName[109] = "SCServerMaintainNtf"
+protoMsgName[110] = "CSZonePlayerInfoReq"
+protoMsgName[111] = "SSCommonIntAck"
+protoMsgName[112] = "SCZonePlayerInfoNtf"
+protoMsgName[113] = "CSServersReq"
+protoMsgName[114] = "SCServersAck"
+protoMsgName[115] = "CSServersCdnReq"
+protoMsgName[116] = "SCServersCdnAck"
+protoMsgName[117] = "CSClientLogoutReq"
+protoMsgName[118] = "SCClientLogoutAck"
+protoMsgName[119] = "CSChangeRoleNameReq"
+protoMsgName[120] = "SCChangeRoleNameAck"
+protoMsgName[121] = "CSReconnectReq"
+protoMsgName[122] = "SCReconnectAck"
+protoMsgName[123] = "SCReconnectCompleteNtf"
+protoMsgName[124] = "PSBgipReq"
+protoMsgName[125] = "SPBgipAck"
+protoMsgName[126] = "SCMarqueeNtf"
+protoMsgName[150] = "CSUpdatePowerInfoReq"
+protoMsgName[151] = "SCUpdatePowerInfoAck"
+protoMsgName[201] = "SCRoleBaseDataNtf"
+protoMsgName[202] = "CSClientSelectRoleReq"
+protoMsgName[203] = "SCClientSelectRoleAck"
+protoMsgName[204] = "CSClientPullRoleListReq"
+protoMsgName[205] = "SCClientPullRoleListAck"
+protoMsgName[206] = "CSClientGmCommandReq"
+protoMsgName[207] = "SCClientGmCommandAck"
+protoMsgName[208] = "SCClientSyncReq"
+protoMsgName[209] = "CSClientSyncAck"
+protoMsgName[210] = "CSLogoutReq"
+protoMsgName[211] = "SCLogoutNtf"
+protoMsgName[212] = "CSBattleReq"
+protoMsgName[213] = "SCBattleAck"
+protoMsgName[214] = "SCHeroListNtf"
+protoMsgName[215] = "SCAddHeroNtf"
+protoMsgName[216] = "SCDelHeroNtf"
+protoMsgName[217] = "CSPullItemReq"
+protoMsgName[218] = "SCPullItemAck"
+protoMsgName[219] = "CSOpenChestReq"
+protoMsgName[220] = "SCOpenChestAck"
+protoMsgName[221] = "CSSellItemReq"
+protoMsgName[222] = "SCSellItemAck"
+protoMsgName[223] = "CSSynthesisItemReq"
+protoMsgName[224] = "SCSynthesisItemAck"
+protoMsgName[225] = "CSSynthesisHeroReq"
+protoMsgName[226] = "SCSynthesisHeroAck"
+protoMsgName[227] = "SCItemChangeNtf"
+protoMsgName[244] = "CSStartIdleMissionReq"
+protoMsgName[245] = "SCStartIdleMissionAck"
+protoMsgName[246] = "CSCollectIdleMissionReq"
+protoMsgName[247] = "SCCollectIdleMissionAck"
+protoMsgName[248] = "CSCancelIdleMissionReq"
+protoMsgName[249] = "SCCancelIdleMissionAck"
+protoMsgName[250] = "CSAcceptBattleMissionReq"
+protoMsgName[251] = "SCAcceptBattleMissionAck"
+protoMsgName[252] = "CSStartBattleMissionReq"
+protoMsgName[253] = "SCStartBattleMissionAck"
+protoMsgName[254] = "CSChangeTeamReq"
+protoMsgName[255] = "SCChangeTeamAck"
+protoMsgName[256] = "CSChangeFunctionTeamReq"
+protoMsgName[257] = "SCChangeFunctionTeamAck"
+protoMsgName[258] = "SCMissionDataNtf"
+protoMsgName[259] = "SCUnblockedMissionDataNtf"
+protoMsgName[260] = "CSDrawCardReq"
+protoMsgName[261] = "SCDrawCardAck"
+protoMsgName[262] = "CSUnblockMissionReq"
+protoMsgName[263] = "SCUnblockMissionAck"
+protoMsgName[264] = "CSSpeedupIdleMissionReq"
+protoMsgName[265] = "SCSpeedupIdleMissionAck"
+protoMsgName[266] = "SCRoleLoadFinishNtf"
+protoMsgName[267] = "CSAdventureInfoReq"
+protoMsgName[268] = "SCAdventureInfoAck"
+protoMsgName[269] = "CSAdventureCombatReq"
+protoMsgName[270] = "SCAdventureCombatAck"
+protoMsgName[271] = "CSAdventureChapterAfkAwardReq"
+protoMsgName[272] = "SCAdventureChapterAfkAwardAck"
+protoMsgName[273] = "CSAdventureAfkCombatReq"
+protoMsgName[274] = "SCAdventureAfkCombatAck"
+protoMsgName[275] = "CSAdventureAfkAwardReq"
+protoMsgName[276] = "SCAdventureAfkAwardAck"
+protoMsgName[277] = "CSHeroDisplayReq"
+protoMsgName[278] = "SCHeroDisplayAck"
+protoMsgName[279] = "CSHeroLevelUpReq"
+protoMsgName[280] = "SCHeroLevelUpAck"
+protoMsgName[281] = "CSHeroStarUpReq"
+protoMsgName[282] = "SCHeroStarUpAck"
+protoMsgName[297] = "CSDrawReq"
+protoMsgName[298] = "SCDrawAck"
+protoMsgName[299] = "CSBuyDrawItemReq"
+protoMsgName[300] = "SCBuyDrawItemAck"
+protoMsgName[301] = "CSHeroDisassembleReq"
+protoMsgName[302] = "SCHeroDisassembleAck"
+protoMsgName[303] = "CSPieceDismissReq"
+protoMsgName[304] = "SCPieceDismissAck"
+protoMsgName[305] = "CSHeroRebornReq"
+protoMsgName[306] = "SCHeroRebornAck"
+protoMsgName[307] = "CSHeroQualityUpReq"
+protoMsgName[308] = "SCHeroQualityUpAck"
+protoMsgName[315] = "CSSynTaskListReq"
+protoMsgName[316] = "SCSynTaskListAck"
+protoMsgName[317] = "CSTaskRewardReq"
+protoMsgName[318] = "SCTaskRewardAck"
+protoMsgName[319] = "SCCommonItemPopUpNtf"
+protoMsgName[320] = "SCTaskChangeNtf"
+protoMsgName[321] = "SCTaskDeleteNtf"
+protoMsgName[322] = "CSShopInfoReq"
+protoMsgName[323] = "SCShopInfoAck"
+protoMsgName[324] = "CSShopRefreshReq"
+protoMsgName[325] = "SCShopRefreshAck"
+protoMsgName[326] = "CSShopBuyReq"
+protoMsgName[327] = "SCShopBuyAck"
+protoMsgName[328] = "CSConvertHeroPieceReq"
+protoMsgName[329] = "SCConvertHeroPieceAck"
+protoMsgName[330] = "SCEquipmentDataNtf"
+protoMsgName[331] = "CSEquipReq"
+protoMsgName[332] = "SCEquipAck"
+protoMsgName[333] = "CSEquipmentSlotEnchantingReq"
+protoMsgName[334] = "SCEquipmentSlotEnchantingAck"
+protoMsgName[335] = "CSEquipmentSlotStrengthReq"
+protoMsgName[336] = "SCEquipmentSlotStrengthAck"
+protoMsgName[337] = "CSEquipmentDestroyReq"
+protoMsgName[339] = "SCEquipmentDestroyAck"
+protoMsgName[340] = "SCEquipmentSlotUnlockNtf"
+protoMsgName[341] = "SCAddEquipmentNtf"
+protoMsgName[342] = "SCCrystalDataNtf"
+protoMsgName[343] = "CSBuyCrystalSlotReq"
+protoMsgName[344] = "SCBuyCrystalSlotAck"
+protoMsgName[345] = "CSPlaceHeroReq"
+protoMsgName[346] = "SCPlaceHeroAck"
+protoMsgName[347] = "CSClearHeroReq"
+protoMsgName[348] = "SCClearHeroAck"
+protoMsgName[349] = "CSRefreshSlotReq"
+protoMsgName[350] = "SCRefreshSlotAck"
+protoMsgName[351] = "CSShareLevelUpReq"
+protoMsgName[352] = "SCShareLevelUpAck"
+protoMsgName[355] = "SCHeroChangeNtf"
+protoMsgName[356] = "CSStoryInfoReq"
+protoMsgName[357] = "SCStoryInfoAck"
+protoMsgName[358] = "CSStoryStartReq"
+protoMsgName[359] = "SCStoryStartAck"
+protoMsgName[360] = "CSStoryEndReq"
+protoMsgName[361] = "SCStoryEndAck"
+protoMsgName[362] = "CSActivateEmblemReq"
+protoMsgName[363] = "SCActivateEmblemAck"
+protoMsgName[364] = "CSStrengthenEmblemReq"
+protoMsgName[365] = "SCStrengthenEmblemAck"
+protoMsgName[366] = "CSRefreshBlessReq"
+protoMsgName[367] = "SCRefreshBlessAck"
+protoMsgName[368] = "CSResumeBlessReq"
+protoMsgName[369] = "SCResumeBlessAck"
+protoMsgName[370] = "CSReplaceBlessReq"
+protoMsgName[371] = "SCReplaceBlessAck"
+protoMsgName[372] = "SCCrystalDataChangeNtf"
+protoMsgName[373] = "CSTowerListReq"
+protoMsgName[374] = "SCTowerListAck"
+protoMsgName[375] = "SCTowerChangeNtf"
+protoMsgName[376] = "CSTowerFinishRewardsReq"
+protoMsgName[378] = "CSTowerBattleReq"
+protoMsgName[379] = "SCTowerBattleAck"
+protoMsgName[380] = "SCAddTowerNtf"
+protoMsgName[381] = "CSElseWdInfoReq"
+protoMsgName[382] = "SCElseWdInfoAck"
+protoMsgName[383] = "CSElseWdStageInitReq"
+protoMsgName[384] = "SCElseWdStageInitAck"
+protoMsgName[385] = "CSElseWdRebornReq"
+protoMsgName[386] = "SCElseWdRebornAck"
+protoMsgName[387] = "CSElseWdStageBattleResultReq"
+protoMsgName[388] = "SCElseWdStageBattleResultAck"
+protoMsgName[389] = "CSElseWdStageOptReq"
+protoMsgName[390] = "SCElseWdStageOptAck"
+protoMsgName[391] = "CSAlbumInfoReq"
+protoMsgName[392] = "SCAlbumInfoAck"
+protoMsgName[393] = "CSAlbumRewardReq"
+protoMsgName[394] = "SCAlbumRewardAck"
+protoMsgName[395] = "CSCharacterProfileInfoReq"
+protoMsgName[396] = "SCCharacterProfileInfoAck"
+protoMsgName[397] = "CSActivateCharacterProfileReq"
+protoMsgName[398] = "SCActivateCharacterProfileAck"
+protoMsgName[399] = "CSCharacterProfileRewardReq"
+protoMsgName[400] = "SCCharacterProfileRewardAck"
+protoMsgName[401] = "SCCustomerServiceReddotNtf"
+protoMsgName[402] = "SCMainUiNtf"
+protoMsgName[403] = "CSMainUiRefreshReq"
+protoMsgName[404] = "SCMainUiRefreshAck"
+protoMsgName[405] = "CSMainUiReceiveReq"
+protoMsgName[406] = "SCMainUiReceiveAck"
+protoMsgName[407] = "SCMainUiSpecialDramaNtf"
+protoMsgName[408] = "CSMainUiCollectReq"
+protoMsgName[409] = "SCMainUiCollectAck"
+protoMsgName[410] = "CSClientGmHelpReq"
+protoMsgName[411] = "SCClientGmHelpAck"
+protoMsgName[412] = "CSMailInfoReq"
+protoMsgName[413] = "SCMailInfoAck"
+protoMsgName[414] = "CSMailOperateReq"
+protoMsgName[415] = "SCMailOperateAck"
+protoMsgName[416] = "CSMailboxSetReq"
+protoMsgName[417] = "SCMailboxSetAck"
+protoMsgName[418] = "SCGmDrawCardNtf"
+protoMsgName[419] = "CSFriendInfoReq"
+protoMsgName[420] = "SCFriendInfoAck"
+protoMsgName[421] = "CSFriendRequestReq"
+protoMsgName[422] = "SCFriendRequestAck"
+protoMsgName[423] = "SCFriendRequestOtherNtf"
+protoMsgName[424] = "CSFriendRemoveRequestReq"
+protoMsgName[425] = "SCFriendRemoveRequestAck"
+protoMsgName[426] = "CSFriendAddBlackListReq"
+protoMsgName[427] = "SCFriendAddBlackListAck"
+protoMsgName[428] = "CSFriendRemoveBlackListReq"
+protoMsgName[429] = "SCFriendRemoveBlackListAck"
+protoMsgName[430] = "CSFriendRemoveReq"
+protoMsgName[431] = "SCFriendRemoveAck"
+protoMsgName[432] = "SCFriendRemoveOtherNtf"
+protoMsgName[433] = "CSFriendRequestAgreeReq"
+protoMsgName[434] = "SCFriendRequestAgreeAck"
+protoMsgName[435] = "SCFriendRequestAgreeOtherNtf"
+protoMsgName[436] = "CSFriendSearchReq"
+protoMsgName[437] = "SCFriendSearchAck"
+protoMsgName[438] = "CSFriendModifyRemarkReq"
+protoMsgName[439] = "SCFriendModifyRemarkAck"
+protoMsgName[440] = "CSIntroQueryReq"
+protoMsgName[441] = "SCIntroQueryAck"
+protoMsgName[442] = "CSIntroChangePortraitReq"
+protoMsgName[443] = "SCIntroChangePortraitAck"
+protoMsgName[500] = "SCRoomChangeNtf"
+protoMsgName[501] = "CSRoomListReq"
+protoMsgName[502] = "SCRoomListAck"
+protoMsgName[503] = "CSRoomCollectReq"
+protoMsgName[504] = "SCRoomCollectAck"
+protoMsgName[505] = "CSCreateRoomReq"
+protoMsgName[506] = "SCCreateRoomAck"
+protoMsgName[507] = "CSRoomUpLevelReq"
+protoMsgName[508] = "SCRoomUpLevelAck"
+protoMsgName[509] = "CSUpdateRoomPosReq"
+protoMsgName[510] = "SCUpdateRoomPosAck"
+protoMsgName[511] = "CSSpeedUpReq"
+protoMsgName[512] = "SCSpeedUpAck"
+protoMsgName[515] = "CSRoomFinishReq"
+protoMsgName[516] = "SCRoomFinishAck"
+protoMsgName[517] = "CSBuyWorkerReq"
+protoMsgName[518] = "SCBuyWorkerAck"
+protoMsgName[519] = "CSStationRoomReq"
+protoMsgName[520] = "SCStationRoomAck"
+protoMsgName[521] = "CSAssignPowerReq"
+protoMsgName[522] = "SCAssignPowerAck"
+protoMsgName[523] = "CSGetHangUpResourceReq"
+protoMsgName[524] = "SCGetHangUpResourceAck"
+protoMsgName[550] = "CSSettingSaveReq"
+protoMsgName[551] = "SCSettingSaveAck"
+protoMsgName[552] = "CSOssBattleStartReq"
+protoMsgName[553] = "SCOssBattleStartAck"
+protoMsgName[554] = "CSOssBattleEndReq"
+protoMsgName[555] = "SCOssBattleEndAck"
+protoMsgName[560] = "SCHealthUpdateTimeNtf"
+protoMsgName[2001] = "PSGmLoginReq"
+protoMsgName[2002] = "SPGmLoginAck"
+protoMsgName[2003] = "PSBanRoleReq"
+protoMsgName[2004] = "SPBanRoleAck"
+protoMsgName[2005] = "PSUnbanRoleReq"
+protoMsgName[2006] = "SPUnbanRoleAck"
+protoMsgName[2007] = "PSCheckRoleReq"
+protoMsgName[2008] = "SPCheckRoleAck"
+protoMsgName[2009] = "PSGmCmdReq"
+protoMsgName[2010] = "SPGmCmdAck"
+protoMsgName[2011] = "PSModifyRoleReq"
+protoMsgName[2012] = "SPModifyRoleAck"
+
+ClientLoginResult =
+{
+	LOGIN_RESULT_CREATE_ROLE = 1, -- 需要创建角色
+	LOGIN_RESULT_PULL_ROLE_LIST = 2, -- 需要拉角色列表
+}
+
+--技能类型
+BanType =
+{
+	BanType_Normal       = 0, --正常
+	BanType_Login        = 1, --禁止登录
+	BanType_Chat         = 2, --禁言
+}
+
+RoleDataType =
+{
+	RoleDataType_Coin 		= 1,	--金币      需要用64位
+	RoleDataType_Diamond 	= 2,	--钻石
+	RoleDataType_Wood		= 3,	--木材
+	RoleDataType_Level		= 4,	--等级
+	RoleDataType_Exp		= 5,	--经验
+	RoleDataType_HeroExp    = 6,    --英雄经验  需要用64位
+	RoleDataType_NickName   = 7,    --玩家昵称
+	RoleDataType_PlayerPower = 8,  --玩家战力
+	RoleDataType_Energy = 9,  --玩家能量点
+	RoleDataType_Tech = 10,  --玩家科技点
+	RoleDataType_DailyActive = 11,  --玩家日活跃点
+	RoleDataType_WeeklyActive = 12, --玩家周活跃点
+
+}
+
+--战斗属性
+Attr =
+{
+    Attr_HP              = 1, --当前生命
+	Attr_HPBase          = 2, --最大生命基础                  （随英雄养成进度变化）
+	Attr_HPRate          = 3, --最大生命加成（百分比）
+	Attr_ExHP            = 4, --额外增加最大生命值
+	Attr_HPMax           = 5, --最大生命                      （经其他属性计算得出）
+	Attr_AtkBase         = 6, --攻击基础                      （随英雄养成进度变化）
+	Attr_AtkRate         = 7, --攻击加成(百分比)
+	Attr_ExAtk           = 8, --额外攻击
+	Attr_Atk             = 9, --攻击                          （经其他属性计算得出）
+	Attr_DefBase         = 10, --防御基础                     （随英雄养成进度变化）
+	Attr_DefRate         = 11, --防御加成（百分比）
+	Attr_ExDef           = 12, --额外防御
+	Attr_Def             = 13, --防御                         （经其它属性计算得出）
+	Attr_Mana            = 14, --当前能量
+	Attr_ManaInit        = 15, --初始能量
+	Attr_ManaMax         = 16, --能量阈值
+	Attr_ManaGainRate    = 17, --能量获取加成(百分比)
+	Attr_Spd             = 18, --速度
+	Attr_SkillCdValue    = 19, --技能cd减少固定值
+	Attr_SkillCdPercent  = 20, --技能cd减少百分比
+	Attr_CritRate        = 21, --爆击率(百分比)
+	Attr_CritDamage      = 22, --爆击伤害加成（百分比）
+	Attr_AntiCritRate    = 23, --抗爆击率(百分比)
+	Attr_HitRate          = 24, --命中率(百分比)
+	Attr_DodgeRate        = 25, --闪避率(百分比)
+	Attr_BlockRate        = 26, --格挡率(百分比)
+	Attr_BlockDeepen      = 27, --格挡强度（百分比）
+	Attr_AntiBlockRate    = 28, --精准率（百分比）
+	Attr_BreakDefRate     = 29, --破甲率（百分比）
+	Attr_BreakDefDeepen   = 30, --防御穿透强度
+	Attr_AntiBreakDefRate = 31, --抗破甲率（百分比）
+	Attr_LifeStealRate    = 32, --吸血率(百分比)
+	Attr_BounceRate       = 33, --反弹率（百分比）
+	Attr_CureRate         = 34, --治疗率（百分比）
+	Attr_HurtRate         = 35, --增伤率（百分比）
+	Attr_AntiHurtRate     = 36, --减伤率（百分比）
+	Attr_DamRate          = 37, --伤害加成率（百分比）
+	Attr_ControlRate      = 38, --效果命中（百分比）
+	Attr_AntiControlRate  = 39, --效果抗性（百分比）
+	Attr_BeDamageRate     = 40, --受伤增加（百分比）
+	Attr_PhysicalAmplyRate   = 41, --物理增伤率（百分比）
+	Attr_PhysicalReduceRate  = 42, --物理减伤率（百分比）
+	Attr_MagicAmplyRate   = 43, --魔法增伤率（百分比）
+	Attr_MagicReduceRate  = 44, --魔法减伤率（百分比）
+	Attr_CritResistRate   = 45, --抗暴伤率（百分比）
+	Attr_BuffTime         = 46, --增益状态持续改变时间
+	Attr_DeBuffTime       = 47, --减益状态持续改变时间
+	Attr_ControlBuffTime  = 48, --控制状态持续时间
+}
+
+--战斗属性组
+AttrGroup =
+{
+	AttrGroup_Base  = 0, --基础属性
+	AttrGroup_Rate  = 1, --百分比加成
+	AttrGroup_Ext   = 2, --额外增加值
+}
+
+--阵营类型
+CampType =
+{
+	CampType_Enemy = 0, --敌方
+	CampType_Our   = 1, --我方
+	CampType_All   = 2, --全体
+}
+
+--目标类型
+TargetType =
+{
+	TargetType_T1               = 1, --T1
+	TargetType_T2               = 2, --T2
+	TargetType_T1UT2            = 3, --T1∪T2
+	TargetType_T1NT2            = 4, --T1∩T2
+	TargetType_T1UT2_Sub_T1NT2  = 5, --(T1∪T2) – (T1∩T2)
+	TargetType_Attacker         = 6, --攻击我的人
+	TargetType_Target           = 7, --我攻击的人
+	TargetType_TriggerSkillT1   = 8, --正在释放技能的T1目标
+	TargetType_TriggerSkillT2   = 9, --正在释放技能的T2目标
+}
+
+--目标范围
+TargetRange =
+{
+	TargetRange_Pursuit    = 0, --追击单体用
+	TargetRange_Single_Row = 1, --单体-优先对应行
+	TargetRange_Single_Col = 2, --单体-优先某列
+	TargetRange_HP         = 3, --单体-优先血量最高/最低
+	TargetRange_Buf        = 4, --单体-优先指定Buff
+	TargetRange_Self       = 100, --自己
+	TargetRange_All        = 101, --全体
+	TargetRange_Col        = 102, --优先某列
+	TargetRange_Row        = 103, --贯穿一行
+	TargetRange_Random     = 104, --随机N个单位
+
+}
+
+--技能类型
+SkillType =
+{
+	SkillType_Nomal       = 0, --常规技能
+	SkillType_Pursuit     = 1, --追击技能
+	SkillType_Ultimate    = 2, --大招
+	SkillType_Passive     = 3, --被动
+}
+
+--效果类型
+FunctionType =
+{
+	FunctionType_Dmg                   = 1, --伤害
+	FunctionType_Heal                  = 2, --治疗
+	FunctionType_HitState              = 3, --造成一个可追打状态
+	FunctionType_Dispel                = 4, --驱散
+	FunctionType_TriggerEffect         = 5, --目标有某效果，触发另一个效果
+	FunctionType_TriggerSkill          = 6, --触发施法对象的某个技能
+	FunctionType_ChangeEffectRound     = 7, --若目标有某效果，改变该效果的回合数
+	FunctionType_AttackTriggerEffect   = 8, --攻击触发某种状态, 触发另一个效果
+	FunctionType_ScatteredHPDmg        = 9, --血量附加伤害（离散）
+	FunctionType_HPDmg                 = 10, --血量附加伤害（连续）
+	FunctionType_AddCampDmg            = 11, --阵营加伤
+	FunctionType_AddAttr               = 12, --临时属性提升
+	FunctionType_KeepInvisibility      = 13, --在隐身的前提下继续保持隐身
+	FunctionType_ControlState          = 101, --持续控制状态
+	FunctionType_ChangeAttr            = 102, --持续修改属性
+	FunctionType_BuffDmg               = 103, --持续伤害
+	FunctionType_BuffHeal              = 104, --持续治疗
+	FunctionType_Shield                = 105, --护盾
+	FunctionType_ImmuneDmg             = 106, --免疫伤害
+	FunctionType_ImmuneDizzy           = 107, --免疫眩晕
+	FunctionType_ImmuneSilent          = 108, --免疫沉默
+	FunctionType_ImmuneImmobilize      = 109, --免疫定身
+	FunctionType_ImmuneSleep           = 110, --免疫沉睡
+	FunctionType_ImmuneEffect          = 111, --免疫指定效果
+	FunctionType_Invisibility          = 112, --隐身效果
+	FunctionType_Chain                 = 113, --灵魂锁链
+	FunctionType_Revive                = 204, --复活
+	FunctionType_Undead                = 205, --不死
+	FunctionType_Unrevive              = 206, --不可复活
+	FunctionType_BeatBack              = 207, --反击
+	FunctionType_Invisible             = 208, --隐身
+	FunctionType_CreatureNumChangeAttr = 209, --场上人数改变属性
+	FunctionType_ReleaseSkillHP        = 210, --根据血量再次释放技能
+
+}
+
+--击打状态
+HitState =
+{
+	HitState_Fly    = 1, --击飞
+	HitState_Repel  = 2, --击退
+	HitState_Fall   = 3, --倒地
+}
+
+--控制状态
+ControlState =
+{
+	ControlState_Dizzy      = 1, --晕眩
+	ControlState_Silent     = 2, --沉默
+	ControlState_Immobilize = 3, --定身
+}
+
+--buff类型
+BuffType =
+{
+	BuffType_Normal   = 0, --通用
+	BuffType_Dot      = 1, --持续伤害
+	BuffType_Hot      = 2, --持续治疗
+	BuffType_Ctrl     = 3, --持续控制
+	BuffType_Attr_Add = 4, --属性增益
+	BuffType_Attr_Sub = 5, --属性减益
+}
+
+--TurnReduceType
+TurnReduceType =
+{
+	TurnReduceType_RoundEnd   = 0, --回合结束时，计时-1
+	TurnReduceType_RoundBegin = 1, --回合开始时，计时-1
+
+}
+
+--战斗记录类型
+BattleRecordType =
+{
+	BattleRecordType_None           = 0,
+	BattleRecordType_CastSkill      = 1, --释放技能
+	BattleRecordType_RemoveBuff     = 2, --移除buff
+	BattleRecordType_BuffEffect     = 3, --buff效果
+}
+
+SkillEffectType =
+{
+	SkillEffectType_Dmg           = 1,  --技能伤害
+	SkillEffectType_BeHitState    = 2,  --被击打状态
+	SkillEffectType_AddBuff       = 3,  --添加buff
+	SkillEffectType_RemoveBuff    = 4,  --移除buff
+	SkillEffectType_BuffDmg       = 5,  --buff伤害
+	SkillEffectType_Miss          = 6,  --未命中
+	SkillEffectType_EnergyChange  = 7,  --能量变化
+	SkillEffectType_Death         = 8,  --死亡
+	SkillEffectType_Heal          = 9,  --治疗
+	SkillEffectType_BuffHeal      = 10, --buff治疗
+}
+
+BattleDataType =
+{
+	BattleDataType_EnergyChange  = 1,  --能量变化
+}
+
+--所有物品类型（物品id的前缀）
+GoodsType =
+{
+	GoodsType_Item = 11, --道具（能出现在背包栏的）
+	GoodsType_Resource = 12, --资源（金币、钻石、经验等）
+	GoodsType_Allies = 13, --英雄（同盟）
+	GoodsType_Equipment = 14, --装备
+	GoodsType_Gem = 15, --宝石
+	GoodsType_Artifact = 16, --神器
+	GoodsType_Tactics= 17, --战术
+	GoodsType_Accessories= 18, --饰品
+	GoodsType_Reward = 19, --奖励
+}
+
+--资源（id枚举）
+ResourceType =
+{
+	ResourceType_Coin = 1201,  --金币id
+	ResourceType_Diamond = 1202,  --钻石id
+	ResourceType_HeroExp = 1203,  --英雄经验id
+
+	ResourceType_Exp = 1204,	 --经验id
+
+	ResourceType_Energy = 1205,  --能量点id
+	ResourceType_Tech = 1206,   --科技点
+
+	ResourceType_DailyActive = 1207, --玩家日活跃点
+	ResourceType_WeeklyActive = 1208,  --玩家周活跃点
+}
+
+--道具
+ItemType =
+{
+	ItemType_Consume = 1,  --消耗品（比如宝箱等）
+	ItemType_Material  = 2,  --材料类型
+	ItemType_Fragment = 3,  --碎片
+	ItemType_Ativity = 4,  --活动
+}
+
+--商店类型
+ShopType =
+{
+	ShopType_Adventure 	= 1,  --冒险商店
+	ShopType_Pvp  		= 2,
+}
+
+ConsumeSubType =
+{
+	ConsumeSubType_Chest = 1, --放在背包中玩家手动开启的宝箱ManualOpen（获得瞬间自动开的宝箱AutomaticOpen目前不做）
+}
+
+MaterialSubType =
+{
+	MaterialSubType_ReinforcementStone = 1, --装备强化石
+	MaterialSubType_EvolutionaryStone = 2, --装备进阶石
+	MaterialSubType_SuitGeneral = 3, --套装通用材料
+	MaterialSubType_SuitSpecial = 4, --套装特殊材料
+	MaterialSubType_AccessoriesLuckyStone = 5, --饰品幸运石
+	MaterialSubType_AccessoriesResearch = 6, --饰品研发材料
+	MaterialSubType_TacticalResearch = 7, --战术研发材料
+	MaterialSubType_ArtifactUpgrade = 8, --神器升级材料
+	MaterialSubType_FamilyAffection = 9, --家族好感度材料
+	MaterialSubType_WikiActivation = 10, --百科激活材料
+}
+
+FragmentSubType =
+{
+	FragmentSubType_ItemFragment = 0, --万能道具碎片
+	FragmentSubType_AlliesFragment = 1, --英雄碎片
+}
+
+AtivitySubType =
+{
+	AtivitySubType_CoinDrawCardItem = 1, --金币抽卡道具
+	AtivitySubType_DiamondDrawCardItem = 2, --钻石抽卡道具
+	AtivitySubType_VipExperienceCard = 3, --vip体验卡
+	AtivitySubType_MonthCard = 4,	 --月卡
+}
+
+ItemQualityType =
+{
+	ItemQualityType_White = 1, --品质白
+	ItemQualityType_Green = 2, --品质绿
+	ItemQualityType_Blue = 3, --品质蓝
+	ItemQualityType_Purple = 4, --品质紫
+	ItemQualityType_Orange = 5, --品质橙
+	ItemQualityType_Gold = 6, --品质金
+}
+
+ChestContentType =
+{
+	ChestContentType_Item       = 1, --物品
+	ChestContentType_ChestOrder = 2, --宝箱序列
+}
+
+MissionType =
+{
+	MissionType_Battle = 0, --战斗任务
+	MissionType_Idle = 1, --放置任务
+}
+
+ActorType =
+{
+	ActorType_Hero = 1, --英雄
+	ActorType_Monster = 2,--怪物
+}
+
+TeamType =
+{
+	TeamType_Attack = 0,  --通用进攻队伍（冒险地图，爬塔，异步竞技场进攻）
+	TeamType_ArenaDefend = 1, --竞技场防守队伍
+	TeamType_Tower = 2, --爬塔
+	TeamType_ElseWd = 3, -- 异世界
+}
+
+LimitType =
+{
+	LimitType_1 = 1, --玩家大于等于一定等级 参数 等级
+	LimitType_2 = 2, --玩家有用一定数量的某等级的房间，数量和等级大于等于生效。 参数 房间ID,房间数量,房间等级
+	LimitType_3 = 3, --某个战斗类任务的状态 参数 MissionID；0-未接取，1-已接取进行中，2-已完成
+	LimitType_4 = 4, --N个角色达到一定等级 参数 角色数量,具体等级 判定范围枚举 0-账号，1-当前任务
+	LimitType_5 = 5, --N个角色达到一定星级 参数 角色数量,具体星级 判定范围枚举 0-账号，1-当前任务
+	LimitType_6 = 6, --有几个英雄的阵营属于/不属于某个特定阵营 参数 角色数量,阵营枚举,0-不属于，1-属于 判定范围枚举 0-账号，1-当前任务
+	LimitType_7 = 7, --有几个英雄的系列属于/不属于某个特定系列 参数 角色数量,系列枚举,0-不属于，1-属于 判定范围枚举 0-账号，1-当前任务
+	LimitType_8 = 8, --有几个英雄的属于/不属于某个特定善恶派系 参数 角色数量,0-反派，1-英雄 判定范围枚举 0-账号，1-当前任务
+	LimitType_9 = 9, --有等级大于限定值，星级大于限定值的指定ID英雄 参数 具体等级,具体星级,ID号,判断范围枚举 0-账号，1-当前任务
+}
+
+--英雄阵营
+Faction =
+{
+	Faction_Master = 1, --达人
+	Faction_Tech = 2,   --科技
+	Faction_Magic = 3,  --魔法
+	Faction_Power = 4,  --超能
+	Faction_Cosmic = 5, --宇宙
+}
+
+--英雄职业
+AllyClass =
+{
+	AllyClass_Tank = 1, --坦克型英雄
+	AllyClass_Output = 2, --输出型英雄
+	AllyClass_Support = 3, --辅助型英雄
+
+}
+
+SystemType =
+{
+	SystemType_DrawCard = 1, --抽卡
+	SystemType_Collection = 2, --收集系统
+}
+
+RoomStatusType =
+{
+	RoomStatusType_Runing = 1,--正常使用运转中
+	RoomStatusType_Building = 2,--建造中
+	RoomStatusType_Upgrading = 3,--升级中
+}
+
+BattleParam =
+{
+	BattleParam_AtkBaseRatio = 11, --攻击属性系数
+	BattleParam_DefBaseRatio = 12, --防御属性系数
+	BattleParam_HpBaseRatio  = 13, --生命属性系数
+}
+
+AttackType =
+{
+	AttackType_Crit        = 0, --暴击
+	AttackType_Penetration = 1, --破甲率
+	AttackType_Block       = 2, --格挡
+	AttackType_Normal      = 3, --普攻
+}
+
+ImmuneState =
+{
+	ImmuneState_Dmg        = 0, --免疫伤害
+	ImmuneState_Dizzy      = 1, --免疫眩晕
+	ImmuneState_Silent     = 2, --免疫沉默
+	ImmuneState_Immobilize = 3, --免疫定身
+	ImmuneState_Sleep      = 4, --免疫沉睡
+}
+
+BuffDispelGroup =
+{
+	BuffDispelGroup_Debuf        = 1, --减益
+	BuffDispelGroup_Buf          = 2, --增益
+	BuffDispelGroup_Undispelable = 3, --不可驱散
+}
+
+BuffDispelRange =
+{
+	BuffDispelRange_Type    = 0, --驱散大类
+	BuffDispelRange_SubType = 1, --驱散小类
+	BuffDispelRange_Id      = 2, --驱散指定id
+	BuffDispelRange_Group   = 3, --驱散增益/减益
+}
+
+BuffSubType =
+{
+	BuffSubType_None       = 0, --无类别
+	BuffSubType_Dot        = 1, --持续伤害
+	BuffSubType_Hot        = 2, --持续治疗
+	BuffSubType_Dizzy      = 3, --持续眩晕
+	BuffSubType_Silent     = 4, --持续沉默
+	BuffSubType_Immobilize = 5, --持续定身
+	BuffSubType_Sleep      = 6, --持续沉睡
+}
+
+BuffState =
+{
+	BuffState_Invisibility = 1, --隐身
+}
+
+DrawType =
+{
+	DrawType_One = 1,--单抽
+	DrawType_Ten = 2,--十连抽
+}
+
+ConditionCheckType =
+{
+	Type_AdventureCountCheck 		= 1, 	   --完成关卡至【】章节【】关。					        各模块提供的参数 条件检查类型
+	Type_HallLevelCheck      		= 2,       --大厅核心升级到【】级。       						各模块提供的参数 条件检查类型
+	Type_AFKRewardCount      		= 3,       --领取冒险挂机奖励【】次。      		--需要改变含义	各模块提供的参数 条件检查类型, 是否领取成功
+	Type_AFKResourceCount      		= 4,       --挂机累计产出【】资源【】个。          				各模块提供的参数 条件检查类型, 产出资源id,数量
+	Type_RoomResourceCount     		= 5,       --大厅累计产出【】资源【】个。                        各模块提供的参数 条件检查类型, 产出资源id,数量
+	Type_LoginDaysCount      		= 6,       --累计登录【】天                       已经验证        各模块提供的参数 条件检查类型, 是否当天首次登录（1是0否）
+	Type_DailyMissionActiveCheck  	= 7,       --获取日常任务活跃值【】。   						各模块提供的参数 条件检查类型, 当前日活跃点
+	Type_WeeklyMissionActiveCheck  	= 8,	   --获取周常任务活跃值【】。                  		    各模块提供的参数 条件检查类型, 当前周活跃点
+	Type_AnyEquipDevelopCount  		= 9,       --对任意装备位进行【】次强化            已经验证        各模块提供的参数 条件检查类型, 强化成功次数
+	Type_EquipLevelCheck  			= 10,      --拥有的强化等级为【】以上的装备位【】个 已经验证        各模块提供的参数 条件检查类型
+	Type_QuickAFKCount    			= 11,      --使用快速挂机【】次                   --验证 	    各模块提供的参数 条件检查类型, 是否快速挂机成功（1是0否）
+	Type_BattleCount      			= 12,      --进行【】次战斗                            			各模块提供的参数 条件检查类型, 是否成功进行战斗（1是0否）
+	Type_PlayerPropConditionCheck   = 13,      --玩家【】道具ID达到【】个       					各模块提供的参数 条件检查类型
+	Type_AnyHeroDevelopLevelCount   = 14,      --对任意英雄进行【】次升级       					各模块提供的参数 条件检查类型, 成功升级次数
+	Type_AnyHeroDevelopStarCount    = 15,      --对任意英雄进行【】次升星       					各模块提供的参数 条件检查类型, 是否升星成功（1是0否）
+	Type_AnyHeroDevelopQualityCount = 16,      --对任意英雄进行【】次升品       					各模块提供的参数 条件检查类型, 是否升品成功（1是0否）
+	Type_HeroVanishQualityCount     = 17,      --分解【】品质英雄碎片【】个     					各模块提供的参数 条件检查类型, 分解品质,分解个数
+	Type_TheHeroQualityCountCheck   = 18,	   --某【】英雄的品质达到了【】     					各模块提供的参数 条件检查类型
+	Type_TheHeroLevelCountCheck     = 19,	   --某【】英雄的等级达到了【】     					各模块提供的参数 条件检查类型
+	Type_TheHeroStarCountCheck      = 20,      --某【】英雄的星级达到了【】     					各模块提供的参数 条件检查类型
+	Type_HasHeroQualityCheck        = 21,      --拥有【】个【】品质以上英雄         			    各模块提供的参数 条件检查类型
+	Type_HasHeroStarCheck           = 22,      --拥有【】个【】星级以上英雄         			    各模块提供的参数 条件检查类型
+	Type_HasHeroLevelCheck          = 23,      --拥有【】个【】等级以上英雄         				各模块提供的参数 条件检查类型
+	Type_HasHeroNumberCheck         = 24,      --拥有【】个英雄                                     各模块提供的参数 条件检查类型
+	Type_PlayerLevelConditionCheck  = 25,      --玩家达到【】级         					        各模块提供的参数 条件检查类型
+	Type_AdventureChapterCheck 		= 26, 	   --完成关卡至【】章节 						         各模块提供的参数 条件检查类型
+	Type_HasOneHeroLevelCheck       = 27,      --拥有1个【】等级以上英雄							 各模块提供的参数 条件检查类型
+	Type_DrawCardCount              = 28,      --累计进行【】次抽卡                  --已经验证          各模块提供的参数 条件检查类型
+	Type_TotalDiamondCount          = 29,      --累积获得【】个钻石                  --已经验证          各模块提供的参数 条件检查类型
+	Type_TowerLevelCount            = 30,      --挑战多元融汇【】塔达到【】层         --已经验证      各模块提供的参数 条件检查类型, 塔ID  通过层数
+	Type_RoomLevelCheck             = 31,      --星辰实验室拥有【】个【】级的【】房间  --验证          各模块提供的参数 条件检查类型
+
+}
+
+--弹窗类型枚举,持续拓展
+ItemPopType =
+{
+	ItemPopType_Defualt = 0, --默认值，无指定类型
+	ItemPopType_TaskSystem1 = 1, --任务领奖弹窗
+	ItemPopType_HeroSystem1 = 2, --转换成英雄碎片弹窗
+	ItemPopType_ItemSystem1 = 3, --获得道具弹窗
+	ItemPopType_TowerBattle = 4, --爬塔战斗奖励弹窗
+	ItemPopType_CharacterProfile  = 5, --档案激活插图弹窗
+	ItemPopType_Hall  = 6,             --大厅弹窗
+	ItemPopType_HallHangUp  = 7,       --神速力弹窗
+
+}
+
+TaskType =
+{
+	TaskType_Main         = 1, --主线任务
+	TaskType_Daily        = 2, --日常任务
+	TaskType_Weekly       = 3, --周常任务
+	TaskType_DailyBox     = 4, --日常任务活跃盒子
+	TaskType_WeeklyBox    = 5, --周常任务活跃盒子
+}
+
+ParameTableType =
+{
+	InitialCard = 1,
+	InitialItem = 2,
+	InitialResources = 3,
+	GoldPerMinPerLv = 4,
+	LvUpGoldRoomCostPerLV = 5,
+	GoldStackTime = 6,
+	InitialRoom = 7,
+	InitialCity = 8,
+	InitialBlock = 9,
+	InitialMission = 10,
+	IdleMissionTime = 11,
+	PackageMaxHero = 12,
+	AfkReward1Time = 13,
+	AfkReward2Time = 14,
+	AfkRewardTimeMax = 15,
+	RoomWorkerNum = 16,
+	EmploymentCost1 = 17,
+	EmploymentCost2 = 18,
+	TimeRelief = 19,
+	MaterialRelief = 20,
+	HeroReborn_cost = 21,
+	UnmovableFloor = 22,
+	randomBUFFlastTime = 23,
+	Equip_UnlockLevel = 24,
+	Equip_BaseEquip = 25,
+	MaxTurn = 26,
+	DmgReduceRate = 27,
+	MyCamp = 28,
+	EnemyCamp = 29,
+	AtkBaseRatio = 30,
+	DefBaseRatio = 31,
+	HpBaseRatio = 32,
+	Gongming_LevelNeedStar = 33,
+	Gongming_LevelUp = 34,
+	Gongming_LevelMax = 35,
+	Gongming_ListNumOnce = 36,
+	Gongming_ListNumBase = 37,
+	Gongming_ListNumLock = 38,
+	Gongming_ListLockNeedItem = 39,
+	Gongming_ListLockNeed = 40,
+	Gongming_ListCD = 41,
+	ElseWorld_refreshcycle = 43,
+	ElseWorld_refreshitem = 44,
+	ElseWorld_rebirthitem = 45,
+	ElseWorld_refreshtime = 46,
+	ElseWorld_hprecovery = 47,
+	ElseWorld_mprecovery = 48,
+	Func_refreshtime = 49,
+	Characterprofile_IllustrationReward = 50,
+	DramaFreshTime = 51,
+	DramaFreshMax = 52,
+	MailNumMax = 53,
+	MailTimeMax = 54,
+	MailItemMax = 55,
+	Lobby_RoomWorkerNum = 56,
+	Lobby_EmploymentCost1 = 57,
+	Lobby_HangUpTime = 58,
+	Lobby_HangUpCost = 59,
+	Lobby_UnMoveArea = 60,
+	Lobby_BaseRoom = 61,
+	Lobby_GetItemMinCD = 62,
+	Lobby_PowerOpen = 63,
+	Lobby_NoPassAnyStageProuduce = 64,
+	FriendNumMax = 65,
+	BlackListNumMax = 66,
+	FriendRequestNumMax = 67,
+	FriendRemarkLengthMax = 68,
+	FirstGacha = 69,
+	SecondGacha = 70,
+
+
+}
+
+--抽卡物品类型
+DrawCardItemType =
+{
+	DrawCardItemType_Item = 1, --物品
+	DrawCardItemType_Hero = 2, --英雄
+	DrawCardItemType_Piece = 3, --碎片
+}
+
+--抽卡产出方式
+DrawCardOutputType =
+{
+	DrawCardOutputType_SpecialGuaranteed = 1, --步长出
+	DrawCardOutputType_SpecialOther = 2, --剩余保底出
+	DrawCardOutputType_TimesGuaranteed = 3,--多少次必出
+	DrawCardOutputType_Random = 4,--随机
+	DrawCardOutputType_Must = 5, --大于多少次必出
+	DrawCardOutputType_Fix = 6, --固定产出，比如第一次给什么英雄
+}
+
+--模块名称
+ModuleName =
+{
+	ModuleName_Base      = 1, --基础信息
+	ModuleName_Hero      = 2, --英雄
+	ModuleName_Room      = 3, --房间
+	ModuleName_Adventure = 4, --冒险
+	ModuleName_Task      = 5, --任务
+	ModuleName_Story     = 6, --剧情
+	ModuleName_Mail      = 7, --邮件
+	ModuleName_Equip     = 8, --装备
+	ModuleName_Crystal   = 9, --共鸣水晶
+	ModuleName_MainUI    = 10, --主ui
+	ModuleName_Shop      = 11, --商城
+	ModuleName_ElseWd    = 12, --异世界
+	ModuleName_Tower     = 13, --爬塔
+
+}
+
+--错误码
+ErrorId =
+{
+	ERROR_OK   = 0, -- 没有错误
+	ERROR_FAIL = 1, -- 通用错误
+	ERROR_TOKEN_EXPIRED = 2, -- TOKEN过期
+	ERROR_USER_NOT_FOUND = 3, -- 用户不存在
+	ERROR_ROLE_NAME_EXISTS = 4, -- 角色重名
+	ERROR_CSV_NOT_EXISTS = 5,	-- csv表格没有配置
+	ERROR_NOT_IN_WHITE_LIST = 6, -- 不在白名单
+	ERROR_ROLE_DESC_TOO_LONG = 7, 	-- 个人描述太长了
+	ERROR_RELOGIN = 8, -- 重复登录
+	ERROR_KICK_TO_SERVER_LIST = 9, -- 退到选服界面
+	ERROR_SERVER_FULL = 10, -- 服务器已满
+	ERROR_SERVER_OUT_OF_SERVICE = 11, -- 服务器在维护中
+	ERROR_BAN_SERVICE = 12, -- 封号中
+	ERROR_BAN_TALK_SERVICE = 13, -- 禁言中
+	ERROR_BAN_LOCKINFO_SERVICE = 14, -- 禁止改名中
+	ERROR_ROLE_NAME_LENGHT 	   = 15, -- 名字字数过长
+	ERROR_ROLE_FORCE_LOGIN 	   = 16, -- 是否强制登录
+	ERROR_CREATEROLL_EXPIRED	= 17, --创建角色时间超过5分钟
+	ERROR_LOGIN_FAIL_IN_PLAT_HEALTHY_TIME = 18, --登录失败，在防沉迷时间内
+	ERROR_WORDS_CHECK = 19, -- 屏蔽字检测失败
+	ERROR_CSV_CONFIG_ERR = 20, --配置错误
+	ERROR_NOT_ENOUGH_COIN = 21,  --金币不足
+	ERROR_NOT_ENOUGH_DIAMOND = 22, --钻石不足
+	ERROR_NOT_ENOUGH_WOOD = 23, --木材不足
+	ERROR_NOT_ENOUGH_ITEM = 24, --道具不足
+	ERROR_CAPACITY_LIMIT = 25, --已达上限
+	ERROR_NOT_ENOUGH_HEROEXP = 26,  --英雄经验不足
+	ERROR_ILLEGAL_PARAMETER = 27,  --非法参数（比如数值超出范围）
+	ERROR_NOT_ENOUGH_STAR = 28, --星级不够
+	ERROR_NOT_ENOUGH_ROOM_LEVEL = 29, --房间等级不够
+	ERROR_DATA = 30, --数据错误
+	ERROR_NOT_ENOUGH_VIP_LEVEL= 31, --vip等级不足
+	ERROR_LEVEL_LIMIT = 32, --等级不够
+	ERROR_COUNT_NOT_POSITIVE = 33, -- 数量不是正数
+	ERROR_NOT_ENOUGH_GOODS = 34, --玩家物品数量不足
+	ERROR_GOODS_TYPE_NOT_SUPPORT = 35, --物品类型不支持
+
+
+
+
+	-- 战斗错误码
+	ERROR_HERO_NOT_DEAD = 200,		-- 非死亡状态(不允许换英雄等)
+	ERROR_HERO_NOT_FOUND = 201, -- 没有这个英雄
+	ERROR_FIRE_SKILL_LEVEL_NOT_ENOUGH = 202,	-- 火力技能不到解锁等级
+	ERROR_FIRE_SKILL_UNOPEN_BATTLE = 203,	-- 战场未开放火力技能
+	ERROR_FIRE_SKILL_NOT_IN_THE_REGION = 204, --没有在要求区域，无法更换火力技能
+	-- 战前准备
+	ERROR_HERO_NOT_EXIST = 301,	-- 英雄不存在
+	ERROR_HERO_TEAM_NUM_INVALID = 302, -- 队伍个数非法
+	ERROR_HERO_NUM_INVALID = 303,	-- 英雄个数非法
+	ERROR_HERO_REPEATED = 304,		-- 英雄id重复
+	ERROR_TEAM_ID_REPEATED = 305,	-- 队伍id重复
+	ERROR_MODE_ID_INVALID = 306,	-- 模式id非法
+	ERROR_CREATE_BATTLE  = 307,	-- 创建房间失败
+	ERROR_TEAM_NOT_EXITST = 308, --队伍不存在
+	ERROR_NO_HERO_TO_BATTLE = 309, --必须有英雄才能战斗
+
+	-- PVE相关
+	ERROR_PRE_STAGE_NOT_PASS = 350,	-- 前置关卡没有通关
+	ERROR_NO_CHALLENGE_CNT = 351,	-- 没有攻打次数
+	ERROR_STAGE_NOT_START = 352,	-- 关卡没有开始
+	ERROR_STAGE_INVALID_ORDER = 353, -- 攻打顺序非法
+	ERROR_STAGE_TIMEOUT = 354,		-- 关卡攻打超时
+
+	--大厅
+	ERROR_ROOM_NOT_EXIST = 400, --房间不存在
+	ERROR_ROOM_CAN_NOT_COLLECT = 401,--房间不能收集产物
+	ERROR_ROOM_NO_OUTPUT  = 402, --没有产物
+	ERROR_ROOM_BUILD_LIMIT = 403, --建造条件不满足
+	ERROR_ROOM_BUILD_COST_LIMIT = 404, --建造所需物品不足
+	ERROR_ROOM_LEVEL_MAX = 405, --房间已达等级上限，不能升级
+	ERROR_ROOM_UP_LEVEL_COST_LIMIT = 406, --升级所需物品不足
+	ERROR_ROOM_NO_FREE_DRAW_CARD_TIMES = 407, --没有免费次数
+	ERROR_ROOM_UPGRADE_LIMIT = 408, --房间升级条件不满足
+	ERROR_ROOM_NO_IDLE_WORKERS = 409, --没有空闲的工人
+	ERROR_ROOM_NOT_UPGRADE = 410, --该房间不能升级
+	ERROR_ROOM_STATUS = 411, --房间状态错误
+	ERROR_ROOM_WORKERS_NUM_MAX = 412, --工人数目达到上限
+	ERROR_ROOM_REPAIR_LIMIT = 413, --修复条件不满足
+	ERROR_HALL_UPGRADE_LIMIT = 414, --大厅升级条件不满足
+	ERROR_ROOM_CAN_NOT_MOVE = 415,--该房间不能移动
+	ERROR_NOT_ENOUGH_POWER = 416,--电力房没有足够的能量
+	ERROR_NO_REACH_CAN_COLLECT_TIME = 417,--未达到可收集时间
+	ERROR_ROOM_ILLEGAL_PRODUCE_PARAMETER = 418,--房间产出参数非法
+	ERROR_NO_OPEN_POWER_FUNCTION = 419, --未开启电力功能
+	ERROR_ROOM_FUNCTION_TYPE = 420, --房间功能类型错误
+	ERROR_HERO_STATION_ROOM_LEVEL_LIMIT = 421, --英雄入驻房间等级限制
+	ERROR_HERO_CAN_NOT_STATION = 422, --该英雄禁止入驻该房间
+	ERROR_ROOM_X_COORDINATE = 423, --房间x坐标非法
+	ERROR_ROOM_Y_COORDINATE = 424, --房间y坐标非法
+	ERROR_ROOM_REGION_OCCUPIED = 425, --房间区域被占用
+	ERROR_DIAMONDS_NUM_NOT_MATCH = 426, --钻石数目不匹配
+	ERROR_HANG_UP_TIMES_LIMIT = 427, --神速力使用次数达到限制
+
+
+
+
+	--邮件相关
+	ERROR_NO_MAIL = 500, --未找到邮件
+	ERROR_NO_ATTACK = 501, -- 没有附件
+	ERROR_TITLE_TOO_LARGE = 502, -- -- 标题太长
+	ERROR_CONTENT_TOO_LARGE = 503, --   内容太长
+	ERROR_SEND_MAIL_FAIL = 508, -- 发送邮件失败
+	ERROR_READ_MAIL_FAIL = 509,  -- 读取邮件失败
+	ERROR_DEL_MAIL_FAIL = 510,   -- 删除有件失败
+	ERROR_OPER_MAIL_FAIL = 511,  -- 读取附件失败
+
+	--道具相关
+	ERROR_ITEM_COUNT_NOT_ENOUGH = 600, -- 道具数量不足
+	ERROR_BAG_FULL = 601, -- 背包满
+	ERROR_ITEM_NOT_EXIST = 602, -- 物品不存在
+	ERROR_DROP_PICK_FAIL = 603, -- 拾取物品失败
+	ERROR_NO_CHAT_APPEARANCE_ID = 604, -- 聊天泡泡条类型不存在
+	ERROR_NO_CHAT_APPEARANCE_ID_TIMEOUT = 605, -- 聊天泡泡条已过期
+	ERROR_ITEM_TYPE_ERROR = 606, -- 物品类型出错
+
+
+	--冒险相关
+	ERROR_HERO_WAS_SENT = 700, --该英雄已经派出去了
+	ERROR_MISSION_BLOCKED = 701, --任务未解锁
+	ERROR_CITY_OR_CITYBLOCK_BLOCKED = 702, --城市或区块未解锁
+	ERROR_MISSION_IN_PROGRESSING = 703, --任务进行中
+	ERROR_NO_OUTPUT  = 704, --没有产物
+	ERROR_MISSION_WAS_FINISHED = 705, --任务已经完成了
+	ERROR_MISSION_NOT_RUNNING = 706, --任务未接取
+	ERROR_CREATE_BATTLE_FAIL = 707, --创建战斗失败
+	ERROR_IDLE_MISSION_NUM_LIMIT = 708, --已达挂机任务上限
+
+	--新冒险-主线推图
+	ERROR_ADVENTRUE_CONFIG_ERROR = 720, --配置错误
+	ERROR_ADVENTRUE_ARGUMENT_ERROR = 721, --参数错误
+	ERROR_ADVENTRUE_CONDITION_NOT_MEET = 722, --条件不符合
+	ERROR_ADVENTRUE_STAGE_UNCLOCKED = 723, --关卡未解锁
+	--新冒险-据点挂机
+	ERROR_ADVENTRUE_HERO_USED = 740, 		 --该英雄已经派出去了
+
+	-- 商店
+	ERROR_SHOP_ERROR = 750, 		--商店错误
+	ERROR_SHOP_CONFIG_ERROR = 751, 	--商店配置错误
+	ERROR_SHOP_ARGUMENT_ERROR = 752, --商店参数错误
+	ERROR_SHOP_CONDITION_NOT_MEET = 753, --商店条件不符合
+	ERROR_SHOP_LACK_CURRENCY = 754, --钱不够
+	ERROR_SHOP_LACK_REQ_ITEM = 755, --物品不够
+	ERROR_SHOP_BUY_ERROR = 756, 	--购买商店物品错误
+	ERROR_SHOP_REFRESH_ERROR = 757, --刷新商店错误
+	ERROR_SHOP_ADD_ITEM_ERROR = 758, -- 增加物品失败
+	ERROR_SHOP_REDUCE_MONEY_ERROR = 759, -- 扣钱失败
+
+	-- 剧情
+	ERROR_STORY_ERROR = 770, 			--剧情错误
+	ERROR_STORY_CONFIG_ERROR = 771, 	--剧情配置错误
+	ERROR_STORY_ARGUMENT_ERROR = 772, 	--剧情参数错误
+	ERROR_STORY_CONDITION_NOT_MEET = 773, --剧情条件不符合
+	ERROR_STORY_ADD_ITEM_ERROR = 774, 	-- 增加物品失败
+	ERROR_STORY_LATEST_NOT_FINISHED = 775, 	-- 最近的一次剧情还没结束
+	ERROR_STORY_NO_START = 776, 			-- 剧情没有开始不能直接结束
+
+	-- 异世界 ElseWorld
+	ERROR_ELSEWD_ERROR = 780, 				--异世界未知错误
+	ERROR_ELSEWD_INITED = 781, 				--异世界周期已重置，需要重新获取异世界信息
+	ERROR_ELSEWD_NOT_OPEN = 782, 			--异世界未开启
+	ERROR_ELSEWD_CONFIG_ERROR = 783, 		--异世界配置错误
+	ERROR_ELSEWD_ARGUMENT_ERROR = 784, 		--异世界参数错误
+	ERROR_ELSEWD_CONDITION_NOT_MEET = 785, 	--异世界该消息条件为满足
+	ERROR_ELSEWD_ADD_ITEM_ERROR = 786, 		--异世界增加物品失败
+	ERROR_ELSEWD_REDUCE_ITEM_ERROR = 787, 	--异世界扣除物品失败
+	ERROR_ELSEWD_INIT_ERROR = 788, 			--异世界初始化队伍错误
+	ERROR_ELSEWD_REBORN_ERROR = 789, 		--异世界重生队伍错误
+	ERROR_ELSEWD_BATTLE_ERROR = 790, 		--异世界战斗结果错误
+	ERROR_ELSEWD_OPT_ERROR = 791, 			--异世界选择奖励错误
+
+	-- 邮件 Mail
+	ERROR_MAIL_ERROR = 800, 				--邮件未知错误
+	ERROR_MAIL_NOT_OPEN = 801, 				--邮件未开启
+	ERROR_MAIL_CONFIG_ERROR = 802, 			--邮件配置错误
+	ERROR_MAIL_ARGUMENT_ERROR = 803, 		--邮件参数错误
+	ERROR_MAIL_CONDITION_NOT_MEET = 804, 	--邮件该消息条件为满足
+	ERROR_MAIL_ADD_ITEM_ERROR = 805, 		--邮件增加物品失败
+	ERROR_MAIL_REDUCE_ITEM_ERROR = 806, 	--邮件扣除物品失败
+	ERROR_MAIL_INIT_ERROR = 807, 			--邮件初始化错误
+	ERROR_MAIL_OPERATE_ERROR = 808, 		--邮件操作错误
+	ERROR_MAIL_SET_MAILBOX_ERROR = 809, 	--邮件设置邮箱错误
+	ERROR_MAIL_OFFICE_ERROR = 810, 			--邮件邮局内部错误
+
+	-- 平台
+	ERROR_PLATFORM_EXIST			= 920, 	-- 平台不存在
+	ERROR_OPEN_ID_ERR			    = 921,	-- OPENID错误
+	ERROR_TOKEN_ERR					= 922,  -- TOKEN错误
+
+	-- 维护相关
+	ERROR_MAINTAIN = 1000, -- 服务器处于维护状态
+	ERROR_MAINTAIN_KICK = 1001, -- 服务器处于维护状态，踢人
+	ERROR_GM_KICK = 1002 , -- gm 工具踢人
+
+	--英雄系统
+	ERROR_HERO_LEVEL_NOT_MATCH =  1101,   -- 英雄等级信息不匹配
+	ERROR_HERO_STAR_NOT_MATCH =   1102,   -- 英雄星级信息不匹配
+	ERROR_HERO_REACH_MAX_LEVEL =  1103,   -- 英雄已达到最大等级
+	ERROR_HERO_REACH_MAX_STAR =   1104,   -- 英雄已达到最大星级
+	ERROR_HERO_ALREADY_OBATAIN  = 1106,   -- 英雄已经拥有
+
+
+	--战斗
+	ERROR_USE_SKILL_DIZZY = 1201, --眩晕状态下无法释放技能
+	ERROR_USE_SKILL_SILENT = 1202, --沉默状态下无法释放技能
+	ERROR_USE_SKILL_IMMOBILIZE = 1203, --定身状态下无法释放技能
+	ERROR_USE_SKILL_USE_TIME   = 1204, --使用次数错误
+	ERROR_USE_SKILL_COOL_DOWN  = 1205, --技能冷却中无法使用
+	ERROR_USE_SKILL_DEATH      = 1206, --死亡状态无法使用技能
+	ERROR_USE_SKILL_ACTION_TIME = 1207, --行动次数不足
+	ERROR_USE_SKILL_MANA        = 1208, --能量不足
+	ERROR_ADD_BUFF_CASTER_NULL  = 1209, --释放者不存在
+	ERROR_ADD_BUFF_IMMUNE       = 1210, --免疫此类型buff
+	ERROR_USE_SKILL_TAGET_EMPTY = 1211, --没有目标
+	ERROR_USE_SKILL_HITSTATE    = 1212, --追打状态不匹配
+	ERROR_USE_SKILL_CAMP        = 1213, --阵营不匹配
+
+	--装备
+	ERROR_EQUIP_INVALID_SLOT = 1400, --无效的装备位
+	ERROR_EQUIP_SLOT_LOCKED  = 1401, --装备位未解锁
+	ERROR_EQUIP_CFG_PARAMETER_COUNT = 1403, --配置参数错误
+	ERROR_EQUIP_NEED_LEVEL = 1404, --等级不够
+	ERROR_EQUIP_NOT_EXIST = 1405, --装备不存在
+	ERROR_EQUIP_UPPER_LIMIT = 1406, --已到装备数上限
+	ERROR_EQUIP_MAX_LEVEL = 1407, --已达最高等级
+	ERROR_EQUIP_RECYCLE_EQUIPED = 1408, --不能分解已装备的装备
+
+
+
+	--奖励池
+	ERROR_REWARD_POOL_NO_REWAED = 1501, --奖励池没有奖励
+	ERROR_REWARD_ID_NO_EXSIT = 1502, --奖励池中该奖励id不存在
+	ERROR_REWARD_ID_NO_REWAED = 1503, --奖励池中该id没有奖励
+	ERROR_REWARD_REACHED_MAX_RECURSION = 1504, --奖励池奖励嵌套达到最大值限制值
+
+	--爬塔
+	ERROR_TOWER_NO_REWARD = 1550, --没有奖励可领
+	ERROR_TOWER_PASSED    = 1551, --已通关
+
+	--好友
+	ERROR_FRIEND_FULL = 1570, --好友已满
+	ERROR_ALREADY_BE_FRIEND = 1571, --你们已经是好友了
+	ERROR_LAREADY_IN_REQUEST_LIST = 1572, --你已经在对方申请列表了
+	ERROR_REQUEST_LIST_FULL = 1573, --对方的申请列表已满
+	ERROR_BLACK_LIST_FULL = 1574, --已达黑名单上限
+	ERROR_REMARK_LENTH_MAX = 1575, --备注字数超过上限
+
+	--任务
+	ERROR_TASK_IS_EMPTY = 1601,			--任务为空
+	ERROR_TASK_NO_CAN_RECEIVE = 1602,	--任务不能领取
+	ERROR_DAILY_TASK_EXPIRED = 1603,	--日程任务已经过期
+	ERROR_WEEKLY_TASK_EXPIRED = 1604,	--日程任务已经过期
+
+}
+
+function ServerNodeId() return {} end
+function KeyValueType() return {} end
+function KeyValue64Type() return {} end
+function RoleBriefInfo() return {} end
+function RolePullInfo() return {} end
+function RoleList() return {} end
+function AccountRole() return {} end
+function RoleDeviceInfo() return {} end
+function ChestOrderData() return {} end
+function RoleBase() return {} end
+function CHeroIntro() return {} end
+function Intro() return {} end
+function Role() return {} end
+function BitFlag() return {} end
+function HeroSkill() return {} end
+function Hero() return {} end
+function CHero() return {} end
+function AttrInstance() return {} end
+function HeroList() return {} end
+function NameUserData() return {} end
+function ActorData() return {} end
+function CampData() return {} end
+function SkillEffectDmg() return {} end
+function SkillEffectBeHitState() return {} end
+function SkillEffectAddBuff() return {} end
+function SkillEffectRemoveBuff() return {} end
+function SkillEffectBuffDmg() return {} end
+function SkillEffectMiss() return {} end
+function SkillEffectEnergyChange() return {} end
+function SkillEffectDeath() return {} end
+function SkillEffectHeal() return {} end
+function SkillEffectBuffHeal() return {} end
+function SkillEffectData() return {} end
+function BattleDataEnergyChange() return {} end
+function BattleData() return {} end
+function BattleRecordData() return {} end
+function BattleReportDetail() return {} end
+function BattleReport() return {} end
+function Item() return {} end
+function Bag() return {} end
+function Reward() return {} end
+function RewardBag() return {} end
+function ClientBag() return {} end
+function Items() return {} end
+function AdventureChapter() return {} end
+function AdventureInfo() return {} end
+function ShopItem() return {} end
+function ShopCtx() return {} end
+function ShopInfo() return {} end
+function StoryInfo() return {} end
+function ElseWdTeam() return {} end
+function ElseWdHeroState() return {} end
+function ElseWdTeamSelf() return {} end
+function ElseWdTeamEnemy() return {} end
+function ElseWdDoor() return {} end
+function ElseWdStage() return {} end
+function ElseWdInfo() return {} end
+function MailSender() return {} end
+function MailRecipient() return {} end
+function MailRecipients() return {} end
+function MailItem() return {} end
+function MailAttachments() return {} end
+function MailTemplate() return {} end
+function MailInstance() return {} end
+function Mailbox() return {} end
+function WorldMailOffice() return {} end
+function WorldIntroCenter() return {} end
+function CRoomAccumulationData() return {} end
+function CRoomData() return {} end
+function RoomAccumulationData() return {} end
+function Pair() return {} end
+function RoomData() return {} end
+function HallCore() return {} end
+function HallRow() return {} end
+function RoomPair() return {} end
+function RoomPosData() return {} end
+function RoomList() return {} end
+function HeroStation() return {} end
+function RoomPower() return {} end
+function WorkTask() return {} end
+function IdleMissionData() return {} end
+function BattleMissionData() return {} end
+function MissionData() return {} end
+function CityInfo() return {} end
+function TeamConfig() return {} end
+function RoleTeams() return {} end
+function RoleMissionData() return {} end
+function RoleAdventureData() return {} end
+function RoleShopData() return {} end
+function RoleStoryData() return {} end
+function RoleElseWdData() return {} end
+function RoleMailboxData() return {} end
+function WorldMailOfficeData() return {} end
+function BlockMissionInfo() return {} end
+function CityMissionInfo() return {} end
+function SyncCityBlockMissionData() return {} end
+function SyncCityMissionData() return {} end
+function SyncMissinData() return {} end
+function ArchiveSeries() return {} end
+function RoleDataChange() return {} end
+function RoleDataChangeInt64() return {} end
+function ServerInfo() return {} end
+function DrawCardDropSection() return {} end
+function DrawCardMustHeroInfo() return {} end
+function DrawCardInfo() return {} end
+function DrawCardData() return {} end
+function Task() return {} end
+function TaskList() return {} end
+function CheckTask() return {} end
+function Equipment() return {} end
+function EquipmentSlot() return {} end
+function EquipmentData() return {} end
+function EquipInfo() return {} end
+function HeroSlot() return {} end
+function HeroSlotInfo() return {} end
+function CrystalData() return {} end
+function BlessingSlot() return {} end
+function Emblem() return {} end
+function CEmblem() return {} end
+function CBlessingSlot() return {} end
+function Tower() return {} end
+function TowerList() return {} end
+function MarqueeInfo() return {} end
+function PunishInfo() return {} end
+function PunishList() return {} end
+function AlbumAndCharacterProfile() return {} end
+function CharacterProfile() return {} end
+function MainUi() return {} end
+function CMainUi() return {} end
+function DrawCardShowInfo() return {} end
+function DrawCardShowList() return {} end
+function GMDrawCardInfo() return {} end
+function GMDrawCardQulityInfo() return {} end
+function FriendInfo() return {} end
+function FriendBriefInfo() return {} end
+function FriendRequestInfo() return {} end
+function CSClientLoginReq() return {} end
+function SCClientLoginAck() return {} end
+function CSClientLogoutReq() return {} end
+function SCClientLogoutAck() return {} end
+function CSCreateRoleReq() return {} end
+function SCCreateRoleAck() return {} end
+function CSChangeRoleNameReq() return {} end
+function SCChangeRoleNameAck() return {} end
+function SCUserStartupInfoNtf() return {} end
+function SCUserStartupFinishedNtf() return {} end
+function SCLogicPingNtf() return {} end
+function CSLogicPingAck() return {} end
+function SCKickNtf() return {} end
+function SCServerMaintainNtf() return {} end
+function CSZonePlayerInfoReq() return {} end
+function SSCommonIntAck() return {} end
+function ZonePlayerInfo() return {} end
+function SCZonePlayerInfoNtf() return {} end
+function CSServersReq() return {} end
+function SCServersAck() return {} end
+function CSServersCdnReq() return {} end
+function SCServersCdnAck() return {} end
+function CSClientDisconnectedReq() return {} end
+function CSClientDisconnectedAck() return {} end
+function SCBroadcastNtf() return {} end
+function CSReconnectReq() return {} end
+function SCReconnectAck() return {} end
+function SCReconnectCompleteNtf() return {} end
+function PSBgipReq() return {} end
+function SPBgipAck() return {} end
+function PSGmLoginReq() return {} end
+function SPGmLoginAck() return {} end
+function PSGmCmdReq() return {} end
+function SPGmCmdAck() return {} end
+function PSBanRoleReq() return {} end
+function SPBanRoleAck() return {} end
+function PSUnbanRoleReq() return {} end
+function SPUnbanRoleAck() return {} end
+function PSCheckRoleReq() return {} end
+function SPCheckRoleAck() return {} end
+function PSModifyRoleReq() return {} end
+function SPModifyRoleAck() return {} end
+function SCRoleBaseDataNtf() return {} end
+function CSClientSelectRoleReq() return {} end
+function SCClientSelectRoleAck() return {} end
+function CSClientPullRoleListReq() return {} end
+function SCClientPullRoleListAck() return {} end
+function CSClientGmCommandReq() return {} end
+function SCClientGmCommandAck() return {} end
+function CSClientGmHelpReq() return {} end
+function GmHelpDesc() return {} end
+function SCClientGmHelpAck() return {} end
+function SCClientSyncReq() return {} end
+function CSClientSyncAck() return {} end
+function CSLogoutReq() return {} end
+function SCLogoutNtf() return {} end
+function CSBattleReq() return {} end
+function SCBattleAck() return {} end
+function CSPullItemReq() return {} end
+function SCPullItemAck() return {} end
+function CSOpenChestReq() return {} end
+function SCOpenChestAck() return {} end
+function CSSellItemReq() return {} end
+function SCSellItemAck() return {} end
+function CSSynthesisItemReq() return {} end
+function SCSynthesisItemAck() return {} end
+function SCItemChangeNtf() return {} end
+function CSStartIdleMissionReq() return {} end
+function SCStartIdleMissionAck() return {} end
+function CSCollectIdleMissionReq() return {} end
+function SCCollectIdleMissionAck() return {} end
+function CSCancelIdleMissionReq() return {} end
+function SCCancelIdleMissionAck() return {} end
+function CSAcceptBattleMissionReq() return {} end
+function SCAcceptBattleMissionAck() return {} end
+function CSStartBattleMissionReq() return {} end
+function SCStartBattleMissionAck() return {} end
+function CSChangeTeamReq() return {} end
+function SCChangeTeamAck() return {} end
+function CSChangeFunctionTeamReq() return {} end
+function SCChangeFunctionTeamAck() return {} end
+function SCMissionDataNtf() return {} end
+function SCUnblockedMissionDataNtf() return {} end
+function CSDrawCardReq() return {} end
+function SCDrawCardAck() return {} end
+function CSUnblockMissionReq() return {} end
+function SCUnblockMissionAck() return {} end
+function CSSpeedupIdleMissionReq() return {} end
+function SCSpeedupIdleMissionAck() return {} end
+function SCRoleLoadFinishNtf() return {} end
+function CSAdventureInfoReq() return {} end
+function SCAdventureInfoAck() return {} end
+function CSAdventureCombatReq() return {} end
+function SCAdventureCombatAck() return {} end
+function CSAdventureChapterAfkAwardReq() return {} end
+function SCAdventureChapterAfkAwardAck() return {} end
+function CSAdventureAfkCombatReq() return {} end
+function SCAdventureAfkCombatAck() return {} end
+function CSAdventureAfkAwardReq() return {} end
+function SCAdventureAfkAwardAck() return {} end
+function CSShopInfoReq() return {} end
+function SCShopInfoAck() return {} end
+function CSShopRefreshReq() return {} end
+function SCShopRefreshAck() return {} end
+function CSShopBuyReq() return {} end
+function SCShopBuyAck() return {} end
+function CSStoryInfoReq() return {} end
+function SCStoryInfoAck() return {} end
+function CSStoryStartReq() return {} end
+function SCStoryStartAck() return {} end
+function CSStoryEndReq() return {} end
+function SCStoryEndAck() return {} end
+function CSElseWdInfoReq() return {} end
+function SCElseWdInfoAck() return {} end
+function CSElseWdStageInitReq() return {} end
+function SCElseWdStageInitAck() return {} end
+function CSElseWdRebornReq() return {} end
+function SCElseWdRebornAck() return {} end
+function CSElseWdStageBattleResultReq() return {} end
+function SCElseWdStageBattleResultAck() return {} end
+function CSElseWdStageOptReq() return {} end
+function SCElseWdStageOptAck() return {} end
+function CSMailInfoReq() return {} end
+function Mail() return {} end
+function SCMailInfoAck() return {} end
+function CSMailOperateReq() return {} end
+function SCMailOperateAck() return {} end
+function CSMailboxSetReq() return {} end
+function SCMailboxSetAck() return {} end
+function CSIntroQueryReq() return {} end
+function SCIntroQueryAck() return {} end
+function CSIntroChangePortraitReq() return {} end
+function SCIntroChangePortraitAck() return {} end
+function SCMarqueeNtf() return {} end
+function SCHeroListNtf() return {} end
+function SCAddHeroNtf() return {} end
+function SCDelHeroNtf() return {} end
+function CSSynthesisHeroReq() return {} end
+function SCSynthesisHeroAck() return {} end
+function CSHeroDisplayReq() return {} end
+function SCHeroDisplayAck() return {} end
+function CSHeroLevelUpReq() return {} end
+function SCHeroLevelUpAck() return {} end
+function CSHeroStarUpReq() return {} end
+function SCHeroStarUpAck() return {} end
+function CSHeroQualityUpReq() return {} end
+function SCHeroQualityUpAck() return {} end
+function CSHeroDisassembleReq() return {} end
+function SCHeroDisassembleAck() return {} end
+function CSPieceDismissReq() return {} end
+function SCPieceDismissAck() return {} end
+function CSHeroRebornReq() return {} end
+function SCHeroRebornAck() return {} end
+function CSConvertHeroPieceReq() return {} end
+function SCConvertHeroPieceAck() return {} end
+function CSDrawReq() return {} end
+function SCDrawAck() return {} end
+function CSBuyDrawItemReq() return {} end
+function SCBuyDrawItemAck() return {} end
+function SCGmDrawCardNtf() return {} end
+function CSSynTaskListReq() return {} end
+function SCSynTaskListAck() return {} end
+function CSTaskRewardReq() return {} end
+function SCTaskRewardAck() return {} end
+function SCCommonItemPopUpNtf() return {} end
+function SCTaskChangeNtf() return {} end
+function SCTaskDeleteNtf() return {} end
+function SCEquipmentDataNtf() return {} end
+function CSEquipReq() return {} end
+function SCEquipAck() return {} end
+function CSEquipmentSlotEnchantingReq() return {} end
+function SCEquipmentSlotEnchantingAck() return {} end
+function CSEquipmentSlotStrengthReq() return {} end
+function SCEquipmentSlotStrengthAck() return {} end
+function CSEquipmentDestroyReq() return {} end
+function SCEquipmentDestroyAck() return {} end
+function SCEquipmentSlotUnlockNtf() return {} end
+function SCAddEquipmentNtf() return {} end
+function SCCrystalDataNtf() return {} end
+function SCCrystalDataChangeNtf() return {} end
+function CSBuyCrystalSlotReq() return {} end
+function SCBuyCrystalSlotAck() return {} end
+function CSPlaceHeroReq() return {} end
+function SCPlaceHeroAck() return {} end
+function CSClearHeroReq() return {} end
+function SCClearHeroAck() return {} end
+function CSRefreshSlotReq() return {} end
+function SCRefreshSlotAck() return {} end
+function CSShareLevelUpReq() return {} end
+function SCShareLevelUpAck() return {} end
+function SCHeroChangeNtf() return {} end
+function CSActivateEmblemReq() return {} end
+function SCActivateEmblemAck() return {} end
+function CSStrengthenEmblemReq() return {} end
+function SCStrengthenEmblemAck() return {} end
+function CSRefreshBlessReq() return {} end
+function SCRefreshBlessAck() return {} end
+function CSResumeBlessReq() return {} end
+function SCResumeBlessAck() return {} end
+function CSReplaceBlessReq() return {} end
+function SCReplaceBlessAck() return {} end
+function CSTowerListReq() return {} end
+function SCTowerListAck() return {} end
+function SCAddTowerNtf() return {} end
+function SCTowerChangeNtf() return {} end
+function CSTowerFinishRewardsReq() return {} end
+function CSTowerBattleReq() return {} end
+function SCTowerBattleAck() return {} end
+function CSAlbumInfoReq() return {} end
+function SCAlbumInfoAck() return {} end
+function CSAlbumRewardReq() return {} end
+function SCAlbumRewardAck() return {} end
+function CSCharacterProfileInfoReq() return {} end
+function SCCharacterProfileInfoAck() return {} end
+function CSActivateCharacterProfileReq() return {} end
+function SCActivateCharacterProfileAck() return {} end
+function CSCharacterProfileRewardReq() return {} end
+function SCCharacterProfileRewardAck() return {} end
+function SCCustomerServiceReddotNtf() return {} end
+function SCMainUiNtf() return {} end
+function CSMainUiRefreshReq() return {} end
+function SCMainUiRefreshAck() return {} end
+function CSMainUiReceiveReq() return {} end
+function SCMainUiReceiveAck() return {} end
+function SCMainUiSpecialDramaNtf() return {} end
+function CSMainUiCollectReq() return {} end
+function SCMainUiCollectAck() return {} end
+function CSFriendInfoReq() return {} end
+function SCFriendInfoAck() return {} end
+function CSFriendRequestReq() return {} end
+function SCFriendRequestAck() return {} end
+function SCFriendRequestOtherNtf() return {} end
+function CSFriendRemoveRequestReq() return {} end
+function SCFriendRemoveRequestAck() return {} end
+function CSFriendAddBlackListReq() return {} end
+function SCFriendAddBlackListAck() return {} end
+function CSFriendRemoveBlackListReq() return {} end
+function SCFriendRemoveBlackListAck() return {} end
+function CSFriendRemoveReq() return {} end
+function SCFriendRemoveAck() return {} end
+function SCFriendRemoveOtherNtf() return {} end
+function CSFriendRequestAgreeReq() return {} end
+function SCFriendRequestAgreeAck() return {} end
+function SCFriendRequestAgreeOtherNtf() return {} end
+function CSFriendSearchReq() return {} end
+function SCFriendSearchAck() return {} end
+function CSFriendModifyRemarkReq() return {} end
+function SCFriendModifyRemarkAck() return {} end
+function SCRoomChangeNtf() return {} end
+function CSRoomListReq() return {} end
+function SCRoomListAck() return {} end
+function CSRoomCollectReq() return {} end
+function SCRoomCollectAck() return {} end
+function CSCreateRoomReq() return {} end
+function SCCreateRoomAck() return {} end
+function CSRoomUpLevelReq() return {} end
+function SCRoomUpLevelAck() return {} end
+function CSUpdateRoomPosReq() return {} end
+function SCUpdateRoomPosAck() return {} end
+function CSSpeedUpReq() return {} end
+function SCSpeedUpAck() return {} end
+function CSBuyWorkerReq() return {} end
+function SCBuyWorkerAck() return {} end
+function CSRoomFinishReq() return {} end
+function SCRoomFinishAck() return {} end
+function CSStationRoomReq() return {} end
+function SCStationRoomAck() return {} end
+function CSAssignPowerReq() return {} end
+function SCAssignPowerAck() return {} end
+function CSGetHangUpResourceReq() return {} end
+function SCGetHangUpResourceAck() return {} end
+function CSUpdatePowerInfoReq() return {} end
+function SCUpdatePowerInfoAck() return {} end
+function CSSettingSaveReq() return {} end
+function SCSettingSaveAck() return {} end
+function SCHealthUpdateTimeNtf() return {} end
+function CSOssBattleStartReq() return {} end
+function SCOssBattleStartAck() return {} end
+function CSOssBattleEndReq() return {} end
+function SCOssBattleEndAck() return {} end

@@ -1,0 +1,3852 @@
+// By author:ypj
+syntax = "proto2";
+package dc;
+
+//import "messagedef.proto";
+
+
+//服务器节点ID
+message ServerNodeId
+{
+	optional  uint32          id              = 1;		// 节点ID
+	optional  uint32          type            = 2;		// 节点类型
+	optional  uint32          zone            = 3;		// 节点区域号
+}
+
+//key value 类型
+message KeyValueType
+{
+	optional  int32           key             = 1;		// 键
+	optional  int32           value           = 2;		// 值
+}
+
+//key value 类型
+message KeyValue64Type
+ {
+	optional  int32           key             = 1;		// 键
+	optional  uint64          value           = 2;		// 值
+}
+
+message RoleBriefInfo
+{
+	optional  uint64          uid             = 1;		// 用户ID
+	optional  string          name            = 2;		// 名字
+	optional  int32           level           = 5;		// 等级
+	optional  int32           exp             = 6;		// 经验
+	optional  bool            online          = 8;		// 是否在线
+	optional  string          open_id         = 9;	    // open_id
+}
+
+
+
+message RolePullInfo
+{
+	optional  uint64          uid             = 1;		// 用户ID
+}
+
+message RoleList
+{
+	repeated  RolePullInfo    role_list       = 1;		// 角色信息列表
+}
+
+message AccountRole
+{
+	optional  string          open_id         = 1;		// 用户平台open_id
+	optional  string          platform        = 2;		// 用户平台
+	optional  uint64          uid             = 3;		// 角色id
+	optional  string          name            = 4;		// 角色名字
+	optional  int32           level           = 5;		// 角色等级
+	optional  string          platform_pic    = 6;		// 用户平台PIC
+	optional  int32           ban_time        = 7;		// 封号时长： -1 永久，*秒
+	optional  string          ban_reason      = 8;		// 原因
+	optional  int32           ban_now_time    = 9;		// 封号写入时间
+	optional  int32           register_time   = 10;		// 注册时间
+	optional  uint32          zone_id         = 11;		// 区号
+	optional  int32           phone_form      = 12;		// 手机平台
+}
+
+message RoleDeviceInfo
+ {
+	optional  string          open_id         = 1;		// 用户平台open_id
+	optional  string          platform        = 2;		// 用户平台
+	optional  int32           time_stamp      = 3;		// 写入时间
+    optional  string          device          = 4;		// 玩家设备唯一标志
+	optional  uint32           zoneid      	  = 5;		// 区号
+}
+
+
+
+//箱子抽取信息
+message ChestOrderData
+{
+	optional int32 id         = 1; //chestorder 列表id
+	optional int32 sequece_id = 2; //列表序列id
+	optional int32 times      = 3; //抽取次数
+}
+
+//玩家基础信息
+message RoleBase
+{
+	optional  int32           level           		= 1;		// 玩家等级
+	optional  string          account         		= 2;      	// 玩家账号名
+	optional  string          name            		= 3;		// 玩家名字
+	optional  int64           coin            		= 4;		// 玩家金币
+	optional  int32           diamond         		= 5;		// 玩家钻石
+	optional  uint64          version         		= 6;		// 版本号
+	optional  int32		      is_new          		= 7;		// 新建角色  (1 ：表示新建角色)
+	optional  int32   		  vip_level		  		= 8; 		// 玩家VIP等级
+	optional  int32			  exp			  		= 9;		// 经验
+	optional  int64           heroExp         		= 10;     	// 英雄经验
+	optional  int32           playerPower     		= 11;     	// 玩家战力
+	optional  int32			  energy 		  		= 12;     	// 能量点
+	optional  int32			  tech 		      		= 13;     	// 科技点
+	optional  int32			  daily_active 	  		= 14;     	// 日任务活跃点
+	optional  int32			  weekly_active	  		= 15;     	// 周任务活跃点
+	optional  int32	          day_first_online_ts 	= 16;     	// 每日首次登录时间戳
+	optional  uint32          portrait        		= 17;	  	// 头像
+	optional  uint32          create_role_time		= 18;     	// 创建号时间
+	optional  uint32          latest_online_ts		= 19;     	// 最近一次登录时间
+	optional  uint32          latest_offline_ts		= 20;     	// 最近一次下线时间
+	optional  bool            is_report_active_tag	= 21;     	// 是否已经埋点上报新活用户标识 避免重复上报
+	repeated  bool 		      client_setting        = 22;       // 存储设置
+	optional  int32 		    ban_state             = 23;       // 被禁状态 - BanType
+	optional  int32 		    ban_expired_time      = 24;       // 解禁时间戳
+}
+
+
+//英雄
+message CHeroIntro
+{
+	optional	uint32            uid             	= 1;        // uuId
+	optional 	int32             id              	= 2;		// 英雄配置ID
+	optional 	int32             level           	= 3;		// 英雄等级
+	optional  	int32             star            	= 4;		// 英雄星级
+	//optional  int32             hero_power        = 5;		// 英雄战力
+	optional  	int32             quality           = 6;		// 英雄品质
+	//repeated  HeroSkill		  hero_skills       = 7;		// 英雄技能
+	//optional  bool              is_priest         = 8;		// 是否是水晶祭祀
+	//optional  int32             slot_number       = 9;        // 所在槽位编号  0不在槽位，
+	//optional  CEmblem           emblem            = 10;       // 徽章
+}
+
+//玩家简要信息
+message Intro
+{
+	optional  uint64          uuid            = 1;      // 玩家全局ID
+	optional  string          name            = 2;		// 玩家昵称 - editable -name in RoleBase
+	optional  int32   		  level		      = 3; 		// 玩家等级
+	optional  uint32   		  portrait		  = 4; 		// 头像 - editable - 英雄ID
+	optional  int32           player_power    = 5;      // 战力
+	optional  int32           adv_chapter     = 6;      // 冒险进度 - 当前关卡章
+	optional  int32           adv_stage       = 7;      // 冒险进度 - 当前关卡节
+	optional  int32           room_level      = 8;      // 大厅等级
+	optional  int32           hero_num        = 9;      // 英雄总数
+	repeated  CHero           heroes          = 10;     // 英雄阵容展示 最强5英雄 - 同水晶祭祀
+	optional  uint64   		  exp		      = 11; 		//
+}
+
+
+
+//角色
+message Role
+{
+	optional  uint64          		 id              			= 1;	// 玩家ID
+	optional  RoleBase        		 roleBase        			= 2;	// 玩家
+	optional  HeroList               heroList                   = 3;	// 英雄列表
+	optional  Bag                    bag                        = 4;	// 背包
+	optional  RoomList               roomList                   = 5; 	// 房间列表
+	optional  RoleMissionData        mission                    = 6;	// 任务信息
+	optional  RoleTeams              team                       = 7;	// 英雄编组
+	optional  RoleAdventureData      adventure                  = 8;	// 探险相关信息
+
+}
+
+
+//比特标记数组
+message BitFlag
+{
+	repeated  uint32          bitFlagArr      = 1;		//各种标记
+}
+
+message HeroSkill
+{
+	optional  uint32	skill_id      		= 1;        //英雄技能id
+	optional  uint32	skill_level         = 2;        //对应等级
+	optional  uint32	unlock	            = 3;		//unlock = 1代表已解锁，unlock = 0未解锁
+}
+
+//英雄
+message Hero
+{
+	optional	uint32            uid             	= 1;        // uuId
+	optional 	int32             id              	= 2;		// 英雄配置ID
+	optional 	int32             level           	= 3;		// 英雄等级
+	optional  	int32             star            	= 4;		// 英雄星级
+	optional  	int32             hero_power        = 5;		// 英雄战力
+	optional  	int32             quality           = 6;		// 英雄品质
+	repeated  	HeroSkill		  hero_skills       = 7;		// 英雄技能
+	optional  	bool              is_priest         = 8;		// 是否是水晶祭祀
+	optional    int32             slot_number       = 9;        // 所在槽位编号  0不在槽位，
+	optional    Emblem            emblem            = 10;       // 徽章
+}
+
+
+//英雄
+message CHero
+{
+	optional	uint32            uid             	= 1;        // uuId
+	optional 	int32             id              	= 2;		// 英雄配置ID
+	optional 	int32             level           	= 3;		// 英雄等级
+	optional  	int32             star            	= 4;		// 英雄星级
+	optional  	int32             hero_power        = 5;		// 英雄战力
+	optional  	int32             quality           = 6;		// 英雄品质
+	repeated  	HeroSkill		  hero_skills       = 7;		// 英雄技能
+	optional  	bool              is_priest         = 8;		// 是否是水晶祭祀
+	optional    int32             slot_number       = 9;        // 所在槽位编号  0不在槽位，
+	optional    CEmblem           emblem            = 10;       // 徽章
+}
+
+
+//英雄属性类
+message AttrInstance
+{
+	optional int32 				attr_id    			= 1;       //属性id（enum Attr）
+	optional int32 				attr_value 			= 2;	   //属性值
+}
+//英雄列表
+message HeroList
+{
+	repeated  Hero            hero_list       = 1;		// 英雄列表
+	optional  RoleTeams       team            = 2;	    // 英雄编组
+	optional  uint64          version         = 3;		// 版本号
+	optional  int32       	  hp_rate_add          = 4;	    // 生命收集养成
+	optional  int32           atk_rate_add         = 5;		// 攻击收集养成
+	optional  int32           def_rate_add         = 6;		// 防御收集养成
+}
+
+//玩家名字存储数据
+message NameUserData
+{
+	optional  uint64          uid             = 1;		// uid
+	optional  string          open_id 		  = 2;		// 玩家的openID
+}
+
+
+//英雄数据
+message ActorData
+{
+    optional uint32 instance_id = 1; //来自服务器的实例化ID
+    optional uint32 camp        = 2; //阵营
+    optional uint32 config_id   = 3; //heroID 或者MonsterID对应表里的ID
+    optional uint32 level       = 4; //Level
+    optional uint32 hp          = 5; //血量
+    optional uint32 energy      = 6; //当前大招能量 （因为初始值可不为0）
+    optional uint32 max_energy  = 7; //触发大招的能量
+    repeated uint32 init_pos    = 8; //初始位置，客户端可以通过刚进战场时获得 1-6
+	optional uint32 type        = 9; //枚举ActorType
+}
+
+//阵营数据
+message CampData
+{
+	optional uint64 uid  = 1;          //pvp自己玩家ID
+    optional string name = 2;          //玩家名称
+	repeated ActorData actor_list = 3; //actor信息
+}
+
+//技能伤害
+message SkillEffectDmg
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 atk_type      = 2; //攻击类型 枚举AttackTYpe
+    optional uint32 dmg           = 3; //伤害
+    optional uint32 hp            = 4; //血量
+	optional bool is_restrain     = 5; //克制
+}
+
+//击打状态
+message SkillEffectBeHitState
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional int32 state          = 2; //击打状态 枚举HitState
+}
+
+//添加buff
+message SkillEffectAddBuff
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 buff_obj_id   = 2; //buff objId
+	optional uint32 buff_cfg_id   = 3; //buff配置Id
+	optional uint32 buff_layer    = 4; //buff 层数
+	optional uint32 control_state = 5; //buff控制状态
+}
+
+//移除buff
+message SkillEffectRemoveBuff
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 buff_obj_id   = 2; //buff objId
+	optional uint32 buff_cfg_id   = 3; //buff配置Id
+	optional uint32 control_state  = 4; //buff控制状态
+}
+
+//buff伤害
+message SkillEffectBuffDmg
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 buff_obj_id   = 2; //buff objId
+	optional uint32 buff_cfg_id   = 3; //buff配置Id
+    optional uint32 dmg           = 4; //伤害
+    optional uint32 hp            = 5; //血量
+}
+
+//miss
+message SkillEffectMiss
+{
+	optional uint32 target_id     = 1; //目标Id
+}
+
+//能量变化
+message SkillEffectEnergyChange
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 energy        = 2; //能量
+}
+
+//死亡
+message SkillEffectDeath
+{
+	optional uint32 target_id     = 1; //目标Id
+}
+
+//治疗
+message SkillEffectHeal
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 add_hp        = 2; //增加的血量
+	optional uint32 hp            = 3; //血量
+}
+
+//治疗
+message SkillEffectBuffHeal
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 add_hp        = 2; //增加的血量
+	optional uint32 hp            = 3; //血量
+	optional uint32 buff_obj_id   = 4; //buff对象id
+	optional uint32 buff_cfg_id   = 5; //buff配置Id
+}
+
+message SkillEffectData
+{
+	optional int32 skill_effect_type           = 1;  //效果类型 枚举SkillEffectType
+	optional SkillEffectDmg skill_dmg          = 2;  //技能伤害
+	optional SkillEffectBeHitState hit_state   = 3;  //被击打状态
+	optional SkillEffectAddBuff add_buff       = 4;  //添加buff
+	optional SkillEffectRemoveBuff remove_buff = 5;  //移除buff
+	optional SkillEffectBuffDmg buff_dmg       = 6;  //buff伤害
+	optional SkillEffectMiss miss              = 7;  //miss
+	optional SkillEffectEnergyChange energy    = 8;  //能量变化
+	optional SkillEffectDeath death            = 9;  //死亡
+	optional SkillEffectHeal heal              = 10; //治疗
+	optional SkillEffectBuffHeal buff_heal     = 11; //buff治疗
+
+}
+
+//能量变化
+message BattleDataEnergyChange
+{
+	optional uint32 target_id     = 1; //目标Id
+	optional uint32 energy        = 2; //能量
+}
+
+message BattleData
+{
+	optional int32 battle_data_type                  = 1;  //战斗数据类型 枚举BattleDataType
+	optional BattleDataEnergyChange energy_change    = 2;  //能量变化
+}
+
+//每回合的数据结构
+message BattleRecordData
+{
+    optional uint32 record_type              = 1; //记录类型 枚举 BattleRecordType
+    optional uint32 round                    = 2; //此次记录所在的回合，比如第round回合的记录
+    optional uint32 caster                   = 3; //拥有者唯一id
+    optional uint32 skill_id                 = 4; //技能ID
+    repeated SkillEffectData target1_effect  = 5; //目标1技能效果
+    repeated SkillEffectData target2_effect  = 6; //目标2技能效果
+    repeated BattleRecordData pursuit_list   = 7; //增加追击者列表，如果有的话
+	repeated BattleData other_data           = 8; //其他战斗数据
+}
+
+message BattleReportDetail
+{
+	optional CampData camp1                      = 1; //阵营1
+	optional CampData camp2                      = 2; //阵营2
+	optional uint64 winner                       = 3; //胜利者uid
+    repeated BattleRecordData battle_recrod_list = 4; //记录所有的单次攻击信息
+}
+
+message BattleReport
+{
+	optional  uint32 battle_report_version                 = 1; //版本
+    optional  uint32 level_type                            = 2; // 关卡类型
+    repeated  BattleReportDetail battle_report_detail_list = 3; //战报详细信息
+
+}
+
+message Item
+{
+	optional int32 id = 1;     //物品id
+	optional uint32 count = 2; //物品数量
+}
+
+message Bag
+{
+	repeated Item item_list    = 1; //物品列表
+	optional uint64 version    = 2; // 版本号
+}
+
+message Reward
+{
+	optional int32 reward_id  = 1; //奖励id
+	optional uint32 times     = 2; //第几次抽奖
+}
+message RewardBag
+{
+	repeated Reward reward_list = 1; //奖励列表
+}
+
+message ClientBag
+{
+	repeated Item item_list    = 1; //物品列表
+}
+
+message Items
+{
+	repeated Item item_list    = 1; //物品列表	// 包括 固定奖励(时间挂钩) 和 随机奖励(定时判定)
+}
+
+message AdventureChapter
+{
+	optional  uint32 chapter         = 1; //章节
+	repeated  uint32 stages          = 2; //关卡s
+}
+
+message AdventureInfo
+{
+	optional  uint32 version                = 1; // 版本
+	optional  uint32 current_chapter        = 2; // 章节进度
+	optional  uint32 current_stage        	= 3; // 关卡进度
+	optional  uint32 fix_awarded_time		= 4; // 最后一次挂机固定奖励的时间
+	optional  uint32 rand_awarded_time		= 5; // 最后一次挂机领随机奖励的时间
+	repeated  AdventureChapter unrewarded   = 6; // 未领取奖励的章节关卡
+	optional  int32 fight_num               = 7; // 当前最新关卡挑战次数
+}
+
+//商店
+//logic:  ShopInfo includes ShopCtx in which server select a ShopPhase, and roll a ShopGoods in each ShopGrid
+message ShopItem
+{
+	optional uint32 itemId					= 1; // 商店物品配置ID
+	optional int32 currentPrice				= 2; // 当前价格
+	optional int32 buyTimes					= 3; // 本周期内已购买几次
+	//optional int32 maxTimes				= 4; // 本周期内最多购买几次 // 通过配置获得
+	optional int32 discount					= 5; // 折扣 - 基于 原价或变价
+}
+
+message ShopCtx
+{
+	optional  uint32   shopType				= 1; // enum ShopType
+	optional  int32    refreshPrice			= 2; // 当前刷新价格
+	repeated  ShopItem item					= 3; // 商品
+	optional  uint32   cfgId				= 4; // 商店配置ID
+	optional  int32    refreshedTimes		= 5; // 已经刷新次数
+	optional  int32    nextRefreshTime		= 6; // 下一次刷新时间
+}
+
+message ShopInfo
+{
+	optional  uint32 version                = 1; // 版本
+	repeated  ShopCtx shop					= 2; // corresponding to enum ShopType
+}
+
+//主线剧情
+
+message StoryInfo
+{
+	optional  uint32 version                = 1; // 版本
+	optional  uint32 current_chapter        = 2; // 当前章节进度
+	optional  uint32 chapter_start_time	= 3; // 当前章节开始时间
+	optional  uint32 passed_chapter         = 4; // 已通过章节进度
+}
+
+//异世界
+
+message ElseWdTeam
+{
+	repeated  CHero	heros		= 1; // 英雄真的展示内容, 与 英雄系统 使用同一个结构,便于客户端展示
+}
+message ElseWdHeroState
+{
+	optional  int32 status		= 1; // 0 死亡 1 存活
+	optional  int32 hp			= 2; // 剩余血量
+	optional  int32 mp			= 3; // 剩余蓝量
+}
+message ElseWdTeamSelf
+{
+	optional  ElseWdTeam team            = 1; //
+	repeated  ElseWdHeroState heroStates = 2; // 对于玩家team 要记录 英雄状态, 与 ElseWdTeam.heros 一一对应
+}
+
+message ElseWdTeamEnemy
+{
+	optional  ElseWdTeam team            = 1; //
+	repeated  uint32 pos          		 = 2; // 对于敌人team 要记录 场上位置, 与 ElseWdTeam.heros 一一对应
+	repeated  ElseWdHeroState heroStates = 3; // 对于敌人team 要记录 英雄状态, 与 ElseWdTeam.heros 一一对应
+}
+
+message ElseWdDoor
+{
+	optional  int32 progress     = 1; // 进度 - 0 不可领祝福，1 可领取祝福，2 已领取祝福
+	optional  uint32 eventId     = 2; // ElseWorldEvent.csv 表的 EventID 列，用来判断本门中的事件类型
+	optional  uint32 eventType   = 3; // ElseWorldEvent.csv 表的 eventType 列
+	optional  uint32 eventTid    = 4; // ElseWorldEvent.csv 表的 ID 列
+	repeated  uint32 options     = 5; // 视optionId而定，敌人:可选祝福IDlist; 血包:什么属性回复百分比; 祝福:可选祝福IDlist; 马车:可选英雄IDlist
+	optional  ElseWdTeamEnemy enemy_team	= 6; // progress 为0 表示敌人英雄团队信息; progress 为1 表示马车时可选英雄列表
+}
+
+message ElseWdStage //关卡信息
+{
+	repeated  ElseWdDoor doors    = 1; 	// 可选门
+	optional  uint32 current_door = 2; 	// 当前正在处理哪个门， 99 代表没有门在处理
+	optional  uint32 quota_door   = 3; 	// N/M通过则整个Stage通过 里面的 N
+}
+
+message ElseWdInfo
+{
+	optional  uint32 version                = 1; // 版本
+	optional  uint32 latest_open_time       = 2; // 最近一次周期开启时间
+	optional  uint32 passed_stage           = 3; // 已通过章节进度
+	optional  uint32 rewarded_stage         = 4; // 已领奖章节进度
+	optional  uint32 env_evil_id            = 5; // 环境邪恶类型
+	repeated  uint32 eventCsvIds            = 6; // ID in config event.csv - 玩家已选择的祝福列表
+	repeated  ElseWdTeam pending_teams      = 8; // 待选英雄团队
+	optional  ElseWdTeamSelf self_team      = 9; // 当前英雄团队 (待补齐1-有了就可以战斗了)
+	optional  ElseWdStage current_stage     = 10; // 当前关卡信息 (待补齐2-有了就可以让玩家选择了)
+	optional  uint32 latest_combat_time     = 11;// 最近一次战斗结束时间
+}
+
+//邮件系统
+
+message MailSender
+{
+	optional  string  index                 = 1; // index for localization config file
+	optional  string  name                  = 2; // specific name, prior to index
+}
+
+message MailRecipient
+{
+	optional  uint64  uid                   = 1; // uid
+	optional  string  name                  = 2; // name
+}
+
+message MailRecipients
+{
+	optional  int32  type                   = 1; // 类型 0 具体收件人 1 全部 2 条件(TODO)   // enum
+	repeated  MailRecipient recipients      = 2; // 具体收件人列表
+}
+
+message MailItem
+{
+	optional uint32 id    = 1; //物品id
+	optional uint32 count = 2; //物品数量
+}
+
+message MailAttachments
+{
+	repeated  MailItem mail_items           = 1; // 物品列表
+}
+
+message MailTemplate // 邮件模板
+{
+	optional  uint32 id                 = 1; // ID
+	optional  uint32 send_time          = 2; // 发送时间
+	optional  uint32 expired_time       = 3; // 过期时间
+	optional  int32 version             = 4; // 版本
+	optional  int32 source              = 5; // 发送来源  // enum: 0 test    1 GM        2 system      3 other module
+	optional  MailSender sender         = 6; // 发送人
+	optional  MailRecipients recipients = 7; // 收件人/条件
+	optional  string subject            = 8; // 邮件主题
+	optional  string text               = 9; // 邮件文本
+	optional  MailAttachments attach    = 10;// 邮件附件
+}
+
+message MailInstance	// 邮件实例
+{
+	optional  uint32 id                 = 1; // ID in mail office
+	optional  uint32 pick_time          = 2; // 收件时间
+	optional  int32  status             = 3; // 邮件状态  // enum: 0 invalid 1 unread     2 un-process 3 readed   4 deleted
+}
+
+//玩家邮箱
+message Mailbox
+{
+	optional  int32 version                 = 1; // 版本
+	optional  uint32 latest_op_time         = 2; // 最近一次操作时间
+	optional  uint32 flags                  = 3; // 是否阅读后删除
+	repeated  MailInstance mailInsts        = 4; // 邮件实例列表
+}
+
+//世界邮局
+message WorldMailOffice
+{
+	optional  uint32  version                = 1; // 版本
+	optional  uint32  latest_update_time     = 2; // 最近一次邮件模板队列更新时间
+	repeated  MailTemplate mails             = 3; // 邮件模板队列
+}
+
+//玩家概要信息存储
+message WorldIntroCenter
+{
+	optional  uint32  version                = 1; // 版本
+	repeated  Intro intros                   = 2; // 玩家概要信息
+}
+
+//*********Room Manager*********//
+
+
+//累积类型功能数据
+message CRoomAccumulationData
+{
+	optional uint32 full_time = 1 ; //满的时间
+	optional uint32 can_collect_time = 2; //客户端能收取时间
+	optional int32 own_extr_power = 3; //获得的电力
+}
+
+message CRoomData
+{
+	optional int32 room_uid = 1; //房间id
+	optional int32 room_cfg_id = 2; // 房间模板id
+	optional int32 level = 3; //等级
+	optional int32 x = 4; //x坐标
+	optional int32 y = 5; //y坐标
+	optional uint32 finish_time = 6; // 如果房间在升级建造中，则记录完成时间
+	optional int32 status = 7; // 建筑状态 枚举RoomStatusType
+	optional CRoomAccumulationData accumulation_data = 8;  //积累数据
+	repeated int32 stationd_heros = 9;//入驻的英雄uid
+}
+
+message RoomAccumulationData
+{
+	optional uint32 last_settle_rs_time = 1; //上次结算时间点
+	optional uint32 full_time = 2; //满的时间
+	optional double save_rs = 3;//每次升级时结算之前产出资源
+	optional double remain_special_rs = 4;//收集资源时产生的零头资源数
+	optional bool is_collect_full = 5; //标志资源是否已经攒满,1攒满，0未满
+	optional uint32 can_collect_time = 6; //客户端能收取时间
+	optional int32 own_extr_power = 7; //获得的电力
+	repeated Pair item_list = 8; //物品列表
+
+}
+
+message Pair
+{
+	optional int32 room_level = 1;  //房间等级
+	optional int32 count = 2; 	    //对应掉落品数量
+}
+
+
+
+message RoomData
+{
+	optional int32 room_uid = 1; //房间id
+	optional int32 room_cfg_id = 2; // 房间模板id 枚举RoomCfgIdType
+	optional int32 level = 3; //等级
+	optional int32 x = 4; //x坐标
+	optional int32 y = 5; //y坐标
+	optional uint32 finish_time = 6; // 如果房间在升级建造中，则记录完成时间
+	optional int32 status = 7; // 建筑状态 枚举RoomStatusType
+	optional RoomAccumulationData accumulation_data = 8; //功能数据
+	repeated int32 stationd_heros = 9;//入驻的英雄uid
+}
+
+//大厅核心,管理大厅资源
+message HallCore
+{
+	optional int32 room_uid = 1; //id，大厅核心是特殊的房间
+	optional int32 room_cfg_id = 2; // 房间模板id 枚举RoomCfgIdType
+	optional int32 hall_level = 3; //大厅核心等级
+	optional uint32 finish_time = 4; //如果核心在升级中，则记录升级完成时间
+	optional int32 status = 5; // 建筑状态 枚举RoomStatusType
+	optional int32 workers_num = 6; //工人数目
+	repeated RoomPair unlock_build_room = 7; //已解锁的可建造的房间类型列表
+	repeated RoomPair already_build_room = 8; //正在建造和已经建造的房间类型列表
+	repeated HallRow region_occupy_record = 9; //大厅区域占用记录
+
+}
+
+
+//大厅一行
+message HallRow
+{
+	repeated bool is_occupy_array = 1; //是否占用
+}
+
+//解锁的房间类型，以及建造的数量
+message RoomPair
+{
+	optional int32 room_cfg_id = 1; // 房间类型 枚举RoomCfgIdType
+	optional int32 room_num = 2; //该类型房间的数量
+}
+
+message RoomPosData
+{
+	optional int32 room_uid = 1; //房间id
+	optional int32 x = 2; //x坐标
+	optional int32 y = 3; //y坐标
+}
+
+//存储数据
+message RoomList
+{
+	repeated RoomData room_list = 1;								//房间列表
+	optional HallCore hall_core = 2;								//大厅核心信息
+	repeated WorkTask worker_tasks = 3;								//建筑工人房间施工队列（建造或升级中的房间id）
+	repeated HeroStation hero_station_list = 4; 					//记录每个英雄所入驻的房间
+	repeated int32 adventure_rooms = 5;								//记录冒险推关房间
+	optional int32 last_hang_up_time = 6;							//上次一键加速产出时间
+	optional int32 hang_up_times = 7;								//一键加速次数
+	optional uint32 last_collect_time = 8;							//上次收菜时间
+}
+
+message HeroStation
+{
+	optional int32 hero_uid = 1; //英雄uid
+	optional int32 room_uid = 2; //房间id
+}
+
+message RoomPower
+{
+	optional int32 room_uid = 1; //房间id
+	optional int32 assgin_power = 2; //分配的电力
+}
+
+message WorkTask
+{
+	optional int32 room_uid = 1; //建造或升级中的房间id
+	optional uint32 finish_time = 2;  //完成时间
+}
+
+
+//*********End of Room Manager**//
+
+message IdleMissionData
+{
+	repeated uint32 heroes = 1;//英雄列表
+	optional uint32 last_collect_time = 2; //最后一次收取时间
+	optional uint32 full_time = 3; //金币满的时间
+}
+
+message BattleMissionData
+{
+	optional int32 stage_index = 1; //当前关卡
+}
+
+message MissionData
+{
+	optional int32 mission_id = 1; // 任务id
+	optional int32 type = 2; //任务类型 枚举MissionType
+	optional IdleMissionData idle_data = 3; //放置任务数据
+	optional BattleMissionData battle_data = 4; //战斗任务数据
+}
+
+message CityInfo
+{
+	optional int32 city_id = 1; //城市id
+	repeated int32 unblocked_block = 2; //已解锁城市列表
+}
+
+//队伍编组
+message TeamConfig	// 其实是 TeamInstance (team成员被选中则全部上场，不会部分上场)
+{
+	optional int32 team_id = 1; //队伍id
+	repeated uint32 heroes = 2; //英雄列表(uid数组) // 具体实例属性参见 CHero
+}
+
+//角色队伍信息
+message RoleTeams
+{
+	repeated TeamConfig teams = 1; //队伍列表
+	repeated int32 function_team = 2; //特定类型队伍, 枚举TeamType -> teamId(顺序即是下标枚举)
+}
+
+//角色人物数据
+message RoleMissionData
+{
+	repeated int32 unblocked_mission = 1; //已解锁任务
+	repeated int32 finished_battle_mission = 2; //已完成的战斗任务
+	repeated MissionData running_mission = 3; //正在进行中的任务
+	repeated CityInfo unblocked_city = 4; //已解锁城市
+}
+
+//角色冒险数据
+message RoleAdventureData
+{
+	optional AdventureInfo info = 1; // 冒险相关信息
+}
+
+//角色商店数据
+message RoleShopData
+{
+	optional ShopInfo info = 1; // 商店相关信息
+}
+
+//角色剧情数据
+message RoleStoryData
+{
+	optional StoryInfo info = 1; // 剧情相关信息
+}
+
+//角色异世界数据
+message RoleElseWdData
+{
+	optional ElseWdInfo info = 1; // 异世界相关信息
+}
+
+//角色 邮件数据
+message RoleMailboxData
+{
+	optional Mailbox info = 1; // 角色邮件相关信息
+}
+
+//全局 邮件数据
+message WorldMailOfficeData
+{
+	optional WorldMailOffice info = 1; // 邮件相关信息
+}
+
+//块任务
+message BlockMissionInfo
+{
+	optional int32 block_id = 1;   //区块id
+	repeated int32 mission_id = 2; //任务id
+}
+
+//任务解锁信息
+message CityMissionInfo
+{
+	optional int32 city_id = 1;    //城市id
+	repeated BlockMissionInfo  info = 2; //块信息
+}
+
+//同步城市块信息
+message SyncCityBlockMissionData
+{
+	optional int32 block_id = 1; //块id
+	repeated int32 unblocked_mission = 2; //已解锁任务
+	repeated int32 finished_battle_mission = 3; //已完成的战斗任务
+	repeated MissionData running_mission = 4; //正在进行中的任务
+}
+
+//同步程序信息
+message SyncCityMissionData
+{
+	optional int32 city_id = 1; //城市id
+	repeated SyncCityBlockMissionData block_data = 2; //块列表
+}
+
+//同步任务信息
+message SyncMissinData
+{
+	repeated SyncCityMissionData city_data = 1; //城市列表
+}
+
+//百科系列解锁信息
+message ArchiveSeries
+{
+	repeated int32 unlock_list = 1; //已解锁列表
+}
+
+message RoleDataChange
+{
+	optional  int32           type            = 1;		// 类型 RoleDataType
+	optional  int32           value           = 2;		// 数值
+}
+
+message RoleDataChangeInt64
+{
+	optional  int32           type            = 1;		// 类型 RoleDataType
+	optional  int64           value           = 2;		// 数值
+}
+
+
+//服务器信息
+message ServerInfo
+{
+    optional 	int32           server_id       = 1;
+    optional    bytes           server_name     = 2;
+    optional    int32           server_type     = 3; //区分wx qq pc 服务器
+    optional    string          server_ip       = 4;
+    optional    int32           server_port     = 5;
+    optional    int32           isUDP           = 6;
+    optional    int32           suggest_status  = 7; //推荐标识位(0不显示/1推荐/)
+    optional    int32           view_status     = 8; //区服是否可见,(0:不可见; 1:可见)
+    optional    int32           new_status      = 9; //新服标识位(0不显示/1新服/)
+    optional    int32           zone_status     = 10;//区服状态（1繁忙/2火爆/3爆满/4拥挤/5流畅/6正常/7维护）
+    optional    int32           open_zone_time  = 11;//开服时间
+}
+
+message DrawCardDropSection
+{
+	optional int32 begin_pos = 1; //起始位置
+	optional int32 end_pos = 2;   //结束位置
+	optional int32 drop_cnt = 3; //掉落数量
+	optional int32 drop_tag = 4; //非s级掉落 对应于TimesGuaranteedDrop里的第一个元素,TimesGuaranteed里的第三个元素， s级掉落该字段为保底掉落的位置
+	optional int32 priority = 5; //优先级 越低越优先
+	optional int32 next_drop_adjust = 6; //下次生成数量调整,调整完设置为0
+	repeated int32 pos = 7; //掉落位置列表
+}
+
+message DrawCardMustHeroInfo
+{
+	optional int32 hero_id = 1; //英雄id
+	optional int32 finish_count = 2;//抽出该英雄的次数
+}
+
+
+//抽卡信息
+message DrawCardInfo
+{
+	repeated int32 special_cnt_list = 1;//s分区数量信息
+	optional int32 special_cnt = 2; //特殊组数量
+	optional int32 draw_cnt = 3; //抽卡次数
+	optional int32 draw_total_cnt = 4; //抽卡总次数
+	optional int32 turn_cnt = 5; //一轮的实际次数
+	optional int32 turn_cfg_cnt = 6; //一轮的配置次数
+	optional int32 first_stride_valid = 7; //初始步长是否有效
+	optional int32 cfg_id = 8;//配置id
+	repeated DrawCardDropSection section = 9; //掉落分段
+	repeated DrawCardMustHeroInfo must_hero = 10; //必出英雄信息
+	optional int32 first_stride = 11; //首次步长
+	optional int32 fix_stride = 12; //固定步长
+}
+
+//
+message DrawCardData
+{
+	repeated DrawCardInfo list = 1;
+}
+
+
+//
+message Task
+{
+	optional int32 cfg_id = 1; //任务配置id
+	optional int32 task_state = 2; //任务状态 1-进行中，2-待领取，3-已完成
+	optional int32 cur_count = 3; //当前进度
+}
+
+//
+message TaskList
+{
+	repeated Task task_list = 1;
+	optional uint32 daily_valid_time = 2;   //日常任务时限
+	optional uint32 weekly_valid_time = 3;  //周常任务时限
+	repeated CheckTask check_Task_list = 4; //检测任务列表
+}
+
+message CheckTask
+{
+	optional int32 condition = 1;  //任务条件
+	repeated int32 task_list = 2;  //该检测条件下的任务id
+}
+
+message Equipment
+{
+	optional uint32 id = 1; //id
+	optional int32 cfg_id = 2; //配置id
+	repeated AttrInstance attr = 3;//属性列表
+}
+
+message EquipmentSlot
+{
+	optional int32 part = 1;
+	optional int32 enchanting_count = 2; //附魔次数
+	optional int32 strength_level = 3; //强化等级
+	optional uint32 equip_id = 4; //装备id
+}
+
+message EquipmentData
+{
+	repeated Equipment equipment_list = 1; //装备列表
+	repeated EquipmentSlot slots = 2; //装备位
+	optional int32 strength_master_lv = 3; //强化大师等级
+}
+
+message EquipInfo
+{
+	optional int32 slot = 1; //装备位
+	optional uint32 id = 2; //装备id
+}
+
+message HeroSlot
+{
+	optional int32 hero_uid = 1;        //英雄uid
+	optional int32 slot_cd = 2;         //槽位cd完成时间戳
+}
+
+message HeroSlotInfo
+{
+	optional int32 slot_number = 1;     //槽位编号
+	optional int32 hero_uid = 2;        //英雄uid
+	optional int32 slot_cd = 3;         //槽位cd完成时间戳
+}
+
+
+//水晶数据
+message CrystalData
+{
+	optional bool is_altar    =  1;       // 0不是，1转为祭坛功能
+	optional int32 share_level = 2; 	  //水晶共享等级
+	optional int32 share_level_up_limit = 3; 	  //当前共享等级上限
+	repeated HeroSlot hero_slot_list = 4; //水晶槽位列表
+	repeated int32 priest_hero_list = 5;  //水晶祭祀英雄uid
+}
+
+
+//神器祝福槽
+message BlessingSlot
+{
+	optional AttrInstance cur_attr = 1; 	   //当前生效的祝福
+	optional AttrInstance draw_attr = 2;       //刷出的新祝福
+	optional uint32 draw_count = 3;            //刷新次数
+	optional int32 bless_id = 4;               //祝福库id
+	optional int32 cost_cfg_id = 5;            //刷新消耗配置id
+}
+
+//神器
+message Emblem
+{
+	optional uint32 cfg_id = 1;        			//神器id
+	optional uint32 level = 2;        			//神器等级
+	repeated BlessingSlot blessing_slots = 3;   //神器祝福槽
+}
+
+
+
+//客户端
+message CEmblem // 现在叫做徽章
+{
+	optional uint32 level = 1;
+	repeated CBlessingSlot blessing_slots = 2;  //神器祝福槽 - 徽章祝福槽
+}
+
+
+
+//神器祝福槽
+message CBlessingSlot
+{
+	optional int32 slot_index = 1;             //第几个槽位，索引从1开始
+	optional AttrInstance cur_attr = 2; 	  //当前生效的祝福
+	optional AttrInstance draw_attr = 3;      //刷出的新祝福
+}
+
+
+//塔信息
+message Tower
+{
+	optional int32 type = 1;				//塔类型
+	optional int32 cur_level = 2;			//当前进度
+	optional bool rewards = 3;				//是否领取过奖励 0,已领取，1，未领取
+	optional int32 fight_num = 4;			//塔当前关卡的挑战次数
+}
+
+
+
+message TowerList
+{
+	repeated Tower list = 1; //塔列表
+}
+
+message MarqueeInfo
+{
+	optional string marquee_id = 1; //跑马灯id
+	optional string content = 2; //内容
+	optional int64 begin_time = 3; //开始时间
+	optional int64 end_time = 4; //结束时间
+	optional int32 interval = 5; //播放间隔, 多少秒播放一次
+	optional int32 status = 6; //状态，1生效，-1失效
+	optional int32 platform = 7; //平台，0全部，1 ios，2 android
+	optional int32 env = 8; //环境，0测试，1正式
+	optional int32 channel = 9; //频道
+	optional int32 priority = 10; //优先级，0置顶，-1置底，>0其他
+	optional string target_url = 11; //跳转链接
+	optional string sub_content = 12; //副标题
+	optional int32 location = 23; //地域，0全部，1国内，2海外
+}
+
+//惩罚信息
+message PunishInfo
+{
+	optional int32 id = 1; //punish id;
+	optional uint32 end_time = 2; //结束时间
+}
+
+//惩罚信息列表
+message PunishList
+{
+	repeated PunishInfo list = 1; //惩罚信息列表
+}
+
+
+
+message AlbumAndCharacterProfile
+{
+	repeated int32 album_id_list = 1; //领奖过的图集信息
+	repeated CharacterProfile profile_list = 2; //玩家档案信息
+}
+
+
+
+message CharacterProfile
+{
+	optional int32 role_cfgid = 1;           //角色cfgid
+	repeated int32 picture_list = 2;         //已经激活的插图列表
+	optional bool is_get = 3;                //是否获得 1-获得 2-未获得
+}
+
+message MainUi
+{
+	repeated int32 special_dramas = 1;     		//暂储生成的待触发特殊剧场cfgid
+	repeated int32 closed_dramas = 2;        	//已经关闭的剧场
+	repeated int32 actived_dramas = 3;        	//已经激活的剧场
+	repeated int32 unactived_dramas = 4;        //未激活的剧场
+	optional uint32 random_drama_time = 5;      //随机剧场生成的时间
+	optional int32 cur_drama_id = 6;  			//当前剧场id
+	optional int32 common_trigger_times = 7;   	//普通剧场触发次数
+	optional uint32 last_collect_time = 8;   	//上次大厅宝箱收集时间
+}
+
+message CMainUi
+{
+	optional int32 cur_drama_id = 1;  		    //当前剧场id
+	optional bool is_get = 2; 					//当前剧场是否获得奖励
+	optional bool is_special = 3; 				//当前剧场是否获得奖励
+	optional uint32 random_drama_time = 4;      //上次随机剧场生成的时间
+	optional uint32 last_collect_time = 5;      //上次大厅宝箱收集时间
+}
+
+message DrawCardShowInfo
+{
+	optional int32 type = 1;    //显示类型
+	optional int32 id = 2;     //type == DrawCardItemType_Item 物品id type == DrawCardItemType_Hero 英雄id type == DrawCardItemType_Piece 碎片id
+	optional int32 count = 3;  //数量
+	optional int32 pram = 4;   //当type == DrawCardItemType_Piece 时，表示英雄模板id
+}
+
+message DrawCardShowList
+{
+	repeated DrawCardShowInfo list = 1; //列表信息
+}
+
+message GMDrawCardInfo
+{
+	optional int32 id = 1; //物品id
+	optional int32 quality = 2; //品质
+	optional int32 out_type = 3; //产出类型 枚举DrawCardOutputType
+}
+
+message GMDrawCardQulityInfo
+{
+	optional int32 quality = 1; //品质
+	optional int32 cnt = 2; //次数
+}
+
+
+//好友信息
+message FriendInfo
+{
+	optional string name = 1; //名字
+	optional int32 server_id = 2; //服务器id
+	optional int32 level = 3; //等级
+	optional int32 head_id = 4; //头像id
+	optional int32 power = 5; //战力
+	optional uint32 last_online_time = 6; //最后在线时间
+	optional uint64 role_id = 7; //角色唯一id
+	optional string remark = 8; //备注
+	optional int32 adventure_chapter = 9; //章
+	optional int32 adventure_stage = 10; //节
+}
+
+//好友简要信息
+message FriendBriefInfo
+{
+	optional string name = 1; //名字
+	optional uint64 role_id = 2; //角色唯一id
+	optional int32 power = 3; //战力
+	optional int32 level = 4; //等级
+	optional int32 head_id = 5; //头像id
+	optional int32 adventure_chapter = 6; //章
+	optional int32 adventure_stage = 7; //节
+}
+
+//好友请求信息
+message FriendRequestInfo
+{
+	optional FriendInfo info = 1; //好友信息
+	optional string msg = 2; //验证消息
+}
+
+
+
+
+//客户端发送登录请求
+message CSClientLoginReq
+{
+	optional  string          platform_token  = 1;		// 平台token
+	optional  int32           platform        = 2;		// 平台
+	optional  string          open_id         = 3;		// 平台账号ID
+	optional  string          guest_id        = 4;		// 游客ID
+	optional  string          client_ip       = 5;		// 客户端IP
+    optional  string          device          = 6;		// 玩家设备唯一标志
+    optional  int32           force_state     = 7;		// 强制登录 0：正常 1 ：强制登录
+	optional  string          os              = 8;      //操作系统 ios，android
+}
+
+//向Client发送登录响应
+message SCClientLoginAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  int32           xor_index       = 2;      // XOR加密索引
+	optional  uint32           time_stamp      = 3;      // 时间戳（服务器所在时区的时间戳）
+	optional  uint32          zoneid          = 4;		// 区域号
+	optional  int32 		  time_zone       = 5;      // 时区（服务器所在时区）
+}
+
+//客户端登出请求
+message CSClientLogoutReq
+{
+}
+
+//客户端登出回应
+message SCClientLogoutAck
+{
+}
+
+//用户创建角色请求
+message CSCreateRoleReq
+{
+	optional  string          role_name       = 1;		// 角色名
+	optional  int32           platform        = 2;		// qq wx 平台
+	optional  string          open_id         = 3;		// 平台账号ID
+	optional  int32           loginChannel    = 4;		// 登录渠道
+	optional  int32           regChannel      = 5;		// 注册渠道
+	optional  int32           phone_form      = 6;		// 手机平台
+}
+
+//用户创建角色响应
+message SCCreateRoleAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  uint64          uuid            = 2;		// 用户ID
+}
+
+//用户改名
+message CSChangeRoleNameReq
+{
+	optional  string          role_name       = 1;		// 新角色名
+}
+
+//
+message SCChangeRoleNameAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  string          role_name       = 2;		// 新角色名
+}
+
+//用户登录完成后收到的启动所需数据信息
+message SCUserStartupInfoNtf
+{
+	optional  RoleBase        		role_base       	= 1;		// 玩家基础数据
+	optional  ClientBag             role_bag            = 2;        //背包数据
+}
+//用户登录完成()
+message SCUserStartupFinishedNtf
+{
+}
+
+//服务器到客户端测试PING请求
+message SCLogicPingNtf
+{
+	optional  uint32          ts              = 1;		// 时间戳
+	optional  int32           ping            = 2;		// 上次的PING值，用于客户端的显示
+}
+
+//服务器到客户端测试PING响应
+message CSLogicPingAck
+{
+	optional  uint32          ts              = 1;		// 时间戳
+}
+
+//服务器主动踢客户端
+message SCKickNtf
+{
+	optional  int32           error           = 1;		// 错误码
+}
+
+//服务器到客户端通知维护
+message SCServerMaintainNtf
+{
+	optional int32 error = 1; // 错误码
+}
+
+//客户端向服务器发送获取各个服务器状态和当前账号在各个服务器上角色信息的请求
+message CSZonePlayerInfoReq
+{
+	optional  string          open_id         = 1;		// 平台账号ID
+}
+
+//通用的int32类型
+message SSCommonIntAck
+{
+	optional  int32          int_value         = 1;		// int32类型的数值
+}
+
+message ZonePlayerInfo
+{
+	optional  int32           zone_id               = 1;        // 服务器区号
+	optional  int32           charactor_num         = 2;        // 角色数量
+    optional  int32           server_status         = 3;        // 服务器状态编号
+}
+
+//服务器到客户端各个服务器状态和当前账号在各个服务器上角色信息的响应
+message SCZonePlayerInfoNtf
+{
+	repeated ZonePlayerInfo info = 1; // 玩家信息
+}
+
+//获取服务器信息
+message CSServersReq
+{
+
+}
+
+//推送服务器信息
+message SCServersAck
+{
+    repeated ServerInfo info    = 1; // 服务器信息
+    optional string cdn_url     = 2; // 验证资源网址
+    optional string version     = 3; // 版本号
+}
+
+//获取服务器CDN信息
+message CSServersCdnReq
+{
+
+}
+
+//推送服务器信息
+message SCServersCdnAck {
+    optional string cdn_url     = 1; // 验证资源网址
+    optional string version     = 2; // 版本号
+}
+
+// 客户端断线消息，客户端断线时gate发向gs
+message CSClientDisconnectedReq
+{
+
+}
+
+message CSClientDisconnectedAck
+{
+
+}
+
+// 广播消息，gs向gate发送改消息体，gate将message字段拆出来发送给客户端
+message SCBroadcastNtf
+{
+    repeated int32 session_ids = 1;  // 广播发向哪些用户
+    optional bool global = 2;  // 是否是全服广播
+    optional bytes message = 3;  // 消息体
+}
+
+//重连请求
+message CSReconnectReq
+{
+	optional uint64 uid = 1;  //玩家id
+	optional string token = 2; //token
+	repeated int32 modules = 3;  //功能模块 枚举 ModuleName
+	optional string openid = 4; //openid
+}
+
+//重连回应
+message SCReconnectAck
+{
+	optional int32 ret = 1;
+}
+
+//重连完成通知
+message SCReconnectCompleteNtf
+{
+}
+
+//bgip请求 - from bgip proxy
+message PSBgipReq
+{
+	optional string json = 1;
+}
+//bgip 回应 - to bgip proxy
+message SPBgipAck
+{
+	optional string json = 1;
+}
+
+
+//所有枚举定义
+
+enum ClientLoginResult
+{
+	LOGIN_RESULT_CREATE_ROLE = 1; // 需要创建角色
+	LOGIN_RESULT_PULL_ROLE_LIST = 2; // 需要拉角色列表
+}
+
+//技能类型
+enum BanType
+{
+	BanType_Normal       = 0; //正常
+	BanType_Login        = 1; //禁止登录
+	BanType_Chat         = 2; //禁言
+}
+
+enum RoleDataType
+{
+	RoleDataType_Coin 		= 1;	//金币      需要用64位
+	RoleDataType_Diamond 	= 2;	//钻石
+	RoleDataType_Wood		= 3;	//木材
+	RoleDataType_Level		= 4;	//等级
+	RoleDataType_Exp		= 5;	//经验
+	RoleDataType_HeroExp    = 6;    //英雄经验  需要用64位
+	RoleDataType_NickName   = 7;    //玩家昵称
+	RoleDataType_PlayerPower = 8;  //玩家战力
+	RoleDataType_Energy = 9;  //玩家能量点
+	RoleDataType_Tech = 10;  //玩家科技点
+	RoleDataType_DailyActive = 11;  //玩家日活跃点
+	RoleDataType_WeeklyActive = 12; //玩家周活跃点
+
+}
+//战斗属性
+enum Attr
+{
+    Attr_HP              = 1; //当前生命
+	Attr_HPBase          = 2; //最大生命基础                  （随英雄养成进度变化）
+	Attr_HPRate          = 3; //最大生命加成（百分比）
+	Attr_ExHP            = 4; //额外增加最大生命值
+	Attr_HPMax           = 5; //最大生命                      （经其他属性计算得出）
+	Attr_AtkBase         = 6; //攻击基础                      （随英雄养成进度变化）
+	Attr_AtkRate         = 7; //攻击加成(百分比)
+	Attr_ExAtk           = 8; //额外攻击
+	Attr_Atk             = 9; //攻击                          （经其他属性计算得出）
+	Attr_DefBase         = 10; //防御基础                     （随英雄养成进度变化）
+	Attr_DefRate         = 11; //防御加成（百分比）
+	Attr_ExDef           = 12; //额外防御
+	Attr_Def             = 13; //防御                         （经其它属性计算得出）
+	Attr_Mana            = 14; //当前能量
+	Attr_ManaInit        = 15; //初始能量
+	Attr_ManaMax         = 16; //能量阈值
+	Attr_ManaGainRate    = 17; //能量获取加成(百分比)
+	Attr_Spd             = 18; //速度
+	Attr_SkillCdValue    = 19; //技能cd减少固定值
+	Attr_SkillCdPercent  = 20; //技能cd减少百分比
+	Attr_CritRate        = 21; //爆击率(百分比)
+	Attr_CritDamage      = 22; //爆击伤害加成（百分比）
+	Attr_AntiCritRate    = 23; //抗爆击率(百分比)
+	Attr_HitRate          = 24; //命中率(百分比)
+	Attr_DodgeRate        = 25; //闪避率(百分比)
+	Attr_BlockRate        = 26; //格挡率(百分比)
+	Attr_BlockDeepen      = 27; //格挡强度（百分比）
+	Attr_AntiBlockRate    = 28; //精准率（百分比）
+	Attr_BreakDefRate     = 29; //破甲率（百分比）
+	Attr_BreakDefDeepen   = 30; //防御穿透强度
+	Attr_AntiBreakDefRate = 31; //抗破甲率（百分比）
+	Attr_LifeStealRate    = 32; //吸血率(百分比)
+	Attr_BounceRate       = 33; //反弹率（百分比）
+	Attr_CureRate         = 34; //治疗率（百分比）
+	Attr_HurtRate         = 35; //增伤率（百分比）
+	Attr_AntiHurtRate     = 36; //减伤率（百分比）
+	Attr_DamRate          = 37; //伤害加成率（百分比）
+	Attr_ControlRate      = 38; //效果命中（百分比）
+	Attr_AntiControlRate  = 39; //效果抗性（百分比）
+	Attr_BeDamageRate     = 40; //受伤增加（百分比）
+	Attr_PhysicalAmplyRate   = 41; //物理增伤率（百分比）
+	Attr_PhysicalReduceRate  = 42; //物理减伤率（百分比）
+	Attr_MagicAmplyRate   = 43; //魔法增伤率（百分比）
+	Attr_MagicReduceRate  = 44; //魔法减伤率（百分比）
+	Attr_CritResistRate   = 45; //抗暴伤率（百分比）
+	Attr_BuffTime         = 46; //增益状态持续改变时间
+	Attr_DeBuffTime       = 47; //减益状态持续改变时间
+	Attr_ControlBuffTime  = 48; //控制状态持续时间
+}
+
+
+
+//战斗属性组
+enum AttrGroup
+{
+	AttrGroup_Base  = 0; //基础属性
+	AttrGroup_Rate  = 1; //百分比加成
+	AttrGroup_Ext   = 2; //额外增加值
+}
+
+//阵营类型
+enum CampType
+{
+	CampType_Enemy = 0; //敌方
+	CampType_Our   = 1; //我方
+	CampType_All   = 2; //全体
+}
+
+//目标类型
+enum TargetType
+{
+	TargetType_T1               = 1; //T1
+	TargetType_T2               = 2; //T2
+	TargetType_T1UT2            = 3; //T1∪T2
+	TargetType_T1NT2            = 4; //T1∩T2
+	TargetType_T1UT2_Sub_T1NT2  = 5; //(T1∪T2) – (T1∩T2)
+	TargetType_Attacker         = 6; //攻击我的人
+	TargetType_Target           = 7; //我攻击的人
+	TargetType_TriggerSkillT1   = 8; //正在释放技能的T1目标
+	TargetType_TriggerSkillT2   = 9; //正在释放技能的T2目标
+}
+
+//目标范围
+enum TargetRange
+{
+	TargetRange_Pursuit    = 0; //追击单体用
+	TargetRange_Single_Row = 1; //单体-优先对应行
+	TargetRange_Single_Col = 2; //单体-优先某列
+	TargetRange_HP         = 3; //单体-优先血量最高/最低
+	TargetRange_Buf        = 4; //单体-优先指定Buff
+	TargetRange_Self       = 100; //自己
+	TargetRange_All        = 101; //全体
+	TargetRange_Col        = 102; //优先某列
+	TargetRange_Row        = 103; //贯穿一行
+	TargetRange_Random     = 104; //随机N个单位
+
+}
+
+//技能类型
+enum SkillType
+{
+	SkillType_Nomal       = 0; //常规技能
+	SkillType_Pursuit     = 1; //追击技能
+	SkillType_Ultimate    = 2; //大招
+	SkillType_Passive     = 3; //被动
+}
+
+//效果类型
+enum FunctionType
+{
+	FunctionType_Dmg                   = 1; //伤害
+	FunctionType_Heal                  = 2; //治疗
+	FunctionType_HitState              = 3; //造成一个可追打状态
+	FunctionType_Dispel                = 4; //驱散
+	FunctionType_TriggerEffect         = 5; //目标有某效果，触发另一个效果
+	FunctionType_TriggerSkill          = 6; //触发施法对象的某个技能
+	FunctionType_ChangeEffectRound     = 7; //若目标有某效果，改变该效果的回合数
+	FunctionType_AttackTriggerEffect   = 8; //攻击触发某种状态, 触发另一个效果
+	FunctionType_ScatteredHPDmg        = 9; //血量附加伤害（离散）
+	FunctionType_HPDmg                 = 10; //血量附加伤害（连续）
+	FunctionType_AddCampDmg            = 11; //阵营加伤
+	FunctionType_AddAttr               = 12; //临时属性提升
+	FunctionType_KeepInvisibility      = 13; //在隐身的前提下继续保持隐身
+	FunctionType_ControlState          = 101; //持续控制状态
+	FunctionType_ChangeAttr            = 102; //持续修改属性
+	FunctionType_BuffDmg               = 103; //持续伤害
+	FunctionType_BuffHeal              = 104; //持续治疗
+	FunctionType_Shield                = 105; //护盾
+	FunctionType_ImmuneDmg             = 106; //免疫伤害
+	FunctionType_ImmuneDizzy           = 107; //免疫眩晕
+	FunctionType_ImmuneSilent          = 108; //免疫沉默
+	FunctionType_ImmuneImmobilize      = 109; //免疫定身
+	FunctionType_ImmuneSleep           = 110; //免疫沉睡
+	FunctionType_ImmuneEffect          = 111; //免疫指定效果
+	FunctionType_Invisibility          = 112; //隐身效果
+	FunctionType_Chain                 = 113; //灵魂锁链
+	FunctionType_Revive                = 204; //复活
+	FunctionType_Undead                = 205; //不死
+	FunctionType_Unrevive              = 206; //不可复活
+	FunctionType_BeatBack              = 207; //反击
+	FunctionType_Invisible             = 208; //隐身
+	FunctionType_CreatureNumChangeAttr = 209; //场上人数改变属性
+	FunctionType_ReleaseSkillHP        = 210; //根据血量再次释放技能
+
+}
+
+//击打状态
+enum HitState
+{
+	HitState_Fly    = 1; //击飞
+	HitState_Repel  = 2; //击退
+	HitState_Fall   = 3; //倒地
+}
+
+//控制状态
+enum ControlState
+{
+	ControlState_Dizzy      = 1; //晕眩
+	ControlState_Silent     = 2; //沉默
+	ControlState_Immobilize = 3; //定身
+}
+
+//buff类型
+enum BuffType
+{
+	BuffType_Normal   = 0; //通用
+	BuffType_Dot      = 1; //持续伤害
+	BuffType_Hot      = 2; //持续治疗
+	BuffType_Ctrl     = 3; //持续控制
+	BuffType_Attr_Add = 4; //属性增益
+	BuffType_Attr_Sub = 5; //属性减益
+}
+
+//TurnReduceType
+enum TurnReduceType
+{
+	TurnReduceType_RoundEnd   = 0; //回合结束时，计时-1
+	TurnReduceType_RoundBegin = 1; //回合开始时，计时-1
+
+}
+
+//战斗记录类型
+enum BattleRecordType
+{
+	BattleRecordType_None           = 0;
+	BattleRecordType_CastSkill      = 1; //释放技能
+	BattleRecordType_RemoveBuff     = 2; //移除buff
+	BattleRecordType_BuffEffect     = 3; //buff效果
+}
+
+enum SkillEffectType
+{
+	SkillEffectType_Dmg           = 1;  //技能伤害
+	SkillEffectType_BeHitState    = 2;  //被击打状态
+	SkillEffectType_AddBuff       = 3;  //添加buff
+	SkillEffectType_RemoveBuff    = 4;  //移除buff
+	SkillEffectType_BuffDmg       = 5;  //buff伤害
+	SkillEffectType_Miss          = 6;  //未命中
+	SkillEffectType_EnergyChange  = 7;  //能量变化
+	SkillEffectType_Death         = 8;  //死亡
+	SkillEffectType_Heal          = 9;  //治疗
+	SkillEffectType_BuffHeal      = 10; //buff治疗
+}
+
+enum BattleDataType
+{
+	BattleDataType_EnergyChange  = 1;  //能量变化
+}
+
+//所有物品类型（物品id的前缀）
+enum GoodsType
+{
+	GoodsType_Item = 11; //道具（能出现在背包栏的）
+	GoodsType_Resource = 12; //资源（金币、钻石、经验等）
+	GoodsType_Allies = 13; //英雄（同盟）
+	GoodsType_Equipment = 14; //装备
+	GoodsType_Gem = 15; //宝石
+	GoodsType_Artifact = 16; //神器
+	GoodsType_Tactics= 17; //战术
+	GoodsType_Accessories= 18; //饰品
+	GoodsType_Reward = 19; //奖励
+}
+
+//资源（id枚举）
+enum ResourceType
+{
+	ResourceType_Coin = 1201;  //金币id
+	ResourceType_Diamond = 1202;  //钻石id
+	ResourceType_HeroExp = 1203;  //英雄经验id
+
+	ResourceType_Exp = 1204;	 //经验id
+
+	ResourceType_Energy = 1205;  //能量点id
+	ResourceType_Tech = 1206;   //科技点
+
+	ResourceType_DailyActive = 1207; //玩家日活跃点
+	ResourceType_WeeklyActive = 1208;  //玩家周活跃点
+}
+
+//道具
+enum ItemType
+{
+	ItemType_Consume = 1;  //消耗品（比如宝箱等）
+	ItemType_Material  = 2;  //材料类型
+	ItemType_Fragment = 3;  //碎片
+	ItemType_Ativity = 4;  //活动
+}
+
+//商店类型
+enum ShopType
+{
+	ShopType_Adventure 	= 1;  //冒险商店
+	ShopType_Pvp  		= 2;
+}
+
+enum ConsumeSubType
+{
+	ConsumeSubType_Chest = 1; //放在背包中玩家手动开启的宝箱ManualOpen（获得瞬间自动开的宝箱AutomaticOpen目前不做）
+}
+
+enum MaterialSubType
+{
+	MaterialSubType_ReinforcementStone = 1; //装备强化石
+	MaterialSubType_EvolutionaryStone = 2; //装备进阶石
+	MaterialSubType_SuitGeneral = 3; //套装通用材料
+	MaterialSubType_SuitSpecial = 4; //套装特殊材料
+	MaterialSubType_AccessoriesLuckyStone = 5; //饰品幸运石
+	MaterialSubType_AccessoriesResearch = 6; //饰品研发材料
+	MaterialSubType_TacticalResearch = 7; //战术研发材料
+	MaterialSubType_ArtifactUpgrade = 8; //神器升级材料
+	MaterialSubType_FamilyAffection = 9; //家族好感度材料
+	MaterialSubType_WikiActivation = 10; //百科激活材料
+}
+
+enum FragmentSubType
+{
+	FragmentSubType_ItemFragment = 0; //万能道具碎片
+	FragmentSubType_AlliesFragment = 1; //英雄碎片
+}
+
+enum AtivitySubType
+{
+	AtivitySubType_CoinDrawCardItem = 1; //金币抽卡道具
+	AtivitySubType_DiamondDrawCardItem = 2; //钻石抽卡道具
+	AtivitySubType_VipExperienceCard = 3; //vip体验卡
+	AtivitySubType_MonthCard = 4;	 //月卡
+}
+
+enum ItemQualityType
+{
+	ItemQualityType_White = 1; //品质白
+	ItemQualityType_Green = 2; //品质绿
+	ItemQualityType_Blue = 3; //品质蓝
+	ItemQualityType_Purple = 4; //品质紫
+	ItemQualityType_Orange = 5; //品质橙
+	ItemQualityType_Gold = 6; //品质金
+}
+
+enum ChestContentType
+{
+	ChestContentType_Item       = 1; //物品
+	ChestContentType_ChestOrder = 2; //宝箱序列
+}
+
+enum MissionType
+{
+	MissionType_Battle = 0; //战斗任务
+	MissionType_Idle = 1; //放置任务
+}
+
+enum ActorType
+{
+	ActorType_Hero = 1; //英雄
+	ActorType_Monster = 2;//怪物
+}
+
+enum TeamType
+{
+	TeamType_Attack = 0;  //通用进攻队伍（冒险地图，爬塔，异步竞技场进攻）
+	TeamType_ArenaDefend = 1; //竞技场防守队伍
+	TeamType_Tower = 2; //爬塔
+	TeamType_ElseWd = 3; // 异世界
+}
+
+enum LimitType
+{
+	LimitType_1 = 1; //玩家大于等于一定等级 参数 等级
+	LimitType_2 = 2; //玩家有用一定数量的某等级的房间，数量和等级大于等于生效。 参数 房间ID;房间数量;房间等级
+	LimitType_3 = 3; //某个战斗类任务的状态 参数 MissionID；0-未接取，1-已接取进行中，2-已完成
+	LimitType_4 = 4; //N个角色达到一定等级 参数 角色数量;具体等级 判定范围枚举 0-账号，1-当前任务
+	LimitType_5 = 5; //N个角色达到一定星级 参数 角色数量;具体星级 判定范围枚举 0-账号，1-当前任务
+	LimitType_6 = 6; //有几个英雄的阵营属于/不属于某个特定阵营 参数 角色数量;阵营枚举;0-不属于，1-属于 判定范围枚举 0-账号，1-当前任务
+	LimitType_7 = 7; //有几个英雄的系列属于/不属于某个特定系列 参数 角色数量;系列枚举;0-不属于，1-属于 判定范围枚举 0-账号，1-当前任务
+	LimitType_8 = 8; //有几个英雄的属于/不属于某个特定善恶派系 参数 角色数量;0-反派，1-英雄 判定范围枚举 0-账号，1-当前任务
+	LimitType_9 = 9; //有等级大于限定值，星级大于限定值的指定ID英雄 参数 具体等级;具体星级;ID号;判断范围枚举 0-账号，1-当前任务
+}
+
+//英雄阵营
+enum Faction
+{
+	Faction_Master = 1; //达人
+	Faction_Tech = 2;   //科技
+	Faction_Magic = 3;  //魔法
+	Faction_Power = 4;  //超能
+	Faction_Cosmic = 5; //宇宙
+}
+//英雄职业
+enum AllyClass
+{
+	AllyClass_Tank = 1; //坦克型英雄
+	AllyClass_Output = 2; //输出型英雄
+	AllyClass_Support = 3; //辅助型英雄
+
+}
+
+enum SystemType
+{
+	SystemType_DrawCard = 1; //抽卡
+	SystemType_Collection = 2; //收集系统
+}
+
+
+enum RoomStatusType
+{
+	RoomStatusType_Runing = 1;//正常使用运转中
+	RoomStatusType_Building = 2;//建造中
+	RoomStatusType_Upgrading = 3;//升级中
+}
+
+
+
+enum BattleParam
+{
+	BattleParam_AtkBaseRatio = 11; //攻击属性系数
+	BattleParam_DefBaseRatio = 12; //防御属性系数
+	BattleParam_HpBaseRatio  = 13; //生命属性系数
+}
+
+enum AttackType
+{
+	AttackType_Crit        = 0; //暴击
+	AttackType_Penetration = 1; //破甲率
+	AttackType_Block       = 2; //格挡
+	AttackType_Normal      = 3; //普攻
+}
+
+enum ImmuneState
+{
+	ImmuneState_Dmg        = 0; //免疫伤害
+	ImmuneState_Dizzy      = 1; //免疫眩晕
+	ImmuneState_Silent     = 2; //免疫沉默
+	ImmuneState_Immobilize = 3; //免疫定身
+	ImmuneState_Sleep      = 4; //免疫沉睡
+}
+
+enum BuffDispelGroup
+{
+	BuffDispelGroup_Debuf        = 1; //减益
+	BuffDispelGroup_Buf          = 2; //增益
+	BuffDispelGroup_Undispelable = 3; //不可驱散
+}
+
+enum BuffDispelRange
+{
+	BuffDispelRange_Type    = 0; //驱散大类
+	BuffDispelRange_SubType = 1; //驱散小类
+	BuffDispelRange_Id      = 2; //驱散指定id
+	BuffDispelRange_Group   = 3; //驱散增益/减益
+}
+
+enum BuffSubType
+{
+	BuffSubType_None       = 0; //无类别
+	BuffSubType_Dot        = 1; //持续伤害
+	BuffSubType_Hot        = 2; //持续治疗
+	BuffSubType_Dizzy      = 3; //持续眩晕
+	BuffSubType_Silent     = 4; //持续沉默
+	BuffSubType_Immobilize = 5; //持续定身
+	BuffSubType_Sleep      = 6; //持续沉睡
+}
+enum BuffState
+{
+	BuffState_Invisibility = 1; //隐身
+}
+enum DrawType
+{
+	DrawType_One = 1;//单抽
+	DrawType_Ten = 2;//十连抽
+}
+
+
+enum ConditionCheckType
+{
+	Type_AdventureCountCheck 		= 1; 	   //完成关卡至【】章节【】关。					        各模块提供的参数 条件检查类型
+	Type_HallLevelCheck      		= 2;       //大厅核心升级到【】级。       						各模块提供的参数 条件检查类型
+	Type_AFKRewardCount      		= 3;       //领取冒险挂机奖励【】次。      		--需要改变含义	各模块提供的参数 条件检查类型; 是否领取成功
+	Type_AFKResourceCount      		= 4;       //挂机累计产出【】资源【】个。          				各模块提供的参数 条件检查类型; 产出资源id;数量
+	Type_RoomResourceCount     		= 5;       //大厅累计产出【】资源【】个。                        各模块提供的参数 条件检查类型; 产出资源id;数量
+	Type_LoginDaysCount      		= 6;       //累计登录【】天                       已经验证        各模块提供的参数 条件检查类型; 是否当天首次登录（1是0否）
+	Type_DailyMissionActiveCheck  	= 7;       //获取日常任务活跃值【】。   						各模块提供的参数 条件检查类型; 当前日活跃点
+	Type_WeeklyMissionActiveCheck  	= 8;	   //获取周常任务活跃值【】。                  		    各模块提供的参数 条件检查类型; 当前周活跃点
+	Type_AnyEquipDevelopCount  		= 9;       //对任意装备位进行【】次强化            已经验证        各模块提供的参数 条件检查类型; 强化成功次数
+	Type_EquipLevelCheck  			= 10;      //拥有的强化等级为【】以上的装备位【】个 已经验证        各模块提供的参数 条件检查类型
+	Type_QuickAFKCount    			= 11;      //使用快速挂机【】次                   --验证 	    各模块提供的参数 条件检查类型; 是否快速挂机成功（1是0否）
+	Type_BattleCount      			= 12;      //进行【】次战斗                            			各模块提供的参数 条件检查类型; 是否成功进行战斗（1是0否）
+	Type_PlayerPropConditionCheck   = 13;      //玩家【】道具ID达到【】个       					各模块提供的参数 条件检查类型
+	Type_AnyHeroDevelopLevelCount   = 14;      //对任意英雄进行【】次升级       					各模块提供的参数 条件检查类型; 成功升级次数
+	Type_AnyHeroDevelopStarCount    = 15;      //对任意英雄进行【】次升星       					各模块提供的参数 条件检查类型; 是否升星成功（1是0否）
+	Type_AnyHeroDevelopQualityCount = 16;      //对任意英雄进行【】次升品       					各模块提供的参数 条件检查类型; 是否升品成功（1是0否）
+	Type_HeroVanishQualityCount     = 17;      //分解【】品质英雄碎片【】个     					各模块提供的参数 条件检查类型; 分解品质;分解个数
+	Type_TheHeroQualityCountCheck   = 18;	   //某【】英雄的品质达到了【】     					各模块提供的参数 条件检查类型
+	Type_TheHeroLevelCountCheck     = 19;	   //某【】英雄的等级达到了【】     					各模块提供的参数 条件检查类型
+	Type_TheHeroStarCountCheck      = 20;      //某【】英雄的星级达到了【】     					各模块提供的参数 条件检查类型
+	Type_HasHeroQualityCheck        = 21;      //拥有【】个【】品质以上英雄         			    各模块提供的参数 条件检查类型
+	Type_HasHeroStarCheck           = 22;      //拥有【】个【】星级以上英雄         			    各模块提供的参数 条件检查类型
+	Type_HasHeroLevelCheck          = 23;      //拥有【】个【】等级以上英雄         				各模块提供的参数 条件检查类型
+	Type_HasHeroNumberCheck         = 24;      //拥有【】个英雄                                     各模块提供的参数 条件检查类型
+	Type_PlayerLevelConditionCheck  = 25;      //玩家达到【】级         					        各模块提供的参数 条件检查类型
+	Type_AdventureChapterCheck 		= 26; 	   //完成关卡至【】章节 						         各模块提供的参数 条件检查类型
+	Type_HasOneHeroLevelCheck       = 27;      //拥有1个【】等级以上英雄							 各模块提供的参数 条件检查类型
+	Type_DrawCardCount              = 28;      //累计进行【】次抽卡                  --已经验证          各模块提供的参数 条件检查类型
+	Type_TotalDiamondCount          = 29;      //累积获得【】个钻石                  --已经验证          各模块提供的参数 条件检查类型
+	Type_TowerLevelCount            = 30;      //挑战多元融汇【】塔达到【】层         --已经验证      各模块提供的参数 条件检查类型; 塔ID  通过层数
+	Type_RoomLevelCheck             = 31;      //星辰实验室拥有【】个【】级的【】房间  --验证          各模块提供的参数 条件检查类型
+
+}
+
+//弹窗类型枚举,持续拓展
+enum ItemPopType
+{
+	ItemPopType_Defualt = 0; //默认值，无指定类型
+	ItemPopType_TaskSystem1 = 1; //任务领奖弹窗
+	ItemPopType_HeroSystem1 = 2; //转换成英雄碎片弹窗
+	ItemPopType_ItemSystem1 = 3; //获得道具弹窗
+	ItemPopType_TowerBattle = 4; //爬塔战斗奖励弹窗
+	ItemPopType_CharacterProfile  = 5; //档案激活插图弹窗
+	ItemPopType_Hall  = 6;             //大厅弹窗
+	ItemPopType_HallHangUp  = 7;       //神速力弹窗
+
+}
+
+enum TaskType
+{
+	TaskType_Main         = 1; //主线任务
+	TaskType_Daily        = 2; //日常任务
+	TaskType_Weekly       = 3; //周常任务
+	TaskType_DailyBox     = 4; //日常任务活跃盒子
+	TaskType_WeeklyBox    = 5; //周常任务活跃盒子
+}
+
+enum ParameTableType
+{
+	InitialCard = 1;
+	InitialItem = 2;
+	InitialResources = 3;
+	GoldPerMinPerLv = 4;
+	LvUpGoldRoomCostPerLV = 5;
+	GoldStackTime = 6;
+	InitialRoom = 7;
+	InitialCity = 8;
+	InitialBlock = 9;
+	InitialMission = 10;
+	IdleMissionTime = 11;
+	PackageMaxHero = 12;
+	AfkReward1Time = 13;
+	AfkReward2Time = 14;
+	AfkRewardTimeMax = 15;
+	RoomWorkerNum = 16;
+	EmploymentCost1 = 17;
+	EmploymentCost2 = 18;
+	TimeRelief = 19;
+	MaterialRelief = 20;
+	HeroReborn_cost = 21;
+	UnmovableFloor = 22;
+	randomBUFFlastTime = 23;
+	Equip_UnlockLevel = 24;
+	Equip_BaseEquip = 25;
+	MaxTurn = 26;
+	DmgReduceRate = 27;
+	MyCamp = 28;
+	EnemyCamp = 29;
+	AtkBaseRatio = 30;
+	DefBaseRatio = 31;
+	HpBaseRatio = 32;
+	Gongming_LevelNeedStar = 33;
+	Gongming_LevelUp = 34;
+	Gongming_LevelMax = 35;
+	Gongming_ListNumOnce = 36;
+	Gongming_ListNumBase = 37;
+	Gongming_ListNumLock = 38;
+	Gongming_ListLockNeedItem = 39;
+	Gongming_ListLockNeed = 40;
+	Gongming_ListCD = 41;
+	ElseWorld_refreshcycle = 43;
+	ElseWorld_refreshitem = 44;
+	ElseWorld_rebirthitem = 45;
+	ElseWorld_refreshtime = 46;
+	ElseWorld_hprecovery = 47;
+	ElseWorld_mprecovery = 48;
+	Func_refreshtime = 49;
+	Characterprofile_IllustrationReward = 50;
+	DramaFreshTime = 51;
+	DramaFreshMax = 52;
+	MailNumMax = 53;
+	MailTimeMax = 54;
+	MailItemMax = 55;
+	Lobby_RoomWorkerNum = 56;
+	Lobby_EmploymentCost1 = 57;
+	Lobby_HangUpTime = 58;
+	Lobby_HangUpCost = 59;
+	Lobby_UnMoveArea = 60;
+	Lobby_BaseRoom = 61;
+	Lobby_GetItemMinCD = 62;
+	Lobby_PowerOpen = 63;
+	Lobby_NoPassAnyStageProuduce = 64;
+	FriendNumMax = 65;
+	BlackListNumMax = 66;
+	FriendRequestNumMax = 67;
+	FriendRemarkLengthMax = 68;
+	FirstGacha = 69;
+	SecondGacha = 70;
+
+
+}
+
+//抽卡物品类型
+enum DrawCardItemType
+{
+	DrawCardItemType_Item = 1; //物品
+	DrawCardItemType_Hero = 2; //英雄
+	DrawCardItemType_Piece = 3; //碎片
+}
+
+//抽卡产出方式
+enum DrawCardOutputType
+{
+	DrawCardOutputType_SpecialGuaranteed = 1; //步长出
+	DrawCardOutputType_SpecialOther = 2; //剩余保底出
+	DrawCardOutputType_TimesGuaranteed = 3;//多少次必出
+	DrawCardOutputType_Random = 4;//随机
+	DrawCardOutputType_Must = 5; //大于多少次必出
+	DrawCardOutputType_Fix = 6; //固定产出，比如第一次给什么英雄
+}
+
+
+//模块名称
+enum ModuleName
+{
+	ModuleName_Base      = 1; //基础信息
+	ModuleName_Hero      = 2; //英雄
+	ModuleName_Room      = 3; //房间
+	ModuleName_Adventure = 4; //冒险
+	ModuleName_Task      = 5; //任务
+	ModuleName_Story     = 6; //剧情
+	ModuleName_Mail      = 7; //邮件
+	ModuleName_Equip     = 8; //装备
+	ModuleName_Crystal   = 9; //共鸣水晶
+	ModuleName_MainUI    = 10; //主ui
+	ModuleName_Shop      = 11; //商城
+	ModuleName_ElseWd    = 12; //异世界
+	ModuleName_Tower     = 13; //爬塔
+
+}
+
+
+
+
+
+
+
+//GM登录请求
+message PSGmLoginReq
+{
+	optional  string          account         = 1;		// 账号
+	optional  string          password        = 2;		// 密码
+}
+
+//GM登录响应
+message SPGmLoginAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  string          result          = 2;		// 错误描述
+}
+
+//GM 通用命令请求
+message PSGmCmdReq
+{
+	optional  string          cmd         	  = 1;		// 命令
+	repeated  string          args        	  = 2;		// 参数
+}
+
+//GM 通用命令 响应
+message SPGmCmdAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  string          result          = 2;		// 错误描述
+	optional  string          cmd         	  = 3;		// 命令
+	repeated  string          args        	  = 4;		// 参数
+}
+
+//禁用角色请求
+message PSBanRoleReq
+{
+	optional  string          name            = 1;		// 名字
+	optional  uint64          uuid         	  = 2;	    // 账号ID
+	optional  int32           platform        = 3;		// qq wx 平台
+}
+
+//禁用角色响应
+message SPBanRoleAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  string          result          = 2;		// 错误描述
+	optional  string          name            = 3;		// 名字
+	optional  uint64          uuid         	  = 4;	    // 账号ID
+	optional  int32           platform        = 5;		// qq wx 平台
+}
+
+
+//解禁角色请求
+message PSUnbanRoleReq
+{
+	optional  string          name            = 1;		// 名字
+	optional  uint64          uuid         	  = 2;	    // 账号ID
+	optional  int32           platform        = 3;		// qq wx 平台
+}
+
+//解禁角色响应
+message SPUnbanRoleAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  string          result          = 2;		// 错误描述
+	optional  string          name            = 3;		// 名字
+	optional  uint64          uuid         	  = 4;	    // 账号ID
+	optional  int32           platform        = 5;		// qq wx 平台
+}
+
+//查看角色信息请求
+message PSCheckRoleReq
+{
+	optional  string          account         = 1;	    // 账号
+	optional  string          role_name       = 2;		// 角色名
+	optional  string          uuid            = 3;	    // 角色ID
+}
+
+//查看角色信息响应
+message SPCheckRoleAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  string          result          = 2;		// 错误描述
+	optional  string          role_name       = 3;		// 角色名
+	optional  uint64          uuid            = 4;		// 用户ID
+}
+
+//修改角色信息请求
+message PSModifyRoleReq
+{
+	optional  string          account         = 1;	    // 账号
+	optional  string          role_name       = 2;		// 角色名
+	optional  uint64          uuid            = 3;	    // 角色ID
+	optional  string          info_loc        = 4;	    // 修改内容定位
+	optional  string          info_val        = 5;	    // 修改内容值
+}
+
+//修改角色信息响应
+message SPModifyRoleAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  string          result          = 2;		// 错误描述
+	optional  string          role_name       = 3;		// 角色名
+	optional  uint64          uuid            = 4;		// 用户ID
+	optional  string          info_loc        = 5;	    // 修改内容定位
+	optional  string          info_val        = 6;	    // 现在内容值
+}
+
+
+
+//用户基础数据通知
+message SCRoleBaseDataNtf {
+	repeated RoleDataChange data = 1; //改变信息
+	repeated RoleDataChangeInt64 data64 = 2; //64位数据改变信息
+}
+
+//用户选取角色请求
+message CSClientSelectRoleReq {    // project logic
+	optional  uint64          uid             = 1;		// 用户ID
+}
+
+//用户选取角色响应
+message SCClientSelectRoleAck {
+	optional  int32           error           = 1;		// 错误码
+	optional  uint64          uid             = 2;		// 用户ID
+}
+
+//用户拉角色列表请求
+message CSClientPullRoleListReq
+{
+	optional  int32           platform        = 1;		// 平台
+	optional  string          open_id         = 2;		// 平台账号ID
+	optional  int32           loginChannel    = 3;		// 登录渠道
+	optional  int32           regChannel      = 4;		// 组册渠道
+	optional  string		  client_talken   = 5;		// 登录talken
+    optional  string  		  pf   			  = 6;
+    optional  string  		  pfkey           = 7;
+	optional  string          openkey         = 8;
+}
+
+//用户拉角色列表响应
+message SCClientPullRoleListAck
+{
+	optional  int32           error           = 1;		// 错误码
+	optional  RoleList        list            = 2;		// 角色列表
+}
+
+//客户端请求执行GM命令
+message CSClientGmCommandReq
+{
+	optional  string          command         = 1;		// 命令
+}
+
+//客户端请求执行GM命令响应
+message SCClientGmCommandAck
+{
+	optional  string          result          = 1;		// 执行结果
+}
+
+//客户端请求执行GM help命令
+message CSClientGmHelpReq
+{
+	optional  string          command         = 1;		// 命令  "all" or specifical cmd
+}
+
+message GmHelpDesc
+{
+	optional  string          command         = 1;		// 命令
+	optional  string          desc         	  = 2;		// 命令描述
+	optional  int32           category        = 3;		// 命令分类
+	repeated  string          args         	  = 4;		// 命令参数
+}
+//
+message SCClientGmHelpAck
+{
+	optional  string          result          = 1;		// 执行结果
+	repeated  GmHelpDesc      desc            = 2;		// 命令及参数描述
+}
+
+//心跳请求
+message SCClientSyncReq
+{
+	optional  int32           sync            = 1;		// 心跳序号
+}
+
+//心跳请求响应
+message CSClientSyncAck {
+	optional  int32           sync            = 1;		// 心跳序号
+}
+
+//请求退出游戏
+message CSLogoutReq
+{
+}
+
+//返回退出游戏
+message SCLogoutNtf
+{
+	optional  uint32          error           = 1;		//
+}
+
+//战斗请求
+message CSBattleReq
+{
+
+}
+
+//战斗回应
+message SCBattleAck
+{
+	optional BattleReport report = 1; //战报信息
+}
+
+
+
+//************Item Manager**//
+
+
+//拉item请求
+message CSPullItemReq
+{
+	 //物品宝箱列表
+}
+
+//
+message SCPullItemAck
+{
+	repeated Item item_list = 1; //物品列表
+	optional int32 ret = 2; //操作结果
+}
+
+//开物品宝箱请求
+message CSOpenChestReq
+{
+	repeated Item item_list = 1; //物品宝箱列表
+}
+//开物品宝箱响应
+message SCOpenChestAck
+{
+	optional int32 ret = 1;//操作结果
+	repeated Item item_list = 2; //获得物品列表
+}
+
+//出售背包的Item请求
+message CSSellItemReq
+{
+	optional int32 itemId = 1; //售卖物品id
+	optional uint32 count = 2;  //售卖物品数量
+}
+//出售响应
+message SCSellItemAck
+{
+	optional int32 ret = 1; //操作结果
+	repeated Item item_list = 2; //获得物品列表
+
+}
+//合成物品请求
+message CSSynthesisItemReq
+{
+	optional int32 itemId = 1; //碎片id
+	optional uint32 count = 2;  //目标合成物的数量
+
+}
+//合成物品响应
+message SCSynthesisItemAck
+{
+	optional int32 ret = 1;  //操作结果
+	repeated Item item_list = 2; //获得物品列表
+}
+
+//物品变化通知
+message SCItemChangeNtf
+{
+	repeated Item item_list = 1; //物品列表
+}
+
+
+//*********End of Item Manager**//
+
+
+
+
+//开始放置任务请求
+message CSStartIdleMissionReq
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+	repeated uint32 heroes = 4; //英雄列表
+
+}
+
+//开始放置任务回应
+message SCStartIdleMissionAck
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+	optional int32 ret = 4; //操作结果
+	optional uint32 start_time = 5; //开始时间
+	optional uint32 full_time = 6; //金币满的时间
+}
+
+//放置任务收集奖励请求
+message CSCollectIdleMissionReq
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+}
+
+//放置任务收集奖励请求
+message SCCollectIdleMissionAck
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+	repeated Item rewards = 4; //奖励
+	optional int32 ret = 5; //操作结果
+	optional uint32 last_collect_time = 6; //最后一次收取时间
+	optional uint32 full_time = 7; //金币满的时间
+}
+
+//放置任务取消请求
+message CSCancelIdleMissionReq
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+}
+
+//放置任务取消回应
+message SCCancelIdleMissionAck
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+	repeated Item rewards = 4; //奖励
+	optional int32 ret = 5; //操作结果
+}
+
+//接收战斗任务请求
+message CSAcceptBattleMissionReq
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+
+}
+
+//接收战斗任务回应
+message SCAcceptBattleMissionAck
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+	optional int32 ret = 4; //操作结果
+	repeated Item rewards = 5;//奖励
+}
+
+//开始战斗任务请求
+message CSStartBattleMissionReq
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+
+}
+
+//开始战斗任务回应
+message SCStartBattleMissionAck
+{
+	optional int32 city_id = 1;//城市id
+	optional int32 block_id = 2;//城市block id
+	optional int32 mission_id = 3;//任务id
+	optional int32 ret = 4; //操作结果
+	optional BattleReport report = 5; //战报
+	repeated Item rewards = 6;//奖励
+	optional int32 stage_index = 7; //索引
+}
+
+//改变队伍请求
+message CSChangeTeamReq
+{
+	optional TeamConfig team = 1; //队伍
+}
+
+//改变队伍回应
+message SCChangeTeamAck
+{
+	optional int32 team_id = 1; //队伍id
+	optional int32 ret = 2; //操作结果
+}
+
+//改变功能队伍请求
+message CSChangeFunctionTeamReq
+{
+	optional int32 team_type = 1; //队伍类型 枚举TeamType
+	optional int32 team_id = 2; //队伍id
+}
+
+//改变功能队伍回应
+message SCChangeFunctionTeamAck
+{
+	optional int32 team_type = 1; //队伍类型 枚举TeamType
+	optional int32 team_id = 2; //队伍id
+	optional int32 ret = 3;//操作结果
+}
+
+//冒险任务信息通知
+message SCMissionDataNtf
+{
+	optional SyncMissinData data = 1;
+}
+
+//任务解锁信息通知
+message SCUnblockedMissionDataNtf
+{
+	repeated int32 city_id = 1;    //城市id
+	repeated int32 block_id = 2;   //区块id
+	repeated int32 mission_id = 3; //任务id
+}
+
+//抽卡请求
+message CSDrawCardReq
+{
+}
+
+//抽卡回应
+message SCDrawCardAck
+{
+	optional int32 ret = 1; //操作结果
+	repeated int32 heroes = 2; //英雄列表
+	optional uint32 free_time = 3; //下次免费时间
+}
+
+//解锁任务请求
+message CSUnblockMissionReq
+{
+	repeated CityMissionInfo info = 1; //任务解锁信息
+
+}
+
+//解锁任务请求
+message SCUnblockMissionAck
+{
+	repeated CityMissionInfo info = 1; //任务解锁信息
+	optional int32 ret = 4; //操作结果
+}
+
+//挂机加速请求
+message CSSpeedupIdleMissionReq
+{
+	optional int32 mission_id = 1; //任务id
+}
+
+//挂机加速回应
+message SCSpeedupIdleMissionAck
+{
+	optional int32 mission_id = 1; //任务id
+	optional int32 ret = 2; //操作结果
+	repeated Item rewards = 3;//奖励
+}
+
+//服务器数据加载完成通知
+message SCRoleLoadFinishNtf
+{
+}
+
+//冒险全量信息请求
+message CSAdventureInfoReq
+{
+
+}
+
+//冒险全量信息回应
+message SCAdventureInfoAck
+{
+	optional AdventureInfo info = 1; //冒险地图相关信息
+}
+
+//冒险战斗请求
+message CSAdventureCombatReq
+{
+	optional uint32 chapter = 1; 	// 章节
+	optional uint32 stage = 2; 		// 关卡
+	optional uint32 battleInfo = 3; // 战斗信息 0:server report; 1: client report win; 2: client report lose
+}
+
+//冒险战斗回应
+message SCAdventureCombatAck
+{
+	optional uint32 result = 1; 	  // 错误码
+	optional BattleReport report = 2; // 战报信息	// null if battleInfo in req > 0
+	optional AdventureInfo info  = 3; // 冒险进度信息
+	optional Items award		 = 4; // 本次关卡奖励
+	optional Items chapter_award = 5; // 本次章节奖励
+}
+
+//冒险章节挂机奖励请求 // obsolete
+message CSAdventureChapterAfkAwardReq
+{
+	optional uint32 chapter = 1; 	// 章节
+	optional uint32 stage = 2; 	// 关卡
+	optional uint32 type = 3;       // 类型: 0 默认 chapter afk 领奖; 1 宝箱领奖
+}
+
+//冒险章节挂机奖励回应 // obsolete
+message SCAdventureChapterAfkAwardAck
+{
+	optional uint32 result = 1;
+	optional Items  award	 = 2; 		// 领取的挂机奖励
+	optional uint32 lapse_time = 3;		// 上次领取到本次领取的时间(单位:s)
+	optional uint32 type = 4;               // 类型: 0 默认 chapter afk 领奖; 1 宝箱领奖
+}
+
+
+//冒险据点巡逻请求
+message CSAdventureAfkCombatReq
+{
+	optional uint32 chapter = 1; 	// 章节
+	optional uint32 stage = 2; 		// 关卡
+	repeated Hero hero_list = 3; 	// 英雄列表
+}
+
+//冒险据点巡逻回应
+message SCAdventureAfkCombatAck
+{
+	optional uint32 result = 1;
+	optional BattleReport report = 2; // 战报信息
+	optional Items award		 = 3; // 本次获得奖励
+	optional AdventureInfo info  = 4; // 冒险进度信息
+}
+
+
+//冒险据点巡逻请求奖励
+message CSAdventureAfkAwardReq
+{
+	optional uint32 chapter = 1; 	// 章节
+	optional uint32 stage = 2; 		// 关卡
+}
+
+//冒险据点巡逻回应奖励
+message SCAdventureAfkAwardAck
+{
+	optional uint32 	result 				= 1;
+	optional Items  	award				= 2; // 领取的挂机奖励
+}
+
+//********* shop *********//
+
+//商店信息请求
+message CSShopInfoReq
+{
+	optional uint32 shopType = 1; 	// enum ShopType
+}
+
+//商店信息应答
+message SCShopInfoAck
+{
+	optional ShopInfo info = 1; 	//商店信息
+}
+
+//商店刷新请求
+message CSShopRefreshReq
+{
+	optional uint32 refreshType = 1; 	// 类型 0 自动 1 手动
+	optional uint32 shopType = 2; 		// enum ShopType
+}
+
+//商店刷新应答
+message SCShopRefreshAck
+{
+	optional uint32 result = 1; 		// 错误码
+	optional uint32 refreshType = 2;	// 类型 0 自动 1 手动
+	optional uint32 shopType = 3; 		// enum ShopType
+	optional ShopInfo info  = 4; 		// 商店信息
+}
+
+//商店购买请求
+message CSShopBuyReq
+{
+	optional uint32 shopType = 1;
+	optional uint32 gridPos = 2;
+	optional uint32 itemId = 3;
+	optional uint32 itemCount = 4;
+}
+
+//商店购买应答
+message SCShopBuyAck
+{
+	optional uint32 result = 1; 	 // 错误码
+	optional uint32 shopType = 2;	 // enum ShopType
+	optional uint32 gridPos = 3;
+	optional uint32 itemId = 4;
+	optional ShopInfo info = 5; 	 // 商店信息
+	optional uint32 itemCount = 6;	 // 购买数量
+}
+
+//********* story *********//
+
+//剧情信息请求
+message CSStoryInfoReq
+{
+}
+
+//剧情信息应答
+message SCStoryInfoAck
+{
+	optional StoryInfo info = 1; 	//剧情信息
+}
+
+//剧情章节开始req
+message CSStoryStartReq
+{
+	optional uint32 chapter = 1;
+}
+
+//剧情章节开始ack
+message SCStoryStartAck
+{
+	optional uint32 result = 1; 		// 错误码
+	optional uint32 chapter = 2; 		// 剧情章节
+	optional StoryInfo info  = 3; 		// 剧情信息
+}
+
+//剧情章节结束req
+message CSStoryEndReq
+{
+	optional uint32 chapter = 1; 		// 章节
+	optional uint32 win = 2;			// 是否赢得比赛
+}
+
+//剧情章节结束ack
+message SCStoryEndAck
+{
+	optional uint32 result = 1; 		// 错误码
+	optional uint32 chapter = 2; 		// 剧情章节
+	optional uint32 win = 3;			// 是否赢得比赛
+	repeated Item rewards_list = 4;		// 奖励物品列表
+	optional StoryInfo info  = 5; 		// 剧情信息
+}
+
+
+//********* ElseWd = ElseWorld = 异世界 *********//
+
+//全量信息同步
+message CSElseWdInfoReq
+{
+	optional uint32 type = 1; // 刷新类型 0=自动(每天5点)/ 1=手动(消耗 重开券)
+}
+//
+message SCElseWdInfoAck
+{
+	optional int32 error	 = 1;
+	optional ElseWdInfo info = 2; 	//全部信息
+}
+
+//选择队伍
+message CSElseWdStageInitReq
+{
+	optional uint32 teamPos           = 1; // 选择哪个队伍
+	repeated uint32 pos2HeroId        = 2; // 场上位置   // no use
+}
+//
+message SCElseWdStageInitAck
+{
+	optional int32 error				= 1;
+	optional ElseWdTeamSelf team        = 2; // 英雄团队状况
+}
+
+//使用复活券- 使得当前队伍中的英雄回复满血满蓝
+message CSElseWdRebornReq
+{
+	optional uint32 ticket_id           = 1; // 复活券道具
+}
+//
+message SCElseWdRebornAck
+{
+	optional int32 error				= 1;
+	optional ElseWdTeamSelf team        = 2; // 英雄团队状况
+}
+
+//战斗结果
+message CSElseWdStageBattleResultReq
+{
+	optional uint32 door_pos            = 1; // 选择的几号门
+	optional uint32 battle_result       = 2; // 0 失败 1 胜利
+	optional ElseWdTeamSelf team        = 3; // 英雄团队状况
+	optional ElseWdTeamEnemy enemy_team = 4; // 敌人团队状况
+}
+//
+message SCElseWdStageBattleResultAck
+{
+	optional int32 error				= 1;
+	repeated Item rewards_list 			= 2; // 战斗奖励列表
+	optional ElseWdStage current_stage  = 3; // 当前关卡信息 (包含所有门内可选项-有了就可以让玩家选择了)
+}
+
+//选择门内选项
+message CSElseWdStageOptReq
+{
+	optional uint32 door_pos            = 1; // 选择的几号门
+	optional uint32 option              = 2; // 选择的哪个选项 id
+}
+//
+message SCElseWdStageOptAck
+{
+	optional int32 error				= 1;
+	optional bool go_next               = 2; // 是否进入下一关
+	repeated Item rewards_list 			= 3; // 全通关奖励
+	optional ElseWdInfo info          = 4; // 全部信息 // TODO: delete if client don't use
+	repeated  uint32 eventCsvIds        = 5; // ID in config event.csv - 玩家已选择的祝福列表
+	optional  ElseWdStage current_stage = 6; // 当前关卡信息
+}
+
+//********* 邮件系统 *********//
+
+//邮件信息同步
+message CSMailInfoReq
+{
+	optional uint32 type               = 1; // 刷新类型 0=全量 1=增量
+	optional uint32 latest_op_time     = 2; // 最近一次操作时间
+}
+
+message Mail
+{
+	optional MailTemplate  tpl  = 1;		// 邮件模板
+	optional MailInstance  inst = 2;		// 邮件实例
+}
+//
+message SCMailInfoAck
+{
+	optional int32  error              = 1;
+	optional uint32 type               = 2; // 刷新类型 0=全量 1=增量
+	optional uint32 latest_op_time     = 3; // 最近一次操作时间
+	repeated Mail   mails              = 4; // 邮件队列
+}
+
+//操作邮件
+message CSMailOperateReq
+{
+	optional uint32 type               = 1; // 操作类型 1=读取/领取 2=删除
+	optional uint32 mail_id            = 2; // 0:全部 1:指定ID
+	//repeated uint32 mail_id_list     = 3; // 邮件列表
+}
+//
+message SCMailOperateAck
+{
+	optional int32 error               = 1;
+	optional uint32 type               = 2; // 操作类型 0=读取 1=领取附件
+	repeated uint32 mail_id_list       = 3; // 邮件操作成功列表
+}
+
+//设置邮箱
+message CSMailboxSetReq
+{
+	optional bool del_on_read          = 1; // 是否阅后删除
+}
+//
+message SCMailboxSetAck
+{
+	optional int32 error               = 1;
+	optional bool del_on_read          = 2; // 是否阅后删除
+}
+
+
+//********* 玩家概要信息展示 - 名片系统 *********//
+
+//玩家概要信息查询
+message CSIntroQueryReq
+{
+	optional uint64 uuid              = 1; // 0LL means self
+}
+
+message SCIntroQueryAck
+{
+	optional int32  error              = 1;
+	optional Intro intro           = 2;
+}
+
+//玩家概要信息换头像
+message CSIntroChangePortraitReq
+{
+	optional uint32 portrait_id              = 1; // 头像id - 已解锁英雄ID
+}
+
+message SCIntroChangePortraitAck
+{
+	optional int32  error              = 1;
+	optional Intro intro           = 2;
+}
+
+
+// 跑马灯
+message SCMarqueeNtf
+{
+	optional int32  priority              = 1;	//优先级
+	optional string content  			        = 2;	//内容
+}
+
+//*********Hero Manager*********//
+
+
+//英雄列表通知
+message SCHeroListNtf
+{
+	repeated CHero hero_list = 1; //英雄列表
+	optional RoleTeams  team = 2; //队伍列表
+	optional int32 share_level = 3; //共享等级
+}
+
+//增加英雄通知
+message SCAddHeroNtf
+{
+	repeated CHero hero_list = 1; //英雄列表
+}
+
+//删除英雄通知
+message SCDelHeroNtf
+{
+	repeated uint32 hero_uid_list = 1; //英雄uid列表
+}
+
+
+//英雄碎片合成英雄请求
+message CSSynthesisHeroReq
+{
+	optional int32 hero_piece_id = 1; //物品英雄碎片id
+}
+//合成英雄响应
+message SCSynthesisHeroAck
+{
+	optional int32 ret = 1;  //操作结果
+	optional int32 allyId = 2;  //合成英雄的配置id
+
+}
+
+//英雄展示请求
+message CSHeroDisplayReq
+{
+	optional  int32           uid           = 1;		// 英雄UID
+}
+
+//英雄展示响应
+message SCHeroDisplayAck
+{
+	optional  int32           error            = 1;		// 错误码,0为正常
+	optional  CHero            info             = 2;     // 英雄展示信息
+}
+
+//英雄升级请求
+message CSHeroLevelUpReq
+{
+	optional  int32           uid           = 1;		// 英雄UID
+	optional  int32           cur_level      = 2;        // 英雄当前等级
+	optional  int32           target_level   = 3;        // 升级后等级
+}
+
+//英雄升级响应
+message SCHeroLevelUpAck
+{
+	optional  int32           error            = 1;		// 错误码,0为正常
+	optional  CHero 		      info             = 2;     // 升级后英雄信息
+}
+
+//英雄升星请求
+message CSHeroStarUpReq
+{
+	optional  int32           uid           = 1;		// 英雄UID
+	optional  int32           cur_star      	= 2;        // 英雄当前星级
+	optional  int32           target_star   	= 3;        // 升星后星级
+}
+
+//英雄升星响应
+message SCHeroStarUpAck
+{
+	optional  int32           error            = 1;		// 错误码,0为正常
+	optional  CHero            info             = 2;     // 升星后英雄信息
+}
+
+//英雄升品请求
+message CSHeroQualityUpReq
+{
+	optional  int32 uid           = 1;		// 英雄UID
+	optional  int32 cur_quality   = 2;        // 英雄品质
+}
+
+//英雄升品响应
+message SCHeroQualityUpAck
+{
+	optional  int32  error  = 1;		// 错误码,0为正常
+	optional  CHero   info   = 2;     // 升品后英雄信息
+}
+
+
+//
+message CSHeroDisassembleReq
+{
+
+}
+
+//自动分解回应
+message SCHeroDisassembleAck
+{
+	repeated Item heros_Piece  = 1;     //多个英雄自动分解后返回英雄碎片
+}
+
+
+//遣散请求
+message CSPieceDismissReq
+{
+	repeated Item item_list = 1;  //需要分解的英雄碎片
+}
+//
+message SCPieceDismissAck
+{
+	optional int32 ret = 1;
+	repeated Item item_list = 2;  //遣散所得的物品
+}
+//重生请求
+message CSHeroRebornReq
+{
+	optional int32 uid = 1;  //英雄uid
+}
+//
+message SCHeroRebornAck
+{
+	optional int32 ret = 1;
+	repeated Item item_list = 2;  //重生返还的物品
+}
+
+//转换英雄碎片请求
+message CSConvertHeroPieceReq
+{
+	optional int32 hero_piece_id = 1;  //万能碎片转换的英雄碎片id
+	optional int32 count = 2;  //万能碎片转换的英雄碎片数量
+}
+//
+message SCConvertHeroPieceAck
+{
+	optional int32 ret = 1;
+}
+
+//*********End of Hero Manager**//
+
+//抽卡请求
+message CSDrawReq
+{
+	optional int32 cfg_id = 1; //配置id
+	optional int32 draw_type = 2; //抽卡类型 枚举DrawType
+}
+
+//抽卡回应
+message SCDrawAck
+{
+	optional int32 ret = 1; //结果
+	optional int32 cfg_id = 2; //配置id
+	optional int32 draw_type = 3; //抽卡类型 枚举DrawType
+	optional DrawCardShowList items = 4; //物品
+}
+
+//购买抽卡道具请求
+message CSBuyDrawItemReq
+{
+	optional int32 cfg_id = 1; //配置id
+	optional int32 draw_type = 2; //抽卡类型 枚举DrawType
+}
+
+//购买抽卡道具回应
+message SCBuyDrawItemAck
+{
+	optional int32 ret = 1; //结果
+	optional int32 cfg_id = 2; //配置id
+	optional int32 draw_type = 3; //抽卡类型 枚举DrawType
+	optional Items items = 4; //物品
+}
+
+//gm抽卡统计信息通知
+message SCGmDrawCardNtf
+{
+	optional int32 ret = 1; //返回值
+	optional int32 draw_cnt = 2; //抽卡次数
+	repeated GMDrawCardInfo list = 3; //抽卡统计结果
+	repeated GMDrawCardQulityInfo qulity = 4; //品质信息
+
+
+}
+
+//同步任务列表请求
+message CSSynTaskListReq
+{
+
+}
+
+//任务列表回应
+message SCSynTaskListAck
+{
+	repeated Task daily_task_list = 1;
+	repeated Task weekly_tasks_list = 2;
+	repeated Task main_tasks_list = 3;
+	optional int32 daily_valid_time = 4;  //日常任务时限
+	optional int32 weekly_valid_time = 5; //周常任务时限
+}
+
+//领取任务奖励请求
+message CSTaskRewardReq
+{
+	repeated int32 cfg_ids = 1; //任务配置id
+}
+//
+message SCTaskRewardAck
+{
+	optional int32 ret = 1;
+}
+
+//通用获得物品、奖励弹出通知
+message SCCommonItemPopUpNtf
+{
+	repeated Item item_list = 1; // 奖励数组不为空，为空不发送通知
+	optional int32 func_type = 2; //弹窗类型枚举-ItemPopType （指示用处,后续拓展）
+}
+
+//
+message SCTaskChangeNtf
+{
+	repeated Task task_list = 1; //任务状态改变列表
+}
+
+//
+message SCTaskDeleteNtf
+{
+	repeated int32 cfg_id_list = 1; //任务id列表
+}
+
+//装备数据通知
+message SCEquipmentDataNtf
+{
+	optional EquipmentData data = 1; //装备数据
+}
+
+//装备物品请求
+message CSEquipReq
+{
+	repeated EquipInfo list = 1; //装备列表
+}
+
+//装备物品回应
+message SCEquipAck
+{
+	optional int32 ret = 1; //返回值
+	repeated EquipInfo list = 2; //装备列表
+}
+
+//装备位附魔请求
+message CSEquipmentSlotEnchantingReq
+{
+	optional int32 slot = 1; //装备位
+	optional uint32 count = 2; //附魔次数
+}
+
+//装备位附魔回应
+message SCEquipmentSlotEnchantingAck
+{
+	optional int32 ret = 1; //返回值
+	optional int32 slot = 2; //装备位
+	optional uint32 cur_count = 3; //当前附魔次数
+}
+
+//装备位强化请求
+message CSEquipmentSlotStrengthReq
+{
+	optional int32 slot = 1; //装备位
+	optional uint32 count = 2; //强化次数
+}
+
+//装备位强化请求
+message SCEquipmentSlotStrengthAck
+{
+	optional int32 ret = 1; //返回值
+	optional int32 slot = 2; //装备位
+	optional uint32 cur_level = 3; //当前强化等级
+	optional int32 strenghMasterLevel = 4; //强化大师等级
+}
+
+//装备分解请求
+message CSEquipmentDestroyReq
+{
+	repeated uint32 ids = 1; //装备id
+}
+
+//装备分解请求
+message SCEquipmentDestroyAck
+{
+	optional int32 ret = 1; //返回值
+	repeated uint32 ids = 2; //装备id
+}
+
+
+//装备解锁通知
+message SCEquipmentSlotUnlockNtf
+{
+	optional EquipmentSlot slot = 2; //装备位信息
+}
+
+//新增装备通知
+message SCAddEquipmentNtf
+{
+	repeated Equipment list = 1; //装备列表
+}
+//********* crystal *********//
+
+//水晶数据通知
+message SCCrystalDataNtf
+{
+	optional CrystalData crystal_data = 1; //水晶数据
+}
+
+//
+message SCCrystalDataChangeNtf
+{
+	optional bool is_altar    =  1;       // 0不是，1转为祭坛功能
+	optional int32 share_level = 2; 	  //水晶共享等级
+	optional int32 share_level_up_limit = 3; //当前共享等级上限
+	repeated HeroSlotInfo hero_slot_list = 4; //水晶槽位列表
+	repeated int32 priest_hero_list = 5;  //水晶祭祀英雄uid
+}
+
+
+//新解锁一个槽位
+message CSBuyCrystalSlotReq
+{
+	optional int32 buy_type = 1; // 1-消耗道具购买， 2-钻石购买
+}
+
+//
+message SCBuyCrystalSlotAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//放置英雄
+message CSPlaceHeroReq
+{
+	optional int32 slot_number = 1;
+	optional int32 hero_uid = 2;
+}
+//
+message SCPlaceHeroAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//卸下英雄
+message CSClearHeroReq
+{
+	optional int32 slot_number = 1;
+}
+//
+message SCClearHeroAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+
+//手动刷新槽位
+message CSRefreshSlotReq
+{
+	optional int32 slot_number = 1;  //读表消耗钻石
+}
+//
+message SCRefreshSlotAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//提升共享等级1级
+message CSShareLevelUpReq
+{
+
+}
+//
+message SCShareLevelUpAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//
+message SCHeroChangeNtf
+{
+	repeated CHero hero_list = 1; //英雄数据变化ntf
+}
+
+
+//激活神器
+message CSActivateEmblemReq
+{
+	optional int32 hero_uid = 1; //英雄uid
+	optional int32 emblem_cfg_id  = 2; //神器配置id
+}
+//
+message SCActivateEmblemAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//强化神器
+message CSStrengthenEmblemReq
+{
+	optional int32 hero_uid = 1; //英雄uid
+}
+//
+message SCStrengthenEmblemAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//刷新祝福
+message CSRefreshBlessReq
+{
+	optional int32 hero_uid = 1; //英雄uid
+	repeated int32 bless_slots = 2; //刷新哪几个祝福槽位,从1开始
+}
+//
+message SCRefreshBlessAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+
+//还原祝福
+message CSResumeBlessReq
+{
+	optional int32 hero_uid = 1; //英雄uid
+	repeated int32 bless_slots = 2; //复原哪个祝福槽位
+}
+//
+message SCResumeBlessAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+
+
+//替换祝福
+message CSReplaceBlessReq
+{
+	optional int32 hero_uid = 1; //英雄uid
+	repeated int32 bless_slots = 2; //替换哪几个祝福槽位
+}
+//
+message SCReplaceBlessAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//塔列表请求
+message CSTowerListReq
+{
+}
+
+//塔列表请求
+message SCTowerListAck
+{
+	optional TowerList list = 1; //塔列表
+}
+
+//塔增加通知
+message SCAddTowerNtf
+{
+	optional TowerList list = 1; //塔列表
+}
+
+//塔变化通知
+message SCTowerChangeNtf
+{
+	optional TowerList list = 1; //塔列表
+}
+
+//通关奖励领取通知
+message CSTowerFinishRewardsReq
+{
+	optional int32 tower_id = 1; //塔id
+}
+
+
+//爬塔战斗请求
+message CSTowerBattleReq
+{
+	optional int32 level_id = 1; //关卡id
+	optional bool win = 2; //是否胜利
+}
+
+
+//爬塔战斗回应
+message SCTowerBattleAck
+{
+	optional int32 ret = 1; //结果
+	optional int32 level_id = 2; //关卡id
+}
+
+
+
+//图集信息请求
+message CSAlbumInfoReq
+{
+
+}
+//
+message SCAlbumInfoAck
+{
+	optional int32 ret = 1; //返回值
+	repeated int32 album_id_list = 2; //领奖过的图集
+}
+
+//图集一次性领取奖励请求
+message CSAlbumRewardReq
+{
+	optional int32 album_id = 1;
+}
+//
+message SCAlbumRewardAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+//人物档案信息请求
+message CSCharacterProfileInfoReq
+{
+
+}
+//
+message SCCharacterProfileInfoAck
+{
+	optional int32 ret = 1; //返回值
+	repeated CharacterProfile profile_list = 2;
+}
+
+
+//激活人物档案插图
+message CSActivateCharacterProfileReq
+{
+	optional int32 role_cfgid = 1;
+	optional int32 picture_index = 2; //从1开始
+}
+//
+message SCActivateCharacterProfileAck
+{
+	optional int32 ret = 1; //返回值
+}
+
+
+//档案人物获得一次领取奖励请求
+message CSCharacterProfileRewardReq
+{
+	optional int32 role_cfgid = 1;
+}
+//
+message SCCharacterProfileRewardAck
+{
+	optional int32 ret = 1; //返回值
+}
+//
+message SCCustomerServiceReddotNtf
+{
+	optional int32 num = 1; //未读消息数
+}
+
+//
+message SCMainUiNtf
+{
+	optional CMainUi main_ui_data = 1;
+}
+//
+message CSMainUiRefreshReq
+{
+}
+//
+message SCMainUiRefreshAck
+{
+	optional int32 cur_drama_id = 1;
+	optional uint32 random_drama_time = 2;
+	optional int32 ret = 3;
+}
+//
+message CSMainUiReceiveReq
+{
+	optional int32 drama_id = 1;
+}
+//
+message SCMainUiReceiveAck
+{
+	optional int32 ret = 1;
+}
+//
+message SCMainUiSpecialDramaNtf
+{
+	optional int32 special_drama_id = 1;
+}
+
+
+//主Ui收集请求
+message CSMainUiCollectReq
+{
+
+}
+
+
+//主Ui收集回应
+message SCMainUiCollectAck
+{
+	optional int32 ret = 1;      //操作结果
+	optional uint32 last_collect_time = 2; //客户端领取时间
+}
+
+
+//好友信息拉取请求
+message CSFriendInfoReq
+{
+
+}
+
+//好友信息回应
+message SCFriendInfoAck
+{
+	repeated FriendInfo list = 1; //好友列表
+	repeated FriendBriefInfo black_list = 2; //黑名单
+	repeated FriendRequestInfo request_list = 3; //申请列表
+}
+
+//添加好友请求
+message CSFriendRequestReq
+{
+	optional uint64 role_id = 1; //要添加的角色id
+	optional string msg = 2; //验证信息
+}
+
+//添加好友回应
+message SCFriendRequestAck
+{
+	optional int32 ret = 1; //返回值
+	optional uint64 role_id = 2; //要添加的角色id
+}
+
+//添加好友对方通知
+message SCFriendRequestOtherNtf
+{
+	optional FriendRequestInfo info = 1; //要添加的角色信息
+}
+
+//移除好友申请请求
+message CSFriendRemoveRequestReq
+{
+	optional uint64 role_id = 1; //要添加的角色id
+	optional bool is_all = 2; //是否全部
+}
+
+//移除好友申请回应
+message SCFriendRemoveRequestAck
+{
+	optional int32 ret = 1; //返回值
+	optional uint64 role_id = 2; //要添加的角色id
+	optional bool is_all = 3; //是否全部
+}
+
+//添加黑名单请求
+message CSFriendAddBlackListReq
+{
+	optional uint64 role_id = 1; //要添加的角色id
+}
+
+//添加黑名单回应
+message SCFriendAddBlackListAck
+{
+	optional int32 ret = 1; //返回值
+	optional uint64 role_id = 2; //要添加的角色id
+}
+
+//移除黑名单请求
+message CSFriendRemoveBlackListReq
+{
+	optional uint64 role_id = 1; //要添加的角色id
+}
+
+//移除黑名单回应
+message SCFriendRemoveBlackListAck
+{
+	optional int32 ret = 1; //返回值
+	optional uint64 role_id = 2; //要添加的角色id
+}
+
+//移除好友请求
+message CSFriendRemoveReq
+{
+	repeated uint64 role_list = 1; //要移除的列表
+}
+
+//移除好友回应
+message SCFriendRemoveAck
+{
+	optional int32 ret = 1; //返回值
+	repeated uint64 role_list = 2; //要移除的列表
+}
+
+//移除好友对方通知
+message SCFriendRemoveOtherNtf
+{
+	optional uint64 role_id = 2; //角色id
+}
+
+//同意添加好友请求
+message CSFriendRequestAgreeReq
+{
+	repeated uint64 role_list = 1; //要添加的列表
+}
+
+//同意添加好友回应
+message SCFriendRequestAgreeAck
+{
+	optional int32 ret = 1; //返回值
+	repeated FriendInfo role_list = 2; //要添加的列表
+}
+
+//同意添加好友对方通知
+message SCFriendRequestAgreeOtherNtf
+{
+	optional FriendInfo info = 2; //角色id
+}
+
+//好友搜索请求
+message CSFriendSearchReq
+{
+	optional uint64 role_id = 1;//角色id
+	optional string name = 2; //名字
+}
+
+//好友搜索回应
+message SCFriendSearchAck
+{
+	repeated FriendInfo list = 1; //好友列表
+}
+
+
+//修改备注请求
+message CSFriendModifyRemarkReq
+{
+	optional uint64 role_id = 1;//角色id
+	optional string remark = 2; //备注
+}
+
+//修改备注回应
+message SCFriendModifyRemarkAck
+{
+	optional int32 ret = 1; //返回值
+	optional uint64 role_id = 2;//角色id
+	optional string remark = 3; //备注
+}
+//*********Room Manager*********//
+
+//房间数据变化通知，比如修复房间列表
+
+message SCRoomChangeNtf
+{
+	repeated CRoomData room_list = 1; //大厅创建、升级完成等，后端通知前端数据修改
+}
+
+//请求房间列表
+message CSRoomListReq
+{
+
+}
+
+
+//房间列表回应
+message SCRoomListAck
+{
+	repeated CRoomData room_list = 1;				//更新状态后的房间列表
+	optional int32 workers_num = 2;					//工人数目
+	optional int32 hang_up_times = 3;				//上次神速力时间
+	optional uint32 last_hang_up_time = 4;			//次数
+	optional uint32 last_collect_time = 5;			//上次收菜时间
+	optional int32 ret = 6;							//操作结果
+}
+
+//房间收集请求
+message CSRoomCollectReq
+{
+	optional uint32 room_uid = 1; //房间id
+}
+
+
+//收集回应
+message SCRoomCollectAck
+{
+	optional int32 ret = 1;       //操作结果
+	optional int32 room_uid = 2;  //房间uid
+	repeated Item item_list = 3;  //收集的物品
+
+}
+
+//创建房间请求
+message CSCreateRoomReq
+{
+	optional int32 room_cfg_id = 1; //房间配置id
+	optional int32 x = 2; //房间x坐标
+	optional int32 y = 3; //房间y坐标
+}
+//创建房间回应
+message SCCreateRoomAck
+{
+	optional int32 ret = 1;     //操作结果
+	optional int32 room_cfg_id = 2; //房间配置id
+	optional int32 x = 3; //房间x坐标
+	optional int32 y = 4; //房间y坐标
+}
+
+//升级房间请求
+message CSRoomUpLevelReq
+{
+	optional uint32 room_uid = 1; //房间id
+	optional int32 now_speed = 2; //是否现在立即升级，1是，0不是
+}
+
+//升级房间回应
+message SCRoomUpLevelAck
+{
+	optional int32 ret = 1;      //操作结果
+	optional uint32 room_uid = 2; //房间id
+	optional int32 now_speed = 3; //是否现在立即升级，1是，0不是
+}
+
+//更新房间位置请求
+message CSUpdateRoomPosReq
+{
+	optional RoomPosData pos = 1;//位置信息
+}
+
+message SCUpdateRoomPosAck
+{
+	optional int32 ret = 1;
+	optional RoomPosData pos = 2;//位置信息
+}
+
+//
+message CSSpeedUpReq
+{
+	optional uint32 room_uid = 1; //房间id
+}
+
+message SCSpeedUpAck
+{
+	optional int32 ret = 1; //操作结果
+	optional uint32 room_uid = 2; //房间id
+}
+
+
+//雇佣工人请求
+message CSBuyWorkerReq
+{
+
+}
+
+//雇佣工人
+message SCBuyWorkerAck
+{
+	optional int32 ret = 1;      //操作结果
+	optional int32 workers_num = 2; //工人数目
+}
+
+
+
+//房间创建，大厅升级，房间升级
+message CSRoomFinishReq
+{
+	optional int32 room_uid = 1;      //完成成功后通知后端同步数据
+}
+
+message SCRoomFinishAck
+{
+	optional int32 ret = 1;      //同步是否成功
+	optional int32 room_uid = 2;
+}
+
+
+
+//房间入驻英雄变化后，将该房间所有英雄uid发过来
+message CSStationRoomReq
+{
+	optional int32 room_uid = 1;  //房间id
+	repeated uint32 hero_list = 2; //英雄uid列表
+}
+
+//入驻后需要发送，房间变化通知给前端
+message SCStationRoomAck
+{
+	optional int32 ret = 1;					//是否入驻成功
+	optional int32 room_uid = 2;			//房间id
+	repeated int32 hero_list = 3;			//英雄列表
+}
+
+message CSAssignPowerReq
+{
+	repeated RoomPower assign_list = 1; //电力分配数组,只发送电力分配数值变化的房间
+}
+
+
+message SCAssignPowerAck
+{
+	optional int32 ret = 1;      //电力分配是否成功
+}
+
+//立刻获取n小时的收益
+message CSGetHangUpResourceReq
+{
+	optional int32 cur_diamonds = 1; //当前钻石数
+}
+
+message SCGetHangUpResourceAck
+{
+	optional int32 ret = 1;
+	optional int32 hang_up_times = 2;
+	optional uint32 last_hang_up_time = 3;
+
+}
+
+//更新战力信息
+message CSUpdatePowerInfoReq
+{
+	optional int32 playerPower = 1; //玩家战力
+}
+
+message SCUpdatePowerInfoAck
+{
+	optional int32 ret = 1;
+}
+
+
+message CSSettingSaveReq
+{
+    optional int32 pos = 1;
+    optional bool  val = 2;
+}
+
+message SCSettingSaveAck
+{
+	optional int32 ret = 1;
+	optional int32 pos = 2;
+    optional bool  val = 3;
+}
+
+//防沉迷时间通知
+message SCHealthUpdateTimeNtf
+{
+	optional int32 max_time = 1; // 如果是实名未成年用户，那么有这个字段，表示当天最多可玩时间，单位秒
+	optional int32 accumu_time = 2; //当前累计在线时间
+	optional int32 try_time = 3; // 试玩时间
+	optional int32 operation = 4; // 本次上报需要的处理类型：0无需操作；1提醒；2强制下线；3当天禁玩；4宵禁；5强制实名认证；6提醒实名认证；7强制下线前提醒
+	optional int32 time_node = 5; // 如果operation是1或2或6或7，则有这个字段，表示本次操作满足的时间节点，对应的是防沉迷时间控制策略里的到达的某个时间点，比如3小时，单位是秒
+	optional int32 force_exit_rest_time = 6; // 如果operation是2，那么有这个字段，表示本次需要下线的时间
+	optional int32 force_exit_rest_end_time = 7; // 如果operation是2，那么有这个字段，表示本次休息结束时间
+	optional int32 ban_end_time = 8; // 如果operation是3，那么有这个字段，表示本次禁玩结束的时间
+	optional int32 curfew_begin_time = 9; // 如果operation是4，那么有这个字段，表示宵禁开始时间
+	optional int32 curfew_end_time = 10; // 如果operation是4，那么有这个字段，表示宵禁结束时间
+}
+
+// 战前埋点上报
+message CSOssBattleStartReq
+{
+	optional int32 battle_type = 1;					//关卡类型
+	optional int32 battle_id = 2;					//第几关
+	optional int32 sub_battle_id = 3;				//关卡序号
+	optional string chip_info = 4;					//装备芯片
+	optional string fight_hero_info =5;				//出战英雄
+}
+
+message SCOssBattleStartAck
+{
+	optional int32 ret = 1;
+}
+
+// 战后埋点上报
+message CSOssBattleEndReq
+{
+	optional int32 battle_type = 1;					//关卡类型
+	optional int32 battle_id = 2;					//第几关
+	optional int32 sub_battle_id = 3;				//关卡序号
+	optional int32 duration = 4;					//通关时间
+	optional int32 result = 5;						//通关结果
+	optional string completion = 6;					//关卡完成度   字符串"击杀敌人数-敌人总数"
+	optional string fight_hero_info = 7;			//出战英雄
+	optional string fight_battle_info = 8;			//战斗明细
+	optional string fight_rewards_info = 9;			//奖励物品
+
+}
+
+message SCOssBattleEndAck
+{
+	optional int32 ret = 1;
+}
+
+//*********End of Room Manager**//
+
+
+
+
